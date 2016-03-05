@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="FilingFeeRequestDetail" table="[dbo].[FilingFeeRequestDetails]" optimistic-lock="none" >
+    <id name="FilingFeeRequestDetailId" column="FilingFeeRequestDetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AmtApproved" column="AmtApproved" />
+    <property name="AmtRequested" column="AmtRequested" />
+    <property name="BilledDate" column="BilledDate" />
+    <property name="IsInterfaced" column="isInterfaced" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="Type" column="Type" />
+    <property name="DocId" column="DocID" type="AnsiString"/>
+    <property name="RequestDocId" column="RequestDocID" type="AnsiString"/>
+  </class>
+</hibernate-mapping>

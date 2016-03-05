@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LegislationProvision" table="[dbo].[LegislationProvisions]" optimistic-lock="none" >
+		<id name="LegislationProvisionId" column="LegislationProvisionId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CrimeCaseInd" column="CrimeCaseInd" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MainLegInd" column="MainLegInd" />
+		<property name="ProvisionNo" column="ProvisionNo" />
+		<property name="SeqNo" column="SeqNo" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="SubProvisionNo" column="SubProvisionNo" />
+		<many-to-one name="MLegislationAct" fetch="select" cascade="none">
+			<column name="ActCode"/>
+		</many-to-one>
+		<many-to-one name="MProvision" fetch="select" cascade="none">
+			<column name="ProvisionCode"/>
+		</many-to-one>
+		<many-to-one name="MSubProvision" fetch="select" cascade="none">
+			<column name="SubProvisionCode"/>
+		</many-to-one>
+		<set name="RCriminalLegislationInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LegislationProvisionsId"/>
+			</key>
+			<one-to-many class="RCriminalLegislationInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

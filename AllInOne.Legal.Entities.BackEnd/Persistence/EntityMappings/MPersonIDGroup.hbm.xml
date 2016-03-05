@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPersonIDGroup" table="[dbo].[MPersonIDGroup]" optimistic-lock="none" >
+		<id name="IdGroupCode" column="IDGroupCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SeqNo" column="SeqNo" />
+		<property name="UIDescription" column="UIDescription" />
+		<set name="BankruptcyOtherDefDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="BankruptcyOtherDefDetail"/>
+		</set>
+		<set name="CaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="CasePartyAICDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="CaveatAAInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdGroupCode"/>
+			</key>
+			<one-to-many class="CaveatAAInfo"/>
+		</set>
+		<set name="DeceasedInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdGroupCode"/>
+			</key>
+			<one-to-many class="DeceasedInfo"/>
+		</set>
+		<set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="DocCasePartyAICDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="LiquidatorPICs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDGroupCode"/>
+			</key>
+			<one-to-many class="LiquidatorPIC"/>
+		</set>
+		<set name="Liquidators" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdGroupCode"/>
+			</key>
+			<one-to-many class="Liquidator"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

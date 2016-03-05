@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="OGCProcessingInfo" table="[dbo].[OGCProcessingInfo]" optimistic-lock="none" >
+    <id name="OGCProcessingInfoId" column="OGCProcessingInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" />
+    <property name="DocId" column="DocID" />
+    <property name="CaseInfoID" column="CaseInfoID" />
+    <property name="SubCaseInfoID" column="SubCaseInfoID" />
+    <property name="SubmissionGroupID" column="SubmissionGroupID" />
+    <property name="HrgID" column="HrgID" />
+    <property name="ProcessedBy" column="ProcessedBy" />
+    <property name="ProcessedTime" column="ProcessedTime" />
+    <property name="Remarks" column="Remarks" />
+    <property name="ErrorMsg" column="ErrorMsg" />
+    <property name="ProcessingStatus" column="ProcessingStatus" />
+    <property name="AttemptCount" column="AttemptCount" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

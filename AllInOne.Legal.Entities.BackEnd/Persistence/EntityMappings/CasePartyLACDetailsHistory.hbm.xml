@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CasePartyLACDetailsHistory" table="[dbo].[CasePartyLACDetailsHistory]" optimistic-lock="none" >
+		<id name="CPLACDetailHistoryId" column="CPLACDetailHistoryId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="EndDate" column="EndDate" />
+		<property name="FiledUserType" column="FiledUserType" />
+		<property name="LACRefStatus" column="LACRefStatus" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LFGroupCode" column="LFGroupCode" />
+		<property name="StartDate" column="StartDate" />
+		<many-to-one name="CaseParty" fetch="select" cascade="none">
+			<column name="CasePartyId"/>
+		</many-to-one>
+		<!--<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocId"/>
+		</many-to-one>
+		<many-to-one name="LACDocumentDetail" fetch="select" cascade="none">
+			<column name="LACDocDetailId"/>
+		</many-to-one>
+		<many-to-one name="LACInfo" fetch="select" cascade="none">
+			<column name="LACInfoId"/>
+		</many-to-one>-->
+    		<property name="DocId" column="DocId" type="AnsiString"/>
+		<property name="LACDocDetailId" column="LACDocDetailId" type="AnsiString"/>
+    		<property name="LACInfoId" column="LACInfoId" type="AnsiString"/>
+	</class>
+</hibernate-mapping>

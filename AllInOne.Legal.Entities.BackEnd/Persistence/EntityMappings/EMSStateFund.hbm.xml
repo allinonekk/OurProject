@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSStateFund" table="[dbo].[EMSStateFund]" optimistic-lock="none" >
+		<id name="EMSStateFundId" column="EMSStateFundId" type="AnsiString">
+			<generator class="assigned"/>
+		</id> 
+		<property name="TransAmt" column="TransAmt" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="TransferStatus" column="TransferStatus" />
+		<property name="TransferApprovedBy" column="TransferApprovedBy" />
+		<property name="TransferDate" column="TransferDate" />
+		<many-to-one name="EMSCheque" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSChequeId"/>
+		</many-to-one>
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAccountId"/>
+		</many-to-one>
+  </class>
+</hibernate-mapping>

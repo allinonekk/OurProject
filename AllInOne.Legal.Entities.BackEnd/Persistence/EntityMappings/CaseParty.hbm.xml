@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CaseParty" table="[dbo].[CaseParty]" optimistic-lock="none" >
+    <id name="CasePartyId" column="CasePartyID" type="AnsiString"  >
+      <generator class="assigned"/>
+    </id>
+    <property name="ApplicantCapacityRemarks" column="ApplicantCapacityRemarks" />
+    <property name="BirthCountryRemarks" column="BirthCountryRemarks" />
+    <property name="CompanyName" column="CompanyName" type="AnsiString"/>
+    <property name="ContactTypeInd" column="ContactTypeInd" />
+    <property name="DateOfBirth" column="DateOfBirth" />
+    <property name="DateOfRegistration" column="DateOfRegistration" />
+    <property name="DateofService" column="DateofService" />
+    <property name="DialectRemarks" column="DialectRemarks" />
+    <property name="DisablePersonInd" column="DisablePersonInd" />
+    <property name="DisablePersonRemarks" column="DisablePersonRemarks" />
+    <property name="Email" column="Email" />
+    <property name="FaxAreaCode" column="FaxAreaCode" />
+    <property name="FaxCountryCode" column="FaxCountryCode" />
+    <property name="FaxNumber" column="FaxNumber" />
+    <property name="FormerCompanyName" column="FormerCompanyName" />
+    <property name="FormerPersonName" column="FormerPersonName" />
+    <property name="FullName" column="FullName" type="AnsiString"/>
+    <property name="HasLAC" column="HasLAC" />
+    <property name="IdNumber" column="IDNumber" type="AnsiString"/>
+    <property name="IdRemarks" column="IDRemarks" />
+    <property name="IsActiveInd" column="IsActiveInd" />
+    <property name="IsDraft" column="isDraft" />
+    <property name="IsPartyServiedWrit" column="IsPartyServiedWrit" />
+    <property name="IsSingaporePR" column="isSingaporePR" />
+    <property name="LanguageCode" column="LanguageCode" />
+    <property name="LanguageRemarks" column="LanguageRemarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LFId" column="LFID" type="AnsiString"/>
+    <property name="MarriageCertNo" column="MarriageCertNo" />
+    <property name="MarriageDt" column="MarriageDt" />
+    <property name="MobileCountryCode" column="MobileCountryCode" />
+    <property name="MobileNumber" column="MobileNumber" />
+    <property name="NationalityRemarks" column="NationalityRemarks" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="OccupationRemarks" column="OccupationRemarks" />
+    <property name="OrdinalNumber" column="OrdinalNumber" />
+    <property name="PartyNo" column="PartyNo" />
+    <property name="PartyStatusDate" column="PartyStatusDate" />
+    <property name="RaceRemarks" column="RaceRemarks" />
+    <property name="RedActName" column="RedActName" />
+    <property name="RelationshipRemarks" column="RelationshipRemarks" />
+    <property name="ReligionRemarks" column="ReligionRemarks" />
+    <property name="TelAreaCode" column="TelAreaCode" />
+    <property name="TelCountryCode" column="TelCountryCode" />
+    <property name="TelNumber" column="TelNumber" />
+    <property name="UEN" column="UEN" />
+    <property name="VesselName" column="VesselName" />
+    <property name="CapacityInfo" column="CapacityInfo" />
+    <property name="CapacityInd" column="CapacityInd" />
+    <property name="VesselIDType" column="VesselIDType" />
+    <property name="IMONumber" column="IMONumber" />
+    <property name="IsSubCaseOnlyParty" column="isSubCaseOnlyParty" />
+    <property name="CounterClaimPartyStatusCode" column="CounterClaimPartyStatusCode" />
+    <property name="CounterClaimPartyStatusDate" column="CounterClaimPartyStatusDate" />
+    <property name="PortOfRegistration" column="PortOfRegistration" />
+    <property name="RegistrationNumber" column="RegistrationNumber" />
+    <property name="CounterClaimOrdinalNumber" column="CounterClaimOrdinalNumber" />
+    <property name="CounterClaimPartyNo" column="CounterClaimPartyNo" />
+    <property name="HarassPlaceCode" column="HarassPlaceCode" />
+    <property name="HarassPlaceRemarks" column="HarassPlaceRemarks" />
+    
+    <many-to-one name="CounterClaimPartyTypeCode" fetch="select" cascade="none">
+      <column name="CounterClaimPartyTypeCode"/>
+    </many-to-one>
+    <set name="ADMBBDefInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="ADMBBDefInfo"/>
+    </set>
+    <set name="AssessmentDamages" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="AssessmentDamage"/>
+    </set>
+    <!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+    <property name="CaseInfoId" column="CaseInfoID" />
+    <set name="CasePartyAddresses" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CasePartyAddress"/>
+    </set>
+    <set name="CasePartyAICDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CasePartyAICDetail"/>
+    </set>
+    <set name="CasePartyAliases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CasePartyAlias"/>
+    </set>
+    <set name="CasePartyAuthorisedOfficerDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CasePartyAuthorisedOfficerDetail"/>
+    </set>
+    <set name="CasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="CasePartyBailorInfo"/>
+		</set>
+		<set name="CasePartyCitizenships" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CasePartyId"/>
+			</key>
+			<one-to-many class="CasePartyCitizenship"/>
+    </set>
+    <set name="CasePartyCriminalInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="CasePartyCriminalInfo"/>
+    </set>
+    <set name="CasePartyLACDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="CasePartyLACDetail"/>
+    </set>
+    <set name="CasePartyLACDetailsHistories" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="CasePartyLACDetailsHistory"/>
+    </set>
+    <set name="CasePartyVesselDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CasePartyVesselDetail"/>
+    </set>
+    <set name="CaseSolicitorHistories" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CaseSolicitorHistory"/>
+    </set>
+    <set name="CaseSolicitors" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="CaseSolicitor"/>
+    </set>
+    <set name="ChargeInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="ChargeInfo"/>
+    </set>
+    <set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="DocCaseParty"/>
+    </set>
+    <set name="EMSApptDebtors" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="EMSApptDebtor"/>
+    </set>
+    <set name="EMSCivCrmSettlements" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="EMSCivCrmSettlement"/>
+    </set>
+    <set name="EMSCrmCases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="EMSCrmCase"/>
+		</set>
+		<set name="EMSPaymentVoucherFinalOthers" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CasePartyId"/>
+			</key>
+			<one-to-many class="EMSPaymentVoucherFinalOther"/>
+    </set>
+    <set name="EMSPaymentVoucherFinals" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="Payee"/>
+      </key>
+      <one-to-many class="EMSPaymentVoucherFinal"/>
+    </set>
+    <set name="LABSection17CertInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="LABSection17CertInfo"/>
+    </set>
+    <set name="LACDocumentDrafts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyId"/>
+      </key>
+      <one-to-many class="LACDocumentDraft"/>
+    </set>
+    <!--<many-to-one name="LawFirmAddress" fetch="select" cascade="none">
+			<column name="LFAddressID"/>
+		</many-to-one>-->
+    <property name="LFAddressId" column="LFAddressID"/>
+    <many-to-one name="MApplicantCapacity" fetch="select" cascade="none">
+      <column name="ApplicantCapacityCode"/>
+    </many-to-one>
+    <many-to-one name="MCPBirthCountry" fetch="select" cascade="none">
+      <column name="BirthCountryCode"/>
+    </many-to-one>
+    <many-to-one name="MCPCompanyIdType" fetch="select" cascade="none">
+      <column name="CompanyIDTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MCPCountryOfRegistration" fetch="select" cascade="none">
+      <column name="CountryOfRegistration"/>
+    </many-to-one>
+    <many-to-one name="MCPIdCountry" fetch="select" cascade="none">
+      <column name="IdCountryCode"/>
+    </many-to-one>
+    <many-to-one name="MCPMarriageCountry" fetch="select" cascade="none">
+      <column name="MarriageCtryCode"/>
+    </many-to-one>
+    <many-to-one name="MCPPersonIdType" fetch="select" cascade="none">
+      <column name="PersonIDTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MDialect" fetch="select" cascade="none">
+      <column name="DialectCode"/>
+    </many-to-one>
+    <many-to-one name="MEntityType" fetch="select" cascade="none">
+      <column name="EntityTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="GenderCode"/>
+    </many-to-one>
+    <many-to-one name="MMaritalStatus" fetch="select" cascade="none">
+      <column name="MaritalCode"/>
+    </many-to-one>
+    <many-to-one name="MNationality" fetch="select" cascade="none">
+      <column name="NationalityCode"/>
+    </many-to-one>
+    <many-to-one name="MOccupation" fetch="select" cascade="none">
+      <column name="OccupationCode"/>
+    </many-to-one>
+    <many-to-one name="MPartyStatus" fetch="select" cascade="none">
+      <column name="PartyStatusCode"/>
+    </many-to-one>
+    <many-to-one name="MPartyType" fetch="select" cascade="none">
+      <column name="PartyTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+      <column name="IDGroupCode"/>
+    </many-to-one>
+    <many-to-one name="MQualification" fetch="select" cascade="none">
+      <column name="EducationLevelCode"/>
+    </many-to-one>
+    <many-to-one name="MRace" fetch="select" cascade="none">
+      <column name="RaceCode"/>
+    </many-to-one>
+    <many-to-one name="MRelationship" fetch="select" cascade="none">
+      <column name="RelationshipCode"/>
+    </many-to-one>
+    <many-to-one name="MReligion" fetch="select" cascade="none">
+      <column name="ReligionCode"/>
+    </many-to-one>
+    <set name="PartyAmendments" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="PartyAmendment"/>
+    </set>
+		<set name="RequestHearingFeeDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CasePartyId"/>
+			</key>
+			<one-to-many class="RequestHearingFeeDetail"/>
+		</set>
+    <set name="ServiceOfDocInfoDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="ToBeServiedCPID"/>
+      </key>
+      <one-to-many class="ServiceOfDocInfoDetail"/>
+    </set>
+    <set name="SubCaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CasePartyID"/>
+      </key>
+      <one-to-many class="SubCaseParty"/>
+    </set>
+
+    <property name="IncomeCode" column="IncomeCode" />
+    <property name="IncomeRemarks" column="IncomeRemarks" />
+    <property name="ResidentStatusRemarks" column="ResidentStatusRemarks" />
+    <property name="ResidentStatusCode" column="ResidentStatusCode" />
+    
+  </class>
+</hibernate-mapping>

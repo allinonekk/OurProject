@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="AASInfo" table="[dbo].[AASInfo]" optimistic-lock="none" >
+		<id name="AASInfoId" column="AASInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AASQualificationRemarks" column="AASQualificationRemarks" />
+		<property name="BLEDocExemptionRemarks" column="BLEDocExemptionRemarks" />
+		<property name="IsMLawExemptionApproved" column="IsMLawExemptionApproved" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LPALPRSectionType" column="LPALPRSectionType" />
+		<property name="QualifiedPersonDate" column="QualifiedPersonDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<many-to-one name="MAASLawDegree" fetch="select" cascade="none">
+			<column name="AASLawDegreeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

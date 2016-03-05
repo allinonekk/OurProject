@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DocComments" table="[dbo].[DocComments]" optimistic-lock="none" >
+    <id name="CommentID" column="CommentID" >
+      <generator class="identity"/>
+    </id>
+    <property name="DocID" column="DocID" type="AnsiString"/>
+    <property name="Comments" column="Comments" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="Action" column="action" />
+    <property name="ComSecurityCode" column="ComSecurityCode" />
+    <property name="UserName" column="UserName" type="AnsiString"/>
+    <property name="CommentType" column="CommentType" />
+    <property name="LocationID" column="LocationID" />
+    <property name="Directed_Date" column="Directed_Date" />
+  </class>
+</hibernate-mapping>

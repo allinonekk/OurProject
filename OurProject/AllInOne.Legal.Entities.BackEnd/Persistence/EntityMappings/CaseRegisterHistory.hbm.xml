@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CaseRegisterHistory" table="[dbo].[CaseRegisterHistory]" optimistic-lock="none" >
+		<id name="CaseRegisterHistoryId" column="CaseRegisterHistoryId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+    <property name="CaseRegisterId" column="CaseRegisterId" />
+		<property name="CaseInfoId" column="CaseInfoId" />
+		<property name="ItemNo" column="ItemNo" />
+    <property name="SeqNo" column="SeqNo" />
+		<property name="CommencementDate" column="CommencementDate" />
+		<property name="DisposedDate" column="DisposedDate" />
+		<property name="IsCurrentLife" column="IsCurrentLife" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="Remarks" column="Remarks" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+
+    <many-to-one name="MForumType" fetch="select" cascade="none">
+      <column name="ForumId"/>
+    </many-to-one>
+    <many-to-one name="MPartyStatus" fetch="select" cascade="none">
+      <column name="PartyStatusCode"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

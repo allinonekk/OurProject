@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PADeedRole" table="[dbo].[PADeedRoles]" optimistic-lock="none" >
+		<id name="PADeedRoleId" column="PADeedRoleId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="DeedInfoId" column="DeedInfoID" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Role" column="Role" />
+		<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

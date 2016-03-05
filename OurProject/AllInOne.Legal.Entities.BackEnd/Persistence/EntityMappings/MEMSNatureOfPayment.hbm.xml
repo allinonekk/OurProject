@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSNatureOfPayment" table="[dbo].[MEMSNatureOfPayment]" optimistic-lock="none" >
+		<id name="EMSNatureOfPaymentCode" column="EMSNatureOfPaymentCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" /> 
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+    <set name="EMSPaymentVoucherFinalOthers" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="NatureOfPayment"/>
+      </key>
+      <one-to-many class="EMSPaymentVoucherFinalOther"/>
+    </set>
+	</class>
+</hibernate-mapping>

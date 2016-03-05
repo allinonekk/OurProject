@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1" namespace="AllInOne.Legal.Entities.BackEnd">
+	<class name="Users" table="dbo.Users">
+		<id name="UserId" column="UserId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property  name="CourtID" column="CourtID" />
+		<property  name="UserName" column="UserName" type="AnsiString"/>
+		<property  name="DisplayName" column="DisplayName" />
+		<property  name="SeniorityLevel" column="SeniorityLevel" />
+		<property  name="eMailAddress" column="eMailAddress" />
+		<property  name="ObsInd" column="ObsInd" />
+		<property  name="EndDate" column="EndDate" />
+		<property  name="LocalDownloadLocation" column="LocalDownloadLocation" />
+		<property  name="Signature" column="Signature" />
+		<property  name="GroupCode" column="GroupCode" />
+		<property  name="LastModifiedBy" column="LastModifiedBy" />
+		<property  name="LastModifiedDate" column="LastModifiedDate" />
+		<property  name="StartDate" column="StartDate" />
+		<property  name="Initials" column="Initials" />
+		<property  name="AssignedDate" column="AssignedDate" />
+		<property  name="CaseFileInspectionInd" column="CaseFileInspectionInd" />
+		<property  name="LawnetIndicator" column="LawnetIndicator" />
+		<property  name="TelCountryCode" column="TelCountryCode" />
+		<property  name="TelAreaCode" column="TelAreaCode" />
+		<property  name="TelNumber" column="TelNumber" />
+		<property  name="FaxCountryCode" column="FaxCountryCode" />
+		<property  name="FaxAreaCode" column="FaxAreaCode" />
+		<property  name="FaxNumber" column="FaxNumber" />
+		<property  name="SignaturePath" column="SignaturePath" />
+    <property  name="LoginPageId" column="LoginPageId" />
+
+  </class>
+</hibernate-mapping>

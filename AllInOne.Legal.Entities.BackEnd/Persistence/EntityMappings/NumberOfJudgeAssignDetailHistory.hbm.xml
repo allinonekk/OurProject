@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd" namespace="AllInOne.Legal.Entities.BackEnd">
+  <class name="NumberOfJudgeAssignDetailHistory" table="dbo.NumberOfJudgeAssignDetailHistory">
+    <id name="NumberOfJudgeAssignDetailHistoryId" column="NumberOfJudgeAssignDetailHistoryId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property  name="NumberOfJudgeAssignDetailId" column="NumberOfJudgeAssignDetailId" type="AnsiString"/>
+    <property  name="ItemNo" column="ItemNo" />
+    <property  name="LastModifiedBy" column="LastModifiedBy" />
+    <property  name="LastModifiedDate" column="LastModifiedDate" />
+    <property  name="HistoryRemarks" column="HistoryRemarks" />
+	<property  name="Track" column="Track" />
+	<property  name="JLCName" column="JLCName" />
+	<property  name="IsJLC" column="IsJLC" />
+  </class>
+</hibernate-mapping>

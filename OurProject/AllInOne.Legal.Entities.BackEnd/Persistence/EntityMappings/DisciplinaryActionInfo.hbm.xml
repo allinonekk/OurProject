@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DisciplinaryActionInfo" table="[dbo].[DisciplinaryActionInfo]" optimistic-lock="none" >
+    <id name="DisciplinaryActionInfoId" column="DisciplinaryActionInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="DACCaseNumber" column="DACCaseNumber" type="AnsiString"/>
+    <property name="DisciplinaryTypeRemarks" column="DisciplinaryTypeRemarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PeriodEndDate" column="PeriodEndDate" />
+    <property name="PeriodStartDate" column="PeriodStartDate" />
+    <property name="Remarks" column="Remarks" />
+    <property name="Result" column="Result" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <many-to-one name="MAASDisciplinaryType" fetch="select" cascade="none">
+      <column name="AASDisciplinaryTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MAASDisciplinaryResultType" fetch="select" cascade="none">
+      <column name="AASDisciplinaryTypeResultCode"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

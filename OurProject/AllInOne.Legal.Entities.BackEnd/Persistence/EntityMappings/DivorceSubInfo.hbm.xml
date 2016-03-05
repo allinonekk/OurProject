@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DivorceSubInfo" table="[dbo].[DivorceSubInfo]" optimistic-lock="none" >
+		<id name="DivorceSubInfoId" column="DivorceSubInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="IntendToDefend" column="IntendToDefend" />
+		<property name="IntendToContest" column="IntendToContest" />
+		<property name="IsBankrupt" column="IsBankrupt" />
+		<property name="SettingDown" column="SettingDown" />
+		<property name="HRGID" column="HRGID" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="PartyAckStatus" column="PartyAckStatus" />
+    <property name="FilingFor" column="FilingFor" />
+    <property name="CasePartyIdOnBehalfOf" column="CasePartyIdOnBehalfOf" type="AnsiString"/>
+    <property name="FilingDCOWithSetDown" column="FilingDCOWithSetDown" />
+    <property name="FilingAffidavitWithSetDown" column="FilingAffidavitWithSetDown" />
+    <property name="AdjudicationOrderInd" column="AdjudicationOrderInd" />
+    <property name="FacingBankruptcy" column="FacingBankruptcy" />
+    <property name="PendingBankruptcyInd" column="PendingBankruptcyInd" />
+    <property name="AgreementOnAMInd" column="AgreementOnAMInd" />
+    <property name="CertificateOfAttendanceInd" column="CertificateOfAttendanceInd" />
+    <property name="ExemptionCertificateInd" column="ExemptionCertificateInd" />
+    <property name="LeaveOfCourtToClaimInd" column="LeaveOfCourtToClaimInd" />
+    <property name="LeaveOfCourtToClaimCaseNo" column="LeaveOfCourtToClaimCaseNo" />
+    <property name="LeaveOfCourtToClaimOrderDate" column="LeaveOfCourtToClaimOrderDate" />
+	</class>
+</hibernate-mapping>

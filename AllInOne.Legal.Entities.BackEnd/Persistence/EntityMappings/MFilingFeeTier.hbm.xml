@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MFilingFeeTier" table="[dbo].[MFilingFeeTier]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="FeeChargeId" column="FeeChargeID" />
+    		<key-property name="SerialNo" column="SerialNo" />
+		</composite-id>
+		<property name="FromPage" column="FromPage" />
+		<property name="Rate" column="Rate" />
+		<property name="ToPage" column="ToPage" />
+		<many-to-one name="MFilingFeeChargingMechanism" fetch="select" cascade="none">
+			<column name="FeeChargeID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ForeignUserRegistrationDetails" table="[dbo].[ForeignUserRegistrationDetails]" optimistic-lock="none" >
+		<id name="ForeignUserRegistrationId" column="ForeignUserRegistrationId" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Salutation" column="Salutation" />
+		<property name="FullName" column="FullName" />
+		<property name="IDTypeCode" column="IDTypeCode" />
+		<property name="IDNumber" column="IDNumber" />
+		<property name="GenderCode" column="GenderCode" />
+		<property name="NationalityCode" column="NationalityCode" />
+		<property name="MobileCountryCode" column="MobileCountryCode" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="TelCountryCode" column="TelCountryCode" />
+		<property name="TelAreaCode" column="TelAreaCode" />
+		<property name="TelNumber" column="TelNumber" />
+		<property name="FaxCountryCode" column="FaxCountryCode" />
+		<property name="FaxAreaCode" column="FaxAreaCode" />
+		<property name="Email" column="Email" />
+		<property name="UserDetailId" column="UserDetailId" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<!--<property name="RFLType" column="RFLType" />
+		<property name="SubmissionGroupID" column="SubmissionGroupID" />-->
+    <property name="AccountID" column="AccountID" />
+	</class>
+</hibernate-mapping>

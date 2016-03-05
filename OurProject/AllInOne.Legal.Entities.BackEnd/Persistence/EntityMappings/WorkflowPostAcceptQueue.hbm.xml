@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="WorkflowPostAcceptQueue" table="[dbo].[WorkflowPostAcceptQueue]" optimistic-lock="none" >
+    <id name="WorkflowPostAcceptQueueId" column="WorkflowPostAcceptQueueId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseTypeGroupCode" column="CaseTypeGroupCode" />
+    <property name="CaseType" column="CaseType" />
+    <property name="SubCaseType" column="SubCaseType" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property name="CaseName" column="CaseName" />
+    <property name="CaseNo" column="CaseNo" />
+    <property name="SubCaseNo" column="SubCaseNo" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" type="AnsiString"/>
+    <property name="DOCCode" column="DOCCode" />
+    <property name="DocId" column="DocId" type="AnsiString"/>
+    <property name="SectionCode" column="SectionCode" />
+    <property name="SourceUser" column="SourceUser" />
+    <property name="QueueStatus" column="QueueStatus" />
+    <property name="ErrorMsg" column="ErrorMsg" />
+    <property name="AttemptCount" column="AttemptCount" />
+    <property name="CreatedBy" column="CreatedBy" />
+    <property name="CreatedDate" column="CreatedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LiquidatedClaim" table="[dbo].[LiquidatedClaim]" optimistic-lock="none" >
+		<id name="LiquidatedClaimId" column="LiquidatedClaimId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LIQAmount" column="LIQAmount" />
+		<property name="LIQAwardedAmount" column="LIQAwardedAmount" />
+		<property name="LIQSGDAmount" column="LIQSGDAmount" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="LIQCurrencyCode" column="LIQCurrencyCode" />
+		<!--<many-to-one name="MCurrency" fetch="select" cascade="none">
+			<column name="LIQCurrencyCode"/>
+		</many-to-one>-->
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPartyAmendmentConfig" table="[dbo].[MPartyAmendmentConfig]" optimistic-lock="none" >
+		<id name="AmendmentConfigId" column="AmendmentConfigID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AmendmentAt" column="AmendmentAt" />
+		<property name="ConfigXML" column="ConfigXML"  type="StringClob"/>
+		<property name="IsAmendmentApplicable" column="IsAmendmentApplicable" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<many-to-one name="MCaseType" fetch="select" cascade="none">
+			<column name="CaseTypeCode"/>
+		</many-to-one>
+		<set name="PartyAmendmentDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ConfigID"/>
+			</key>
+			<one-to-many class="PartyAmendmentDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

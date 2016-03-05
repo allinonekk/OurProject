@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DocOrderDetail" table="[dbo].[DocOrderDetails]" optimistic-lock="none" >
+		<id name="DocOrderDetailId" column="DOCOrderDetailId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="DateOfConsent" column="DateOfConsent" />
+		<property name="DateOfOrder" column="DateOfOrder" />
+		<property name="FilingOrderFor" column="FilingOrderFor" />
+		<property name="IsAutoOrManual" column="IsAutoOrManual" />
+		<property name="JudgeName" column="JudgeName" />
+		<property name="JudgmentFor" column="JudgmentFor" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OrderMadeIn" column="OrderMadeIn" />
+		<property name="OrderNumber" column="OrderNumber" />
+		<property name="OtherHearingDate" column="OtherHearingDate" />
+		<property name="OtherHearingMadeBy" column="OtherHearingMadeBy" />
+		<property name="PenalNotice" column="PenalNotice" />
+		<property name="PrepopulateOOC" column="PrepopulateOOC" />
+		<property name="RecId" column="RecID" />
+		<property name="WelfareOFFName" column="WelfareOFFName" />
+    <property name="FilingFrom" column="FilingFrom" />
+    <property name="SchedulerProcessStatus" column="SchedulerProcessStatus" />
+    <property name="ConsentOrder" column="ConsentOrder" />
+    <property name="OrderForExamination" column="OrderForExamination" />
+    <property name="ReqAvailableDateForOtherParty" column="ReqAvailableDateForOtherParty" />
+    <property name="JOUserId" column="JOUserId" />
+    <property name="CoramCode" column="CoramCode" />
+    <property name="IsCWUOrder" column="IsCWUOrder" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>
+		<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocID"/>
+		</many-to-one>
+		<many-to-one name="Hearing" fetch="select" cascade="none">
+			<column name="HRGID"/>
+		</many-to-one>
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>-->
+    <property name="CaseInfoId" column="CaseInfoId"/>
+    <property name="DocId" column="DocID" type="AnsiString"/>
+    <property name="HRGID" column="HRGID"/>
+    <property name="SubCaseInfoId" column="SubCaseInfoId"/>
+    <many-to-one name="MDesignation" fetch="select" cascade="none">
+      <column name="DSGCode"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

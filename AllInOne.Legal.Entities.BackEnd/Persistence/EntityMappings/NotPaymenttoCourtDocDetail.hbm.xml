@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="NotPaymentToCourtDocDetail" table="[dbo].[NotPaymenttoCourtDocDetail]" optimistic-lock="none" >
+		<id name="NotPayeCourtDetailId" column="NotPayeCourtDetailId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Amount" column="Amount" />
+		<property name="AmountSGD" column="AmountSGD" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Reason" column="Reason" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="PIAmount" column="PIAmount" />
+    <property name="EFSPayInNumber" column="EFSPAYINNUMBER" />
+    <property name="ItemNo" column="ItemNo" />
+		<many-to-one name="MCurrency" fetch="select" cascade="none">
+			<column name="CurrencyCode"/>
+		</many-to-one>
+		<many-to-one name="PaymentInDocDetail" fetch="select" cascade="none">
+			<column name="PaymentInID"/>
+		</many-to-one>
+    <many-to-one name="PICurrencyCode" fetch="select" cascade="none">
+      <column name="PICurrencyCode"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

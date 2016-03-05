@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="OutgoingCorrespondenceInfo" table="[dbo].[OutgoingCorrespondenceInfo]" optimistic-lock="none" >
+    <id name="OutgoingCorrespondenceInfoId" column="OutgoingCorrespondenceInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="TaxedDate" column="TaxedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="FeePayable" column="FeePayable" />
+    <property name="HearingDate" column="HearingDate" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="IsInterfaced" column="IsInterfaced" />
+    <property name="DocCollectPeriod" column="DocCollectPeriod" />
+    <property name="CollectionDate" column="CollectionDate" />
+    <property name="CollectedBy" column="CollectedBy" />
+    <property name="CollectionRemarks" column="CollectionRemarks" />
+    <property name="CollectedAmount" column="CollectedAmount" />
+    <property name="BatchNo" column="BatchNo" />
+    <property name="PaymenttxnNo" column="PaymenttxnNo" />
+  </class>
+</hibernate-mapping>

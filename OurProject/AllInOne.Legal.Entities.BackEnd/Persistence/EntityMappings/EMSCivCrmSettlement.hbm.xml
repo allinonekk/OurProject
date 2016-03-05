@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSCivCrmSettlement" table="[dbo].[EMSCivCrmSettlement]" optimistic-lock="none" >
+		<id name="EMSCivCrmSettlementId" column="EMSCivCrmSettlementId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AmountSettled" column="AmountSettled" />
+		<property name="CauseShownCourtNo" column="CauseShownCourtNo" />
+		<property name="CauseShownDetails" column="CauseShownDetails" />
+		<property name="CauseShownOrderDate" column="CauseShownOrderDate" />
+		<property name="CourtDirection" column="CourtDirection" />
+		<property name="DirectionDateTime" column="DirectionDateTime" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OthersDetails" column="OthersDetails" />
+		<property name="PayeeName" column="PayeeName" />
+		<property name="ReceiptNo" column="ReceiptNo" />
+		<property name="Remarks" column="Remarks" />
+		<property name="SentenceCourtNo" column="SentenceCourtNo" />
+		<property name="SentenceDetails" column="SentenceDetails" />
+		<property name="SentenceOrderDate" column="SentenceOrderDate" />
+		<property name="SettlementDateTime" column="SettlementDateTime" />
+		<property name="WCNo" column="WCNo" />
+    <property name="SettlementOutcome" column="SettlementOutcome" />
+    <many-to-one name="EMSAppointment" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAppointmentId"/>
+    </many-to-one>
+    <many-to-one name="CaseParty" fetch="select" cascade="none" lazy="false">
+      <column name="CasePartyId"/>
+    </many-to-one>
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

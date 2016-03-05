@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LABPartyHistory" table="[dbo].[LABPartyHistory]" optimistic-lock="none" >
+		<id name="LABPartyHistoryId" column="LABPartyHistoryId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ContactTypeInd" column="ContactTypeInd" />
+		<property name="Email" column="Email" />
+		<property name="FaxAreaCode" column="FaxAreaCode" />
+		<property name="FaxCountryCode" column="FaxCountryCode" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<property name="FullName" column="FullName" />
+		<property name="IdNumber" column="IdNumber" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MobileCountryCode" column="MobileCountryCode" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="TelCountryCode" column="TelCountryCode" />
+		<property name="TelNumber" column="TelNumber" />
+		<!--<many-to-one name="LABParty" fetch="select" cascade="none">
+			<column name="LABPartyId"/>
+		</many-to-one>-->
+    <property name="LABPartyId" column="LABPartyId" type="AnsiString"></property>
+    
+		<!--<many-to-one name="LACDocumentDetail" fetch="select" cascade="none">
+			<column name="LACDocDetailId"/>
+		</many-to-one>-->
+
+    <property name="LACDocDetailId" column="LACDocDetailId" type="AnsiString"></property>
+		<many-to-one name="MGender" fetch="select" cascade="none">
+			<column name="GenderCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDType" fetch="select" cascade="none">
+			<column name="IdTypeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="InfantOriginalName" table="[dbo].[InfantOriginalName]" optimistic-lock="none" >
+		<id name="InfantOriginalNameId" column="InfantOriginalNameId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="DocumentName" column="DocumentName" />
+		<property name="IdNumber" column="IDNumber" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OtherName" column="OtherName" />
+		<many-to-one name="InfantInfo" fetch="select" cascade="none">
+			<column name="InfantInfoID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

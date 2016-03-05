@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PBPrevGrantDetails" table="[dbo].[PBPrevGrantDetails]" optimistic-lock="none" >
+    <id name="PBPrevGrantDetailId" column="PBPrevGrantDetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="Name" column="Name" />
+    <property name="ItemNo" column="ItemNo" />
+    <property name="GrantNumber" column="GrantNumber" />
+    <property name="GrantDate" column="GrantDate" />
+    <property name="Capacity" column="Capacity" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="DateOfDeath" column="DateOfDeath" />
+    <property name="CapacityRemarks" column="CapacityRemarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="Gender"/>
+    </many-to-one>
+    <many-to-one name="MCourtType" fetch="select" cascade="none">
+      <column name="CourtId"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

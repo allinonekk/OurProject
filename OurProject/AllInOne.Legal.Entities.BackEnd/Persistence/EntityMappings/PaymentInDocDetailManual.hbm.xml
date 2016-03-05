@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PaymentInDocDetailManual" table="[dbo].[PaymentInDocDetailManual]" optimistic-lock="none" >
+		<id name="PaymentInManualId" column="PaymentInManualId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AGRefNumber" column="AGRefNumber" type="AnsiString"/>
+		<property name="AmountSGD" column="AmountSGD" />
+		<property name="HasTransferredOut" column="HasTransferredOut" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="PayingInType" column="PayingInType" />
+		<property name="Remarks" column="Remarks" />
+		<property name="SubCaseNo" column="SubCaseNo" />
+		<property name="TransferredOutAmount" column="TransferredOutAmount" />
+		<property name="TransferredOutDate" column="TransferredOutDate" />
+		<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

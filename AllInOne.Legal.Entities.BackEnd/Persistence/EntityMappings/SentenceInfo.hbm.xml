@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SentenceInfo" table="[dbo].[SentenceInfo]" optimistic-lock="none" >
+		<id name="SentenceInfoId" column="SentenceInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CommencementOfSentenceDate" column="CommencementOfSentenceDate" />
+		<property name="DateFinePaid" column="DateFinePaid" />
+		<property name="DateOfConviction" column="DateOfConviction" />
+		<property name="DateOfSentence" column="DateOfSentence" />
+		<property name="DatePenaltyPaid" column="DatePenaltyPaid" />
+		<property name="DefaultSentenceDay" column="DefaultSentenceDay" />
+		<property name="DefaultSentenceMonth" column="DefaultSentenceMonth" />
+		<property name="DefaultSentenceWeek" column="DefaultSentenceWeek" />
+		<property name="DefaultSentenceYear" column="DefaultSentenceYear" />
+		<property name="DisqualificationPeriodDay" column="DisqualificationPeriodDay" />
+		<property name="DisqualificationPeriodMonth" column="DisqualificationPeriodMonth" />
+		<property name="DisqualificationPeriodWeek" column="DisqualificationPeriodWeek" />
+		<property name="DisqualificationPeriodYear" column="DisqualificationPeriodYear" />
+		<property name="FineAmount" column="FineAmount" />
+		<property name="FinePaidInd" column="FinePaidInd" />
+		<property name="ImprisonmentTermDay" column="ImprisonmentTermDay" />
+		<property name="ImprisonmentTermMonth" column="ImprisonmentTermMonth" />
+		<property name="ImprisonmentTermWeek" column="ImprisonmentTermWeek" />
+		<property name="ImprisonmentTermYear" column="ImprisonmentTermYear" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NatureOfSentence" column="NatureOfSentence" />
+		<property name="NumberOfStrokes" column="NumberOfStrokes" />
+		<property name="OrderRemarks" column="OrderRemarks" />
+		<property name="PenaltyAmount" column="PenaltyAmount" />
+		<property name="PenaltyPaidInd" column="PenaltyPaidInd" />
+		<property name="SentenceDescription" column="SentenceDescription" />
+		<property name="SentenceNo" column="SentenceNo" />
+		<property name="SentencingJudgeName" column="SentencingJudgeName" />
+		<property name="SentencingUserId" column="SentencingUserId" type="AnsiString"/>
+		<property name="StatusOfSentence" column="StatusOfSentence" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="ChargeInfoId" column="ChargeInfoId" type="AnsiString"/>
+		<!--
+		<many-to-one name="ChargeInfo" fetch="select" cascade="none">
+			<column name="ChargeInfoId"/>
+		</many-to-one>-->
+		<many-to-one name="MCriminalOrder" fetch="select" cascade="none">
+			<column name="CriminalOrderCode"/>
+		</many-to-one>
+		<many-to-one name="MDrivingLicense" fetch="select" cascade="none">
+			<column name="DrivingLicenseCode"/>
+		</many-to-one>
+		<many-to-one name="MSentence" fetch="select" cascade="none">
+			<column name="SentenceCode"/>
+		</many-to-one>
+    <many-to-one name="MCourtType" fetch="select" cascade="none">
+      <column name="CourtID"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

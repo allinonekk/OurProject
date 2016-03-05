@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MinuteSheet" table="[dbo].[MinuteSheet]" optimistic-lock="none" >
+		<id name="HRGID" column="HRGID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="ApprovedBy" column="ApprovedBy" />
+		<property name="AttachmentDocId" column="AttachmentDocID" />
+		<property name="CaseInfoId" column="CaseInfoID" />
+		<property name="CreatedBy" column="CreatedBy" />
+		<property name="IntJudgeToBeMadeWithin" column="IntJudgeToBeMadeWithin" />
+		<property name="IsIntJudgeCC" column="IsIntJudgeCC" />
+		<property name="IsIntJudgeSOC" column="IsIntJudgeSOC" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MatrimonialAsset" column="MatrimonialAsset" />
+		<property name="SubCaseInfoId" column="SubCaseInfoID" />
+		<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocID"/>
+		</many-to-one>
+		<one-to-one name="Hearing"  fetch="select" cascade="none" constrained="true" foreign-key="none"/>
+
+	</class>
+</hibernate-mapping>

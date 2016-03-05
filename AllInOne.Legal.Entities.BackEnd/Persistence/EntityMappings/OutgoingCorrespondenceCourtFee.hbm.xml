@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="OutgoingCorrespondenceCourtFee" table="[dbo].[OutgoingCorrespondenceCourtFee]" optimistic-lock="none" >
+    <id name="OutgoingCorrespondenceCourtFeeId" column="OutgoingCorrespondenceCourtFeeId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="ItemNo" column="ItemNo" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="OriginalDocId" column="OriginalDocId" type="AnsiString"/>
+    <property name="ShortFallAmount" column="ShortFallAmount" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="ShortFallDocumentFee" column="ShortFallDocumentFee" />
+    <property name="ShortFallProcessingFee" column="ShortFallProcessingFee" />
+    <property name="ShortFallTransmissionFee" column="ShortFallTransmissionFee" />
+    <property name="ShortFallUrgentFee" column="ShortFallUrgentFee" />
+    <property name="ShortFallServiceBureauFee" column="ShortFallServiceBureauFee" />
+    <property name="IsNBSInterfaced" column="IsNBSInterfaced" />
+    <property name="CollectionDate" column="CollectionDate" />
+    <property name="CollectedBy" column="CollectedBy" />
+    <property name="CollectionRemarks" column="CollectionRemarks" />
+    <property name="CollectedAmount" column="CollectedAmount" />
+    <property name="BatchNo" column="BatchNo" />
+    <property name="PaymenttxnNo" column="PaymenttxnNo" />
+   </class>
+</hibernate-mapping>

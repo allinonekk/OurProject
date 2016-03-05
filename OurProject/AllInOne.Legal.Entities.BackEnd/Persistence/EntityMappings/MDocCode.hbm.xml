@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MDocCode" table="[dbo].[MDocCode]" optimistic-lock="none" >
+		<id name="DOCCode" column="DOCCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AmendPartyInd" column="AmendPartyInd" />
+		<property name="AttachmentInd" column="AttachmentInd" />
+		<property name="ConfigType" column="ConfigType" />
+		<property name="DocCategoryCode" column="DocCategoryCode" />
+		<property name="DocInd" column="DocInd" />
+		<property name="DocLegislationCode" column="DocLegislationCode" />
+		<property name="DocType" column="DocType" />
+		<property name="FormNumber" column="FormNumber" />
+		<property name="GenDocCode" column="GenDocCode" />
+		<property name="HideFrFE" column="HideFrFE" />
+		<property name="IndexDocInd" column="IndexDocInd" />
+		<property name="InternalDocInd" column="InternalDocInd" />
+		<property name="IsDocAmendment" column="IsDocAmendment" />
+		<property name="IsDocRefiled" column="IsDocRefiled" />
+		<property name="IsEditAllowed" column="IsEditAllowed" />
+		<property name="IsHidden" column="IsHidden" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MainGroup" column="MainGroup" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="RelatedDocCode" column="RelatedDocCode" />
+		<property name="SealInd" column="SealInd" />
+		<property name="Section" column="Section" />
+		<property name="Seqno" column="Seqno" />
+		<property name="SubCategory" column="SubCategory" />
+		<property name="SubFormNumber" column="SubFormNumber" />
+		<property name="Title" column="Title" />
+		<property name="WFType" column="WFType" />
+    <property name="TargetRecipientType" column="TargetRecipientType" />
+    <property name="TitlePrefix" column="TitlePrefix" />
+    <property name="IsDocFeeTobeDeducted" column="IsDocFeeTobeDeducted" />
+		<set name="CheckListSubmissions" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DocCode"/>
+			</key>
+			<one-to-many class="CheckListSubmission"/>
+		</set>
+		<set name="DocumentInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DOCCode"/>
+			</key>
+			<one-to-many class="DocumentInfo"/>
+		</set>
+		<set name="MDocControls" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DocCode"/>
+			</key>
+			<one-to-many class="MDocControl"/>
+		</set>
+		<set name="RMCDRAutoFixTimeLines" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DocCode"/>
+			</key>
+			<one-to-many class="RMCDRAutoFixTimeLine"/>
+		</set>
+		<set name="RMDocCodeLawfirmGroups" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DocCode"/>
+			</key>
+			<one-to-many class="RMDocCodeLawfirmGroup"/>
+		</set>
+		<set name="RMDocCodePCConditions" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DocCode"/>
+			</key>
+			<one-to-many class="RMDocCodePCCondition"/>
+		</set>
+
+	</class>
+
+  <sql-query name="GetMDocCode">
+    exec Mediator_Common_GetMDocCodeByDocCode
+    :DocCode
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="TaxationClaim" table="[dbo].[TaxationClaim]" optimistic-lock="none" >
+    <id name="TaxationClaimId" column="TaxationClaimId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="SectionNumber" column="SectionNumber" />
+    <property name="ClaimAmount" column="ClaimAmount" />
+    <property name="AwardedAmount" column="AwardedAmount" />
+    <property name="Instructions" column="Instructions" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="Remarks" column="Remarks" />
+    <property name="IsCorrectInd" column="IsCorrectInd" />
+    <property name="HRGTypeCode" column="HRGTypeCode" />
+    <property name="SumAwardedAmount" column="SumAwardedAmount" />
+
+    <!--<many-to-one name="MHRGType" fetch="select" cascade="none">
+      <column name="HRGTypeCode"/>
+      <column name="CourtInd"   />
+    </many-to-one>-->
+  </class>
+</hibernate-mapping>

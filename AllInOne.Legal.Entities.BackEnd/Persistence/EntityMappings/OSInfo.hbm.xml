@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="OSInfo" table="[dbo].[OSInfo]" optimistic-lock="none" >
+    <id name="OSInfoId" column="OSInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AppAgstDecOf" column="AppAgstDecOf" />
+    <property name="AppAgstJudOrderDate" column="AppAgstJudOrderDate" />
+    <property name="CompanyName" column="CompanyName" />
+    <property name="DateOfCommCertIssued" column="DateOfCommCertIssued" />
+    <property name="DateOfMarriage" column="DateOfMarriage" />
+    <property name="DIRAmount" column="DIRAmount" />
+    <property name="ESCOSubNOC" column="ESCOSubNOC" />
+    <property name="EstAccBillClaimed" column="EstAccBillClaimed" />
+    <property name="IsAppeaToHC" column="IsAppeaToHC" />
+    <property name="IsCommCertIssued" column="IsCommCertIssued" />
+    <property name="IsCourtPermissionReq" column="IsCourtPermissionReq" />
+    <property name="IsFilingCOSSFCWNOA" column="IsFilingCOSSFCWNOA" />
+    <property name="IsFilingForHRGBef3Judges" column="isFilingForHRGBef3Judges" />
+    <property name="IsFilingtoEnfSCT" column="IsFilingtoEnfSCT" />
+    <property name="IsInjunctionFiled" column="IsInjunctionFiled" />
+    <property name="IsMuslimMarriage" column="IsMuslimMarriage" />
+    <property name="IsSceurityByUndertaking" column="IsSceurityByUndertaking" />
+    <property name="IsServiceOutJur" column="isServiceOutJur" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="MCASubNOC" column="MCASubNOC" />
+    <property name="ProceedingInSyariahCourt" column="ProceedingInSyariahCourt" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="UENNumber" column="UENNumber" />
+    <property name="IsProbateOSP" column="IsProbateOSP"/>
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="CountryOfIssue"/>
+    </many-to-one>
+    <many-to-one name="MEntityType" fetch="select" cascade="none">
+      <column name="CompanyRegType"/>
+    </many-to-one>
+    <many-to-one name="MNatureOfDeputyShip" fetch="select" cascade="none">
+      <column name="NatureOfDeputyShip"/>
+    </many-to-one>
+    <!--<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>-->
+    <property name="SubCaseInfoId" column="SubCaseInfoId"/>
+	<property name="IsSeekingEnfProtection" column="IsSeekingEnfProtection"/>
+	<property name="IsOrderforRelocation" column="IsOrderforRelocation"/>
+  <property name="IsJudicialManagement" column="IsJudicialManagement"/>
+  <property name="PHAType" column="PHAType"/>
+    <property name="HasPendingMCCases" column="HasPendingMCCases"/>
+    <property name="HasPendingFJCCases" column="HasPendingFJCCases"/>
+    <property name="HasPendingCJDCases" column="HasPendingCJDCases"/>
+    <property name="HasPendingSCTCases" column="HasPendingSCTCases"/>
+    <property name="HasPendingCDRACases" column="HasPendingCDRACases"/>
+
+  </class>
+</hibernate-mapping>

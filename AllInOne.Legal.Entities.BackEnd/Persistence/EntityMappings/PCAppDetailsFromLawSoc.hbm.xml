@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PCAppDetailsFromLawSoc" table="[dbo].[PCAppDetailsFromLawSoc]" optimistic-lock="none" >
+		<id name="PCAppDetailsFromLawSocId" column="PCAppDetailsFromLawSocId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="KeyFromLawSoc" column="KeyFromLawSoc" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MembershipCategory" column="MembershipCategory" />
+		<property name="VoteInfo" column="VoteInfo" />
+    <property name="SubscriptionFee" column="SubscriptionFee" />
+    <property name="PCInfo" column="PCInfo" />
+    <property name="PCCaseYear" column="PCCaseYear" />
+    <property name="ObsInd" column="ObsInd" />
+    
+		<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

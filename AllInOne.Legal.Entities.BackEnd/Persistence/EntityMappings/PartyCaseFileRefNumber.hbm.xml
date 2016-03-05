@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PartyCaseFileRefNumber" table="[dbo].[PartyCaseFileRefNumber]" optimistic-lock="none" >
+		<id name="PartyCaseFileRefNumberId" column="PartyCaseFileRefNumberId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseInfoID" column="CaseInfoID"/>
+		<property name="CasePartyID" column="CasePartyID" />
+		<property name="LFFileRefNumber" column="LFFileRefNumber" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LFID" column="LFID" />
+	</class>
+
+  <sql-query name="SaveOrUpdatePartyCaseFileRefNumber">
+    AllInOne_Mediator_PartyCaseFileRefNumber
+    :PartyCaseFileRefNumberId,
+    :CaseInfoID,
+    :CasePartyID,
+    :LFFileRefNumber,
+    :ObsInd,
+    :LastModifiedBy,
+    :LastModifiedDate,
+    :LFID
+  </sql-query>
+</hibernate-mapping>

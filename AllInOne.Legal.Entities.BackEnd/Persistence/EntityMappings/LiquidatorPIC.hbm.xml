@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LiquidatorPIC" table="[dbo].[LiquidatorPIC]" optimistic-lock="none" >
+		<id name="LiquidatorPICId" column="LiquidatorPICId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AddressAvailabilityInd" column="AddressAvailabilityInd" />
+		<property name="AICRemarks" column="AICRemarks" />
+		<property name="FormerName" column="FormerName" />
+		<property name="FullName" column="FullName" />
+		<property name="IdNumber" column="IDNumber" />
+		<property name="IdRemarks" column="IDRemarks" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    		<!--<many-to-one name="Liquidator" fetch="select" cascade="none">
+			<column name="LiquidatorId"/>
+		</many-to-one>-->
+		<property name="LiquidatorId" column="LiquidatorId" type="AnsiString"/>
+		<set name="LiquidatorPICAddresses" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LiquidatorPICId"/>
+			</key>
+			<one-to-many class="LiquidatorPICAddress"/>
+		</set>
+		<set name="LiquidatorPICAliases" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LiquidatorPICId"/>
+			</key>
+			<one-to-many class="LiquidatorPICAlias"/>
+		</set>
+		<many-to-one name="MActingInCapacity" fetch="select" cascade="none">
+			<column name="AICCode"/>
+		</many-to-one>
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="IdCountryCode"/>
+		</many-to-one>
+		<many-to-one name="MEntityType" fetch="select" cascade="none">
+			<column name="EntityTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MGender" fetch="select" cascade="none">
+			<column name="GenderCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+			<column name="IDGroupCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDType" fetch="select" cascade="none">
+			<column name="IdTypeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

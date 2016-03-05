@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PBAdminBond" table="[dbo].[PBAdminBond]" optimistic-lock="none" >
+		<id name="PBAdminBondId" column="PBAdminBondId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="EstimatedValue" column="EstimatedValue" />
+		<property name="FixedValue" column="FixedValue" />
+		<property name="OtherValue" column="OtherValue" />
+		<property name="ActualValue" column="ActualValue" />
+		<property name="SupplimentaryValue" column="SupplimentaryValue" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="EstateValue" column="EstateValue" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="ExpensesIncurred" column="ExpensesIncurred" />
+    <property name="AdminBondReqInd" column="AdminBondReqInd" />
+	</class>
+</hibernate-mapping>

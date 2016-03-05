@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SetDownInfo" table="[dbo].[SetDownInfo]" optimistic-lock="none" >
+		<id name="SetDownId" column="SetDownId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="IsCertExcAEICFiled" column="IsCertExcAEICFiled" />
+		<property name="IsHearingFeePayable" column="IsHearingFeePayable" />
+		<property name="IsOrder25R8Complied" column="IsOrder25R8Complied" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NoOfHRGDays" column="NoOfHRGDays" />
+		<property name="SDPursuantTo" column="SDPursuantTo" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

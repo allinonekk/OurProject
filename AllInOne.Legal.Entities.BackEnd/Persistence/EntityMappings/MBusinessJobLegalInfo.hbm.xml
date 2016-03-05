@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MBusinessJobLegalInfo" table="[dbo].[MBusinessJobLegalInfo]" optimistic-lock="none" >
+		<id name="BusinessJobLegalInfoId" column="BusinessJobLegalInfoId" >
+			<generator class="assigned"/>
+		</id>
+		<property name="BusinessName" column="BusinessName" />
+		<property name="Description" column="Description" />
+		<property name="BusinessGroup" column="BusinessGroup" />
+		<property name="CaseTypeCode" column="CaseTypeCode" />
+    <property name="SubCaseTypeCode" column="SubCaseTypeCode" />
+    <property name="FrequencyType" column="FrequencyType" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <many-to-one name="MForumType" fetch="select" cascade="none">
+      <column name="ForumId"/>
+    </many-to-one>
+    <many-to-one name="MDocCode" fetch="select" cascade="none">
+      <column name="DocCode"/>
+    </many-to-one>
+    <many-to-one name="MMonitoringType" fetch="select" cascade="none">
+      <column name="MonitoringTypeCode"/>
+    </many-to-one>
+
+	</class>
+</hibernate-mapping>

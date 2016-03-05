@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MCriminalClaimType" table="[dbo].[MCriminalClaimType]" optimistic-lock="none" >
+		<id name="CriminalClaimTypeCode" column="CriminalClaimTypeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CriminalClaimInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CriminalClaimTypeCode"/>
+			</key>
+			<one-to-many class="CriminalClaimInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

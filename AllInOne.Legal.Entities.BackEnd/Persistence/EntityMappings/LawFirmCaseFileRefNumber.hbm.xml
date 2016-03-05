@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LawFirmCaseFileRefNumber" table="[dbo].[LawFirmCaseFileRefNumber]" optimistic-lock="none" >
+		<id name="LFCFRNId" column="LFCFRNId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LFFileRefNumber" column="LFFileRefNumber" />
+		<property name="LFID" column="LFID" />
+		<property name="ObsInd" column="ObsInd" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+    		<property name="CaseInfoId" column="CaseInfoID" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MHRGOutComeReason" table="[dbo].[MHRGOutComeReason]" optimistic-lock="none" >
+		<id name="HRGOutComeRSNCode" column="HRGOutComeRSNCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="IsInterfaced" column="IsInterfaced" />
+		<property name="LastModifiedBY" column="LastModifiedBY" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="Hearings" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="HRGOutComeRSNCode"/>
+			</key>
+			<one-to-many class="Hearing"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

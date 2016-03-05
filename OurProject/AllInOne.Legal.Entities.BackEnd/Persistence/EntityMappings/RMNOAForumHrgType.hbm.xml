@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RMNOAForumHrgType" table="[dbo].[RMNOAForumHrgType]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="ForumID" column="ForumID" />
+    		<key-property name="CaseTypeCode" column="CaseTypeCode" />
+    		<key-property name="NOACode" column="NOACode" />
+		</composite-id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="HRGTypeCode" column="HRGTypeCode" />
+    <property name="ObsInd" column="ObsInd" />
+  </class>
+</hibernate-mapping>

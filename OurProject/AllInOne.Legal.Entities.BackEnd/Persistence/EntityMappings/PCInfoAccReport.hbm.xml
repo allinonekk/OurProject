@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PCInfoAccReport" table="[dbo].[PCInfoAccReport]" optimistic-lock="none" >
+		<id name="PCInfoAccReportId" column="PCInfoAccReportId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="PCInfoId" column="PCInfoId" type="AnsiString"/>
+		<property name="FileName" column="FileName" />
+		<property name="FromDate" column="FromDate" />
+		<property name="ToDate" column="ToDate" />
+		<property name="NRIC" column="NRIC" />
+	
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MDocControlForum" table="[dbo].[MDocControlForum]" optimistic-lock="none" >
+    <id name="DocControlId" column="DocControlID" >
+      <generator class="assigned"/>
+    </id>
+    <property name="ForumId" column="ForumId" />
+    <many-to-one name="MDocCode" fetch="select" cascade="none">
+      <column name="DocCode"/>
+    </many-to-one>
+    <many-to-one name="CaseTypeCode" fetch="select" cascade="none">
+      <column name="CaseTypeCode"/>
+    </many-to-one>
+    <property name="DocPrefix" column="DocPrefix" />
+    <property name="DIYInd" column="DIYInd" />
+    <property name="HearingInd" column="HearingInd" />
+    <property name="AutoAcceptInd" column="AutoAcceptInd" />
+    <property name="SpecialReqInd" column="SpecialReqInd" />
+    <property name="ComDocGroupInd" column="ComDocGroupInd" />
+    <property name="SubDocGroupInd" column="SubDocGroupInd" />
+    <property name="IsMandatory" column="IsMandatory" />
+    <property name="AmendPartyInd" column="AmendPartyInd" />
+    <property name="FeeRuleCode" column="FeeRuleCode" />
+    <property name="DocControlId" column="DocControlID" />
+    <many-to-one name="SubCaseTypeCode" fetch="select" cascade="none">
+      <column name="SubCaseTypeCode"/>
+    </many-to-one>
+    <property name="AmendFeeRuleCode" column="AmendFeeRuleCode" />
+    <property name="ProcessPartyStatusUpdateInd" column="ProcessPartyStatusUpdateInd" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+
+  </class>
+</hibernate-mapping>

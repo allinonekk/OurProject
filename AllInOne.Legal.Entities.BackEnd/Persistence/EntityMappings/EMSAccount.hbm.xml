@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAccount" table="[dbo].[EMSAccount]" optimistic-lock="none" >
+		<id name="EMSAccountId" column="EMSAccountId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AccountSerialNo" column="AccountSerialNo" />
+		<property name="AccountYear" column="AccountYear" />
+		<property name="AccountNo" column="AccountNo" />
+		<property name="Balance" column="Balance" />
+		<property name="EMSType" column="EMSType" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="WritFilingDate" column="WritFilingDate" />
+		<property name="WritExpiryDate" column="WritExpiryDate" />
+		<property name="WritAmount" column="WritAmount" />
+		<property name="WritCost" column="WritCost" />
+		<property name="Interest" column="Interest" />
+		<property name="IsWaiver" column="IsWaiver" />
+		<property name="IsWSeizure" column="IsWSeizure" />
+		<property name="IsOnHold" column="IsOnHold" /> 
+		<property name="SerialNumber" column="SerialNumber" />
+		<property name="LedgerRemarks" column="LedgerRemarks" />
+		<property name="IsUrgent" column="IsUrgent" />
+		<property name="AccountNoCreatedDate" column="AccountNoCreatedDate" />
+		<property name="SyncRequired" column="SyncRequired" />
+		<many-to-one name="JudicialUser" fetch="select" cascade="none" lazy="false">
+		  <column name="BailiffId"/>
+		</many-to-one>
+		<many-to-one name="CaseInfo" fetch="select" cascade="none" lazy="false">
+			<column name="CaseInfoId"/>
+		</many-to-one>
+		<set name="EMSOutstandingPayments" cascade="none" inverse="true" fetch="select" lazy="true">
+		  <key>
+			<column name="EMSAccountId"/>
+		  </key>
+		  <one-to-many class="EMSOutstandingPayment"/>
+		</set>
+		<set name="EMSAdmClaims" cascade="none" inverse="true" fetch="select" lazy="true">
+		  <key>
+			<column name="EMSAccountId"/>
+		  </key>
+		  <one-to-many class="EMSAdmClaim"/>
+		</set>
+		<set name="EMSAdmExecs" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSAdmExec"/>
+		</set>
+		<set name="EMSAdmReleases" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSAdmRelease"/>
+		</set>
+		<set name="EMSAppointments" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSAppointment"/>
+		</set>
+		<set name="EMSCivCaseAborts" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSCivCaseAbort"/>
+		</set>
+		<set name="EMSCivCrmMissings" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSCivCrmMissing"/>
+		</set>
+		<set name="EMSCivCrmReleases" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSCivCrmRelease"/>
+		</set>
+		<set name="EMSCivCrmSeizures" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSCivCrmSeizure"/>
+		</set>
+		<set name="EMSCivCrmSettlements" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSCivCrmSettlement"/>
+		</set>
+		<set name="EMSFileMovements" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSFileMovement"/>
+		</set>
+		<set name="EMSPaymentVouchers" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSPaymentVoucher"/>
+		</set>
+		<set name="EMSReceipts" cascade="none" inverse="true" fetch="select" lazy="true">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSReceipt"/>
+		</set>
+		<set name="EMSExecLedgers" cascade="none" inverse="true" fetch="select" lazy="true">
+		  <key>
+			<column name="EMSAccountId"/>
+		  </key>
+		  <one-to-many class="EMSExecLedger"/>
+		</set>
+		<set name="EMSCourtCommissions" cascade="none" inverse="true" fetch="select" lazy="true">
+		  <key>
+			<column name="EMSAccountId"/>
+		  </key>
+		  <one-to-many class="EMSCourtCommission"/>
+		</set>
+		<set name="EMSSales" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAccountId"/>
+		  </key>
+		  <one-to-many class="EMSSale"/>
+		</set>
+		<set name="EMSStateFunds" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSAccountId"/>
+			</key>
+			<one-to-many class="EMSStateFund"/>
+		</set>
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none" lazy="false">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

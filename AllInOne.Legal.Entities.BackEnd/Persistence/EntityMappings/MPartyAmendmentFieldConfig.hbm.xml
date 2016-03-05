@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPartyAmendmentFieldConfig" table="[dbo].[MPartyAmendmentFieldConfig]" optimistic-lock="none" >
+		<id name="ConfigId" column="ConfigID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="FieldName" column="FieldName" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="TableName" column="TableName" />
+		<many-to-one name="MPartySection" fetch="select" cascade="none">
+			<column name="PartySectionID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

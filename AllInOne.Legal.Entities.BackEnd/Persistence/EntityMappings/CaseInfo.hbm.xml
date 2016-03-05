@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CaseInfo" table="[dbo].[CaseInfo]" optimistic-lock="none" >
+    <id name="CaseInfoId" column="CaseInfoID" >
+      <generator class="assigned"/>
+    </id>
+    <property name="CannotCaneInd" column="CannotCaneInd" />
+    <property name="CapitalCaseInd" column="CapitalCaseInd" />
+    <property name="CaseFiledDate" column="CaseFiledDate" />
+    <property name="CaseFileLocation" column="CaseFileLocation" />
+    <property name="CaseName" column="CaseName" />
+    <property name="CaseNo" column="CaseNo" type="AnsiString"/>
+    <property name="CaseOfficerAssignedDate" column="CaseOfficerAssignedDate" />
+    <property name="CaseSerialNo" column="CaseSerialNo" />
+    <property name="CaseStatusDate" column="CaseStatusDate" />
+    <property name="CaseSummary" column="CaseSummary" />
+    <property name="CaseYear" column="CaseYear" />
+    <property name="ConsolidatedTypeInd" column="ConsolidatedTypeInd" />
+    <property name="ConvertedTypeInd" column="ConvertedTypeInd" />
+    <property name="DCMInd" column="DCMInd" />
+    <property name="DocPhysicalLoc" column="DocPhysicalLoc" />
+    <property name="ForeignInterpreterInd" column="ForeignInterpreterInd" />
+    <property name="FSCaseFileLocation" column="FS_CaseFileLocation" />
+    <property name="HandicapInd" column="HandicapInd" />
+    <property name="HasObjection" column="HasObjection" />
+    <property name="HighProfileInd" column="HighProfileInd" />
+    <property name="InterpreterLanguage" column="InterpreterLanguage" />
+    <property name="IsDeclarationForAASPrinted" column="IsDeclarationForAASPrinted" />
+    <property name="IsInstrumentOfAdmissionPrinted" column="IsInstrumentOfAdmissionPrinted" />
+    <property name="IsReviewed" column="IsReviewed" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="MinorInvolvedInd" column="MinorInvolvedInd" />
+    <property name="MRUCounter" column="MRUCounter" />
+    <property name="MuslimInd" column="MuslimInd" />
+    <property name="NIMAInd" column="NIMAInd" />
+    <property name="NoDeathSentenceInd" column="NoDeathSentenceInd" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="PoliceAssistReqInd" column="PoliceAssistReqInd" />
+    <property name="RedActCaseName" column="RedActCaseName" />
+    <property name="RelatedTypeInd" column="RelatedTypeInd" />
+    <property name="ROCInd" column="ROCInd" />
+    <property name="SMCLInd" column="SMCLInd" />
+    <property name="SystemInd" column="SystemInd" />
+    <property name="TempCaseNo" column="TempCaseNo" type="AnsiString"/>
+    <property name="Track" column="Track" />
+    <property name="TransferTypeInd" column="TransferTypeInd" />
+    <property name="TribunalCaseNo" column="TribunalCaseNo" />
+    <property name="TribunalType" column="TribunalType" />
+    <property name="WithdrawnDate" column="WithdrawnDate" />
+    <property name="IsCrossCourt" column="IsCrossCourt" />
+    <property name="TierType" column="TierType" />
+    <property name="IsInstrumentGenerated" column="IsInstrumentGenerated" />
+    <property name="IsRegistrarNoticeSent" column="IsRegistrarNoticeSent" />
+    <property name="HideDocAccessTillDate" column="HideDocAccessTillDate" />
+    <property name="CFRCInd" column="CFRCInd" />
+
+    <property name="Order2bringupaprisonerInd" column="Order2bringupaprisonerInd" />
+    <property name="DigitaltranscriptionservicesInd" column="DigitaltranscriptionservicesInd" />
+    <property name="JOLIND" column="JOLIND" />
+    <property name="BankruptInd" column="BankruptInd" />
+    <property name="FilingFeeRuleType" column="FilingFeeRuleType" />
+	<property name="SimplifiedTrackInd" column="SimplifiedTrackInd" />
+	<property name="ChildTrackInd" column="ChildTrackInd" />
+	<property name="ViolenceTrackInd" column="ViolenceTrackInd" />
+	<property name="InternationalTrackInd" column="InternationalTrackInd" />
+	<property name="HighConflictTrackInd" column="HighConflictTrackInd" />
+	<property name="CFRCnFRCInd" column="CFRCnFRCInd" />
+	<property name="ChildRepresentativeInd" column="ChildRepresentativeInd" />
+  <property name="PaymentMode" column="PaymentMode" />
+
+      
+	  <set name="AASObjections" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="AASObjection"/>
+    </set>
+    <set name="AffidavitInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="AffidavitInfo"/>
+    </set>
+    <set name="CaseOriginatingCases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="CaseOriginatingCase"/>
+    </set>
+    <set name="CaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="CaseParty"/>
+    </set>
+    <set name="CaseSolicitorHistories" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="CaseSolicitorHistory"/>
+    </set>
+    <set name="CaseSolicitors" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="CaseSolicitor"/>
+    </set>
+    <set name="CheckListInstances" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="CheckListInstance"/>
+    </set>
+    <set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="DocCaseParty"/>
+    </set>
+    <set name="DocCaseSolicitors" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="DocCaseSolicitor"/>
+    </set>
+    <set name="DocOrderDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="DocOrderDetail"/>
+    </set>
+    <!--<one-to-one name="DocumentBatesList"  fetch="select" cascade="none" constrained="true" foreign-key="none"/>-->
+    <set name="DocumentInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="DocumentInfo"/>
+    </set>
+    <set name="EMSAccounts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="EMSAccount"/>
+    </set>
+    <set name="EMSCrmCases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="EMSCrmCase"/>
+    </set>
+        <set name="ForeignLPSolicitorRegs" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="ForeignLPSolicitorReg"/>
+    </set>
+    <!--<many-to-one name="JudicialUser" fetch="select" cascade="none">
+			<column name="CaseOfficerUserId"/>
+		</many-to-one>-->
+    <property name="CaseOfficerUserId" column="CaseOfficerUserId" />
+    <set name="LABSection17CertInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="LABSection17CertInfo"/>
+    </set>
+    <set name="LACDocumentDrafts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="LACDocumentDraft"/>
+    </set>
+    <set name="LACInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="LACInfo"/>
+    </set>
+    <set name="LawFirmCaseFileRefNumbers" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="LawFirmCaseFileRefNumber"/>
+    </set>
+    <many-to-one name="MCaseSecurity" fetch="select" cascade="none">
+      <column name="CaseSecurityCode"/>
+    </many-to-one>
+    <many-to-one name="MCaseStatus" fetch="select" cascade="none">
+      <column name="CaseStatusCode"/>
+    </many-to-one>
+    <many-to-one name="MCaseType" fetch="select" cascade="none">
+      <column name="CaseType"/>
+    </many-to-one>
+    <many-to-one name="MForumType" fetch="select" cascade="none">
+      <column name="ForumID"/>
+    </many-to-one>
+
+    <many-to-one name="MSection" fetch="select" cascade="none">
+      <column name="CaseOfficerAssignedSectionCode"/>
+    </many-to-one>
+
+    <set name="NatureOfApplications" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="NatureOfApplication"/>
+    </set>
+    <set name="NatureOfCases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="NatureOfCase"/>
+    </set>
+    <set name="PartyAmendmentLeaveOfCourts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="PartyAmendmentLeaveOfCourt"/>
+    </set>
+    <set name="PaymentInDocDetailManuals" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="PaymentInDocDetailManual"/>
+    </set>
+    <set name="PaymentOutDocDetailManuals" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="PaymentOutDocDetailManual"/>
+    </set>
+    <set name="PCAppDatesFromSALs" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="PCAppDatesFromSAL"/>
+    </set>
+    <set name="PCAppDetailsFromLawSocs" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoId"/>
+      </key>
+      <one-to-many class="PCAppDetailsFromLawSoc"/>
+    </set>
+    <set name="RCaseLawFirms" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="RCaseLawFirm"/>
+    </set>
+    <set name="RCaseSubmissions" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="RCaseSubmission"/>
+    </set>
+    <set name="RDocCases" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="RDocCase"/>
+    </set>
+    <set name="RefOrderDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="RefOrderDetail"/>
+    </set>
+    <set name="ServiceOfDocInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="ServiceOfDocInfo"/>
+    </set>
+    <set name="SubCaseInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="SubCaseInfo"/>
+    </set>
+    <set name="SubCaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseInfoID"/>
+      </key>
+      <one-to-many class="SubCaseParty"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

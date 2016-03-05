@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="AccountantsReportInfo" table="[dbo].[AccountantsReportInfo]" optimistic-lock="none" >
+		<id name="AccountantsReportInfoId" column="AccountantsReportInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AccountingFromDate" column="AccountingFromDate" />
+		<property name="AccountingToDate" column="AccountingToDate" />
+		<property name="CertainTrivialBreaches" column="CertainTrivialBreaches" />
+		<property name="DoesAcctRptComplyS73LPA" column="DoesAcctRptComplyS73LPA" />
+		<property name="DoesHaveDiffInComparision" column="DoesHaveDiffInComparision" />
+		<property name="IdNumberOfAccountant" column="IdNumberOfAccountant" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MatterSetOutFirstSection" column="MatterSetOutFirstSection" />
+		<property name="MatterSetOutSecondSection" column="MatterSetOutSecondSection" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

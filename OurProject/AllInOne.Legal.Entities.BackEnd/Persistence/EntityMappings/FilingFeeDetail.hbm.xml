@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="FilingFeeDetail" table="[dbo].[FilingFeeDetail]" optimistic-lock="none" >
+		<id name="FilingFeeDetailId" column="FilingFeeDetailId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AdminFee" column="AdminFee" />
+		<property name="BilledDate" column="BilledDate" />
+		<property name="DocFee" column="DocFee" />
+		<property name="DocFeeWaived" column="DocFeeWaived" />
+		<property name="DocFeeWaiverReq" column="DocFeeWaiverReq" />
+		<property name="FeeCode" column="FeeCode" />
+		<property name="FeePaid" column="FeePaid" />
+		<property name="IsEstimated" column="isEstimated" />
+		<property name="IsInterfaced" column="isInterfaced" />
+		<property name="IsUrgentHandling" column="IsUrgentHandling" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LawSocietyComFundAppWaiver" column="LawSocietyComFundAppWaiver" />
+		<property name="LawSocietyComFundFee" column="LawSocietyComFundFee" />
+		<property name="LawSocietyComFundWaiverReq" column="LawSocietyComFundWaiverReq" />
+		<property name="LawSocietyMemFee" column="LawSocietyMemFee" />
+		<property name="LawSocietyMemFeeAppWaiver" column="LawSocietyMemFeeAppWaiver" />
+		<property name="LawSocietyMemFeeWaiverReq" column="LawSocietyMemFeeWaiverReq" />
+		<property name="LawSocietyPenaltyAppWaiver" column="LawSocietyPenaltyAppWaiver" />
+		<property name="LawSocietyPenaltyFee" column="LawSocietyPenaltyFee" />
+		<property name="LawSocietyPenaltyWaiverReq" column="LawSocietyPenaltyWaiverReq" />
+		<property name="LawSocietyRejFeeType" column="LawSocietyRejFeeType" />
+		<property name="LawSocietyWaiverAppInd" column="LawSocietyWaiverAppInd" />
+		<property name="LawSocietyWaiverReason" column="LawSocietyWaiverReason" />
+		<property name="ProcFee" column="ProcFee" />
+		<property name="ProcFeeWaived" column="ProcFeeWaived" />
+		<property name="ProcFeeWaiverReq" column="ProcFeeWaiverReq" />
+		<property name="ReasonForDeduction" column="ReasonForDeduction" />
+		<property name="SALRejFeeType" column="SALRejFeeType" />
+		<property name="SALSubscriptionAppWaiver" column="SALSubscriptionAppWaiver" />
+		<property name="SALSubscriptionFee" column="SALSubscriptionFee" />
+		<property name="SALSubscriptionWaiverReq" column="SALSubscriptionWaiverReq" />
+		<property name="SALWaiverAppInd" column="SALWaiverAppInd" />
+		<property name="SALWaiverReason" column="SALWaiverReason" />
+		<property name="SBFee" column="SBFee" />
+		<property name="SBFeeWaived" column="SBFeeWaived" />
+		<property name="SBFeeWaiverReq" column="SBFeeWaiverReq" />
+		<property name="SBHandlingFee" column="SBHandlingFee" />
+		<property name="SBScanningFee" column="SBScanningFee" />
+		<property name="TotalFeeComp" column="TotalFeeComp" />
+		<property name="TotalPayable" column="TotalPayable" />
+		<property name="TotalWaived" column="TotalWaived" />
+		<property name="TotalWaiverReq" column="TotalWaiverReq" />
+		<property name="TransFee" column="TransFee" />
+		<property name="TransFeeWaived" column="TransFeeWaived" />
+		<property name="TransFeeWaiverReq" column="TransFeeWaiverReq" />
+		<property name="UrgFee" column="UrgFee" />
+		<property name="UrgFeeWaived" column="UrgFeeWaived" />
+		<property name="UrgFeeWaiverReq" column="UrgFeeWaiverReq" />
+		<property name="WaiverType" column="WaiverType" />
+		<property name="SILEFee" column="SILEFee" />
+		<property name="SILEFeeWaiverReq" column="SILEFeeWaiverReq" />
+		<property name="SILEFeeAppWaiver" column="SILEFeeAppWaiver" />
+		<property name="SILERejFeeType" column="SILERejFeeType" />
+		<property name="DocId" column="DocID" type="AnsiString"/>
+    <property name="TierType" column="TierType" />
+    <property name="CTHrgDate" column="CTHrgDate" />
+    <property name="ActualFilingDate" column="ActualFilingDate" />
+    <property name="TaxationClaimAmt" column="TaxationClaimAmt" />
+    <property name="SubCaseFeeForumID" column="SubCaseFeeForumID" />
+    <property name="SubCaseFeeTierType" column="SubCaseFeeTierType" />
+    <property name="ActualProcTime" column="ActualProcTime" />
+    <property name="IsPOHARelated" column="IsPOHARelated" />
+	</class>
+</hibernate-mapping>

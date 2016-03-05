@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DegreeInfo" table="[dbo].[DegreeInfo]" optimistic-lock="none" >
+		<id name="DegreeInfoId" column="DegreeInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AdmissionOn" column="AdmissionOn" />
+		<property name="ClassOfDegree" column="ClassOfDegree" />
+		<property name="ConfermentOfDegree" column="ConfermentOfDegree" />
+		<property name="CourseLength" column="CourseLength" />
+		<property name="DegreeType" column="DegreeType" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LawDegreeRemarks" column="LawDegreeRemarks" />
+		<property name="Remarks" column="Remarks" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="UniversityRemarks" column="UniversityRemarks" />
+		<many-to-one name="MAASLawDegree" fetch="select" cascade="none">
+			<column name="AASLawDegreeCode"/>
+		</many-to-one>
+		<many-to-one name="MAASUniversity" fetch="select" cascade="none">
+			<column name="AASUniversityCode"/>
+		</many-to-one>
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="CountryCode"/>
+		</many-to-one>
+    <property name="OtherDegree" column="OtherDegree" />
+    <property name="OtherUniversity" column="OtherUniversity" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="WitnessInfo" table="[dbo].[WitnessInfo]" optimistic-lock="none" >
+		<id name="WitnessInfoId" column="WitnessInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="DateOfStatement" column="DateOfStatement" />
+		<property name="Name" column="Name" />
+		<property name="IdNumber" column="IdNumber" />
+		<property name="IdRemarks" column="IDRemarks" />
+		<many-to-one name="IdGroupCode" fetch="select" cascade="none">
+			<column name="IdGroupCode"/>
+		</many-to-one>
+
+		<many-to-one name="IdTypeCode" fetch="select" cascade="none">
+			<column name="IdTypeCode"/>
+		</many-to-one>
+		<many-to-one name="IdCountryTypeCode" fetch="select" cascade="none">
+			<column name="IdCountryTypeCode"/>
+		</many-to-one>
+		<many-to-one name="WitnessType" fetch="select" cascade="none">
+			<column name="WitnessType"/>
+		</many-to-one>
+		<property name="OtherWitnessType" column="OtherWitnessType" />
+		<property name="DocId" column="DocId" type="AnsiString"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />		
+	</class>
+</hibernate-mapping>

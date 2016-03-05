@@ -1,0 +1,52 @@
+<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Rolling Our Own Website Administration Tool</title>
+	<link type="text/css" href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+	<form id="form1" runat="server">
+	
+	
+	<asp:LoginView ID="LoginStatus1" runat="server">
+		<AnonymousTemplate>
+			<a href="/Simple/login.aspx">Login</a>
+		</AnonymousTemplate>
+		<LoggedInTemplate>
+			<asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome, {0}" />&nbsp;&nbsp;
+			<a href="/Simple/logout.aspx">Logout</a>
+		</LoggedInTemplate>
+	</asp:LoginView>
+	<br />
+	<br />
+	
+	<table class="gnav">
+	<tr>
+		<td><a href="/Simple/Default.aspx">Home</a></td>
+		<td><a href="/Simple/admin/access/access_rules.aspx">Admin</a></td>
+		<td><a href="/Simple/management/management.aspx">Management</a></td>
+		<td><a href="/Simple/personnel/personnel.aspx">Personnel</a></td>
+		<td><a href="/Simple/sales/sales.aspx">Sales</a></td>
+		<td><a href="/Simple/marketing/marketing.aspx">Marketing</a></td>
+		<td><a href="/Simple/purchasing/purchasing.aspx">Purchasing</a></td>
+		<td><a href="/Simple/it/it.aspx">IT</a></td>
+	</tr>
+	</table>
+
+	<hr />
+	
+	
+        <asp:contentplaceholder id="c" runat="server">
+        
+        </asp:contentplaceholder>
+    </form>
+    
+    <asp:Literal runat="server" ID="SecurityDisclosure"></asp:Literal>
+</body>
+</html>

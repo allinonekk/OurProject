@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ForeignLPSolicitorReg" table="[dbo].[ForeignLPSolicitorReg]" optimistic-lock="none" >
+		<id name="ForeignLPSolicitorRegId" column="ForeignLPSolicitorRegId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CertificateRegNumber" column="CertificateRegNumber" />
+		<property name="CertificateRegPeriodFrom" column="CertificateRegPeriodFrom" />
+		<property name="CertificateRegPeriodTo" column="CertificateRegPeriodTo" />
+		<property name="CertificateRegYear" column="CertificateRegYear" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name ="LFID" column="LFID"/>
+
+    <property name="PCInfo" column="PCInfo" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property name="DOCCode" column="DOCCode" />
+    <property name="PCDOCCode" column="PCDOCCode" />
+    <property name="IsAccRptstatus" column="IsAccRptstatus" />
+	</class>
+</hibernate-mapping>

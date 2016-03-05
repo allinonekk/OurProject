@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PartyAmendment" table="[dbo].[PartyAmendment]" optimistic-lock="none" >
+    <id name="AmendmentId" column="AmendmentID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AmendmentMode" column="AmendmentMode" />
+    <property name="InSupport" column="InSupport" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PerformedAt" column="PerformedAt" />
+    <property name="Status" column="Status" />
+    <property name="DCPId" column="DCPID" type="AnsiString"/>
+    <many-to-one name="CaseParty" fetch="select" cascade="none">
+      <column name="CasePartyID"/>
+    </many-to-one>
+    <many-to-one name="DocumentInfo" fetch="select" cascade="none">
+      <column name="DocID"/>
+    </many-to-one>
+    <set name="PartyAmendmentDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="AmendmentID"/>
+      </key>
+      <one-to-many class="PartyAmendmentDetail"/>
+    </set>
+    <set name="PartyAmendmentLeaveOfCourts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="AmendmentID"/>
+      </key>
+      <one-to-many class="PartyAmendmentLeaveOfCourt"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MSensitiveFilingACL" table="[dbo].[MSensitiveFilingACL]" optimistic-lock="none" >
+		<id name="SensitiveFilingACLID" column="SensitiveFilingACLID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="NOACode" column="NOACode" />
+		<property name="NOCCode" column="NOCCode" />
+		<property name="SubCaseTypeCode" column="SubCaseTypeCode" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="NoDaysBlock" column="NoDaysBlock" />
+	
+	</class>
+</hibernate-mapping>

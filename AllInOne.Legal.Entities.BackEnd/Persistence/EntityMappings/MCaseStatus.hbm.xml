@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MCaseStatus" table="[dbo].[MCaseStatus]" optimistic-lock="none" >
+		<id name="CaseStatusCode" column="CaseStatusCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CaseInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CaseStatusCode"/>
+			</key>
+			<one-to-many class="CaseInfo"/>
+		</set>
+		<set name="SubCaseInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseStatusCode"/>
+			</key>
+			<one-to-many class="SubCaseInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

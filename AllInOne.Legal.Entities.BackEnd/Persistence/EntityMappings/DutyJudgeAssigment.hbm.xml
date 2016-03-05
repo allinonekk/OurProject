@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DutyJudgeAssignment" table="[dbo].[DutyJudgeAssignment]" optimistic-lock="none" >
+    <id name="DutyJudgeAssignmentId" column="DutyJudgeAssignmentId" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="UserId" column="UserId" type="AnsiString" />
+    <property name="FromDate" column="FromDate" />
+    <property name="ToDate" column="ToDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+   
+    <many-to-one name="MForumType" fetch="select" cascade="none">
+      <column name="ForumId"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

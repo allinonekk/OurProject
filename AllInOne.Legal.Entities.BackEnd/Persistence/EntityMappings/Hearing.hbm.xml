@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="Hearing" table="[dbo].[Hearing]" optimistic-lock="none" >
+    <id name="HRGID" column="HRGID" >
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="CaseInfoID" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property name="HRGTrench" column="HRGTrench" />
+    <property name="HRGSlotcode" column="hrgSlotcode" />
+    <property name="HRGTypeCode" column="HRGTypeCode" />
+    <property name="HRGDateTime" column="HrgDateTime" />
+    <property name="StartDateTime" column="StartDateTime" />
+    <property name="EndDateTime" column="EndDateTime" />
+    <property name="UserId" column="UserID" type="AnsiString"/>
+    <property name="SpecialHrgDateInd" column="SpecialHrgDateInd" />
+    <property name="PartHeardInd" column="PartHeardInd" />
+    <property name="HRGRoomCode" column="HRGRoomCode" />
+    <!--<property name="HRGOutComeCode" column="HRGOutComeCode" />-->
+    <property name="HRGOutComeRSNCode" column="HRGOutComeRSNCode" />
+    <property name="HRGOutcomeRemarks" column="HRGOutcomeRemarks" />
+    <property name="HRGApproveInd" column="HRGApproveInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="HRGLockInd" column="HRGLockInd" />
+    <property name="HRGInstructions" column="HRGInstructions" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="HRGOutcomeApprInd" column="HRGOutcomeApprInd" />
+    <property name="Indicator" column="Indicator" />
+    <property name="SCInd" column="SCInd" />
+    <property name="QueueNo" column="QueueNo" />
+    <property name="EHearingInd" column="eHearingInd" />
+    <property name="EHearingStatus" column="eHearingStatus" />
+    <property name="HearingModeInd" column="HearingModeInd" />
+    <property name="IndicationsGiven" column="IndicationsGiven" />
+    <property name="CountAsCDRSession" column="CountAsCDRSession" />
+    <property name="FinalAdjournment" column="FinalAdjournment" />
+    <property name="ToShow" column="toShow" />
+    <property name="ComputedHearingFee" column="ComputedHearingFee" />
+    <property name="ComputedHearingFeeDatetime" column="ComputedHearingFeeDatetime" />
+    <property name="DocId" column="docid" type="AnsiString" />
+    <property name="EstimatedHearingFee" column="EstimatedHearingFee" />
+    <property name="EstimatedHearingFeeDatetime" column="EstimatedHearingFeeDatetime" />
+    <property name="USERNAME" column="USERNAME" />
+    <property name="DsgName" column="DsgName" />
+    <property name="IsPartiesAbsent" column="IsPartiesAbsent" />
+    <property name="MultiDayInd" column="MultiDayInd" />
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" />
+    <property name="IsCDRRefixed" column="IsCDRRefixed" />
+    <property name="MSType" column="MSType"/>
+    <many-to-one name="MHRGBeforeTypeEstimatedHRGBeforeTypeCode" fetch="select" cascade="none">
+      <column name="HRGBeforeTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MHRGBeforeTypeHRGBeforeTypeCode" fetch="select" cascade="none">
+      <column name="EstimatedHRGBeforeTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MDesignation" fetch="select" cascade="none">
+      <column name="DSGCode"/>
+    </many-to-one>
+    <many-to-one name="MCourtType" fetch="select" cascade="none">
+      <column name="CourtInd"/>
+    </many-to-one>
+    <many-to-one name="MHRGOutCome" fetch="select" cascade="none">
+      <column name="HRGOutComeCode"/>
+    </many-to-one>
+    <many-to-one name="MCoram" fetch="select" cascade="none">
+      <column name="CoramCode"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

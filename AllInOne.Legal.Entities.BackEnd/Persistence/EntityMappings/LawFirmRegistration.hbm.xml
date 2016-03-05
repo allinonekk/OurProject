@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LawFirmRegistration" table="[dbo].[LawFirmRegistration]" optimistic-lock="none" >
+		<id name="LFRegId" column="LFRegID" >
+			<generator class="identity"/>
+		</id>
+		<property name="AccountId" column="AccountID" type="AnsiString"/>
+		<property name="AuthorizedSignatoryURL" column="AuthorizedSignatoryURL" />
+		<property name="DDANo" column="DDANo" />
+		<property name="DREffectiveDate" column="DREffectiveDate" />
+		<property name="EffectiveDate" column="EffectiveDate" />
+		<property name="JOLInd" column="JOLInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LFID" column="LFID" type="AnsiString"/>
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrganizationName" column="OrganizationName" />
+		<property name="OutboxLibraryName" column="OutboxLibraryName" />
+		<property name="RREffectiveDate" column="RREffectiveDate" />
+		<property name="SentLibraryName" column="SentLibraryName" />
+		<property name="SiteURL" column="SiteURL" />
+		<property name="StatusCode" column="StatusCode" />
+		<property name="SubmissionDate" column="SubmissionDate" />
+		<property name="SubmissionSeqNo" column="SubmissionSeqNo" />
+		<property name="UEN" column="UEN" />
+		<property name="VerComments" column="VerComments" />
+		<property name="VerStatus" column="VerStatus" />
+		<property name="WebURL" column="WebURL" />
+		<many-to-one name="MLawFirmGroup" fetch="select" cascade="none">
+			<column name="LFGroupCode"/>
+		</many-to-one>
+    <property name="LawFirmSize" column="LawFirmSize" />
+    <property name="Remarks" column="Remarks" />
+    <property name="AccountName" column="AccountName" />
+    <property name="WaivedAccount" column="WaivedAccount" />
+    <property name="StartDate" column="StartDate" />
+    <property name="WaivedBy" column="WaivedBy" />
+    
+	</class>
+</hibernate-mapping>

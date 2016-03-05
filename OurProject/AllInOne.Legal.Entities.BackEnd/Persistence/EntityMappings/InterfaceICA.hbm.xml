@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="InterfaceICA" table="[dbo].[InterfaceICA]" optimistic-lock="none" >
+		<id name="ICAInterfaceId" column="ICAInterfaceId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseNo" column="CaseNo" type="AnsiString"/>
+		<property name="DateOfOrder" column="DateOfOrder" />
+		<property name="DocId" column="DocId" type="AnsiString"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NoOfTry" column="NoOfTry" />
+		<property name="OrderNo" column="OrderNo" />
+		<property name="Status" column="Status" />
+
+	</class>
+</hibernate-mapping>

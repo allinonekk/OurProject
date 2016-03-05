@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSRoundRobinAuctioneer" table="[dbo].[EMSRoundRobinAuctioneer]" optimistic-lock="none" >
+		<id name="RoundRobinAuctioneerId" column="RoundRobinAuctioneerId" type="AnsiString">
+			<generator class="assigned"/>
+		</id> 
+		<property name="BailiffId" column="BailiffId" />
+		<property name="EMSAuctioneerCode" column="EMSAuctioneerCode" />
+	</class>
+</hibernate-mapping>

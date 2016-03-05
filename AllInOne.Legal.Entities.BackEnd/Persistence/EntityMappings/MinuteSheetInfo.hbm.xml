@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MinuteSheetInfo" table="[dbo].[MinuteSheetInfo]" optimistic-lock="none" >
+    <id name="MinuteSheetInfoId" column="MinuteSheetInfoId" >
+      <generator class="assigned"/>
+    </id>
+    <property name="HRGID" column="HRGID" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="OrderMadeIn" column="OrderMadeIn" />
+    <property name="HearingCategory" column="HearingCategory" />
+    <property name="SessionProceedingStatus" column="SessionProceedingStatus" />
+    <property name="NoteOfEvidence" column="NoteOfEvidence" />
+    <property name="RegistryInstruction" column="RegistryInstruction" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="RequestForSubCaseInd" column="RequestForSubCaseInd" />
+    <property name="RequestForSplLetterInd" column="RequestForSplLetterInd" />
+    <property name="OtherDirections" column="OtherDirections" />
+    <property name="InstrToFrcAndCapsStaff" column="InstrToFrcAndCapsStaff" />
+  </class>
+</hibernate-mapping>

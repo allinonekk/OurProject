@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ForeignUserRegAddressDetails" table="[dbo].[ForeignUserRegAddressDetails]" optimistic-lock="none" >
+		<id name="ForeignUserRegAddressId" column="ForeignUserRegAddressId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ForeignUserRegistrationId" column="ForeignUserRegistrationId"/>
+		<property name="Address1" column="Address1" />
+		<property name="Address2" column="Address2" />
+		<property name="City" column="City" />
+		<property name="State" column="State" />
+		<property name="CountryCode" column="CountryCode" />
+		<property name="PostalCode" column="PostalCode" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RegistrationOfForeignLawyerId"  column="RegistrationOfForeignLawyerId" />
+	</class>
+</hibernate-mapping>

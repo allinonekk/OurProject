@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LABPartySolicitor" table="[dbo].[LABPartySolicitor]" optimistic-lock="none" >
+		<id name="LABPartySolicitorId" column="LABPartySolicitorId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RepresentedBy" column="RepresentedBy" />
+		<property name="SolicitorName" column="SolicitorName" />
+		<property name="StartDate" column="StartDate" />
+		<property name="UEN" column="UEN" />
+		<!--<many-to-one name="LABParty" fetch="select" cascade="none">
+			<column name="LABPartyId"/>
+		</many-to-one>-->
+		<!--<many-to-one name="LawFirm" fetch="select" cascade="none">
+			<column name="LFId"/>
+		</many-to-one>
+		<many-to-one name="Solicitor" fetch="select" cascade="none">
+			<column name="SolicitorId"/>
+		</many-to-one>-->
+    <property name="LABPartyId" column="LABPartyId" type="AnsiString"></property>
+		<property name="LFID" column="LFId" type="AnsiString"/>
+		<property name="SolicitorId" column="SolicitorId" />
+
+	</class>
+</hibernate-mapping>

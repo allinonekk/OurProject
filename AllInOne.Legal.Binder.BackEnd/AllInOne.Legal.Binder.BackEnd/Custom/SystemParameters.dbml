@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IELSFE_V12" Class="SystemParametersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=192.168.32.243;Initial Catalog=IELSFE_V12;Persist Security Info=True;User ID=devuser" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SystemParameters" Member="SystemParameters">
+    <Type Name="SystemParameter">
+      <Column Name="ConfigKey" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="ModuleName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ObsInd" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedBy" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="LastModifieddate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ConfigType" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

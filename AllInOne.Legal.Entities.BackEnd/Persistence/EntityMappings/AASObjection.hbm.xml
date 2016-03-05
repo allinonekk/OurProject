@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="AASObjection" table="[dbo].[AASObjection]" optimistic-lock="none" >
+		<id name="AASObjectionId" column="AASObjectionId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="BLEObjection" column="BLEObjection" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LawSocObjection" column="LawSocObjection" />
+		<property name="PublicObjection" column="PublicObjection" />
+		<property name="SALObjection" column="SALObjection" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>-->
+
+	</class>
+</hibernate-mapping>

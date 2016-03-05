@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MSection" table="[dbo].[MSections]" optimistic-lock="none" >
+		<id name="SectionCode" column="SectionCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="EndDate" column="EndDate" />
+		<property name="LastAssignedUserId" column="LastAssignedUserId" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SectionDescription" column="SectionDescription" />
+		<property name="SectionName" column="SectionName" />
+		<property name="StartDate" column="StartDate" />
+		<property name="TaskRoutingType" column="TaskRoutingType" />
+		<set name="EMSTeamMgmts" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SectionCode"/>
+			</key>
+			<one-to-many class="EMSTeamMgmt"/>
+		</set>
+		<many-to-one name="MCourtType" fetch="select" cascade="none">
+			<column name="CourtID"/>
+		</many-to-one>
+		<set name="ReportConfigInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SectionCode"/>
+			</key>
+			<one-to-many class="ReportConfigInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

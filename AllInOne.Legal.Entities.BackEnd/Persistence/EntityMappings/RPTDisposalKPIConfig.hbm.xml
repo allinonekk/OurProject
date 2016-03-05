@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RPTDisposalKPIConfig" table="[dbo].[RPTDisposalKPIConfig]" optimistic-lock="none" >
+		<id name="RPTDisposalKPIConfigId" column="RPTDisposalKPIConfigId">
+			<generator class="identity"/>
+		</id>
+		<property name="NocGroupCode" column="NocGroupCode" />
+		<property name="CaseTypeCode" column="CaseTypeCode" />
+		<property name="DisposalPeriodinMnths" column="DisposalPeriodinMnths" />
+		<property name="KPIPercentge" column="KPIPercentge" />
+		<property name="OutComeCodeType" column="OutComeCodeType" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+	</class>
+</hibernate-mapping>

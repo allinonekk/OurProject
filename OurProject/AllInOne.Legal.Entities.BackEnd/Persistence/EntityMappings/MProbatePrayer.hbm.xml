@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MProbatePrayer" table="[dbo].[MProbatePrayers]" optimistic-lock="none" >
+		<id name="ProbatePrayerCode" column="ProbatePrayerCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="InfancyNomination" column="InfancyNomination" />
+		<property name="IsInterfaced" column="IsInterfaced" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ProbateNatureCode" column="ProbateNatureCode" />
+		<property name="WithCoAdministrator" column="WithCoAdministrator" />
+		<property name="WithLimitations" column="WithLimitations" />
+		<property name="WithReservation" column="WithReservation" />
+
+	</class>
+</hibernate-mapping>

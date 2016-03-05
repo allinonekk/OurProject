@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmExec" table="[dbo].[EMSAdmExec]" optimistic-lock="none" >
+		<id name="EMSAdmExecId" column="EMSAdmExecId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AgentContact" column="AgentContact" />
+		<property name="AgentName" column="AgentName" />
+		<property name="ArrestDateTime" column="ArrestDateTime" /> 
+		<property name="ExecAddrBlkNo" column="ExecAddrBlkNo" />
+		<property name="ExecAddrBuildingName" column="ExecAddrBuildingName" />
+		<property name="ExecAddrFloorNo" column="ExecAddrFloorNo" />
+		<property name="ExecAddrPostalCode" column="ExecAddrPostalCode" />
+		<property name="ExecAddrStreetName" column="ExecAddrStreetName" />
+		<property name="ExecAddrUnitNo" column="ExecAddrUnitNo" />
+		<property name="ExecOutcome" column="ExecOutcome" />
+		<property name="ExecOutcomeDesc" column="ExecOutcomeDesc" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="Remarks" column="Remarks" />
+		<property name="DepositAmt" column="DepositAmt" />
+		<property name="FormatInd" column="FormatInd" />
+		<property name="Address" column="Address" />
+		<property name="Addr1" column="Addr1" />
+		<property name="Addr2" column="Addr2" />
+		<property name="Addr3" column="Addr3" />
+		<property name="Addr4" column="Addr4" />
+		<property name="SyncRequired" column="SyncRequired" />
+		<property name="AttendanceFee" column="AttendanceFee" />
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+		<many-to-one name="EMSAdmProperty" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAdmPropertyId"/>
+		</many-to-one>
+		<many-to-one name="Bailiff" fetch="select" cascade="none" lazy="false">
+		  <column name="BailiffId"/>
+		</many-to-one>
+		<many-to-one name="MEMSADMExecLocation" fetch="select" cascade="none">
+		  <column name="EMSADMExecLocationCode"/>
+		</many-to-one>
+		<many-to-one name="MEMSSecurityGuard" fetch="select" cascade="none">
+		  <column name="EMSSecurityGuardCode"/>
+		</many-to-one>
+    
+		<set name="EMSAdmClaims" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmExecId"/>
+		  </key>
+		  <one-to-many class="EMSAdmClaim"/>
+		</set>
+  </class>
+</hibernate-mapping>

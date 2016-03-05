@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DocCaseTierType" table="[dbo].[DocCaseTierType]" optimistic-lock="none" >
+    <id name="DocCaseTierTypeId" column="DocCaseTierTypeId" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="CaseInfoId" column="CaseInfoID" />
+
+    <property name="OldTierType" column="OldTierType" ></property>
+    <property name="NewTierType" column="NewTierType"/>
+    <property name="SubmissionGroupId" column="SubmissionGroupId"/>
+
+  </class>
+</hibernate-mapping>

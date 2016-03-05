@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DocumentInfo" table="[dbo].[DocumentInfo]" optimistic-lock="none" >
+    <id name="DocId" column="DOCID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="ActualFilingDateTime" column="ActualFilingDateTime" />
+    <property name="AutoTestingMode" column="AutoTestingMode" />
+    <property name="BackDateApprInd" column="BackdateApprInd" />
+    <property name="BackDateReasonFrCourt" column="BackDateReasonFrCourt" />
+    <property name="BackDateReasonFrLawFirm" column="BackDateReasonFrLawFirm" />
+    <property name="BackDateTime" column="BackDateTime" />
+    <property name="DisplayName" column="DisplayName"  type="StringClob"/>
+    <property name="DIYHrgslotcode" column="DIYHrgslotcode" />
+    <property name="DIYHrgTypeCode" column="DIYHrgTypeCode" />
+    <property name="DocSerialNo" column="DocSerialNo" />
+    <property name="DocSystemInd" column="docsystemind" />
+    <property name="DocTitle" column="DocTitle" />
+    <property name="DocType" column="DocType" />
+    <property name="DocYear" column="DocYear" />
+    <property name="DraftDateTime" column="DraftDateTime" />
+    <property name="DraftFileName" column="DraftFileName" />
+    <property name="DraftFileSize" column="DraftFileSize" />
+    <property name="DraftFNID" column="DraftFNID" />
+    <property name="DraftFormName" column="DraftFormName" />
+    <property name="DraftLocation" column="DraftLocation" />
+    <property name="DraftProcessType" column="DraftProcessType" />
+    <property name="EndorsementType" column="EndorsementType" />
+    <property name="ExpungeInd" column="ExpungeInd" />
+    <property name="FECopy" column="FECopy" />
+    <property name="FiledBy" column="FiledBy" />
+    <property name="FileType" column="FileType" />
+    <property name="FilingDateTime" column="FilingDateTime" />
+    <property name="FilingType" column="FilingType" />
+    <property name="HearingDateTime" column="HearingDateTime" />
+    <property name="HideInd" column="HideInd" />
+    <property name="InTrayDateTime" column="InTrayDateTime" />
+    <property name="IsReplyProcessed" column="IsReplyProcessed" />
+    <property name="IsUrgent" column="IsUrgent" />
+    <property name="Isvalidated" column="Isvalidated" />
+    <property name="JOUserIdApprBackDate" column="JOUserIdApprBackDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LFID" column="LFID" />
+    <property name="LFWaiverReqFee" column="LFWaiverReqFee" />
+    <property name="LFWaiverReqReason" column="LFWaiverReqReason" />
+    <property name="NoOfAttachments" column="NoOfAttachments" />
+    <property name="NumberOfPages" column="NumberOfPages" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="OCRInd" column="OCRInd" />
+    <property name="OCRPdfFNID" column="OCRPdfFNID" />
+    <property name="OCRStatus" column="OCRStatus" />
+    <property name="ParentDocId" column="ParentDocId" />
+    <property name="PrivateAnnoPdfFNID" column="PrivateAnnoPdfFNID" />
+    <property name="ProcessedBy" column="ProcessedBy" />
+    <property name="ProcessedTime" column="ProcessedTime" />
+    <property name="ProcessType" column="ProcessType" />
+    <property name="RecDateTime" column="RecDateTime" />
+    <property name="RecFileName" column="RecFileName" />
+    <property name="RecFileSize" column="RecFileSize" />
+    <property name="RecFNID" column="RecFNID" />
+    <property name="RecFormName" column="RecFormName" />
+    <property name="RecLocation" column="RecLocation" />
+    <property name="RecProcessType" column="RecProcessType" />
+    <property name="RelatedDocId" column="RelatedDocID" type="AnsiString"/>
+    <property name="Remarks" column="Remarks" />
+    <property name="RequestDocId" column="RequestDocID" />
+    <property name="SentDateTime" column="SentDateTime" />
+    <property name="SentFileName" column="SentFileName" />
+    <property name="SentFileSize" column="SentFileSize" />
+    <property name="SentFNID" column="SentFNID" />
+    <property name="SentFormName" column="SentFormName" />
+    <property name="SentLocation" column="SentLocation" />
+    <property name="SentProcessType" column="SentProcessType" />
+    <property name="SpecHandlingReqInd" column="SpecHandlingReqInd" />
+    <property name="SpecHandlingReqRem" column="SpecHandlingReqRem" />
+    <property name="SpecHandlingReqRsn" column="SpecHandlingReqRsn" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString" />
+    <property name="SubmSignature" column="SubmSignature" />
+    <property name="Version" column="Version" />
+    <property name="WaiverApprFee" column="WaiverApprFee" />
+    <property name="WaiverApproveInd" column="WaiverApproveInd" />
+    <property name="WaiverApprReason" column="WaiverApprReason" />
+    <property name="WaiverInd" column="WaiverInd" />
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" />
+    <property name="JOLInd" column="JOLInd" />
+    <property name="DocInitiated" column="DocInitiated" />
+    <property name="HrgDateToBeFixedInd" column="HrgDateToBeFixedInd" />
+    <property name="IsCrossCourt" column="IsCrossCourt" />
+    <property name="ReqDecisionRemark" column="ReqDecisionRemark" />
+    <property name="ReqDecision" column="ReqDecision" />
+    <property name="RejectionFeeActionType" column="RejectionFeeActionType"/>
+    <property name="IsConfidential" column="IsConfidential"/>
+    <property name="HashCode" column="HashCode"/>
+    <property name="FiledByLoginId" column="FiledByLoginId" />
+    <property name="Step4TermAndConditionVersion" column="Step4TermAndConditionVersion"/>
+    <property name="DocNo" column="DocNo"/>
+    <property name="DIYSelectbyUser" column="DIYSelectbyUser"/>
+    <!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>-->
+    <property name="CaseInfoId" column="CaseInfoId"/>
+
+    <one-to-one name="DocRequestDetail"  fetch="select" cascade="none"/>
+    <!--<one-to-one name="DocumentBatesList"  fetch="select" cascade="none" constrained="true" foreign-key="none"/>-->
+
+    <!--<many-to-one name="Hearing" fetch="select" cascade="none">
+			<column name="HRGID"/>
+		</many-to-one>-->
+    <property name ="HRGID" column="HRGID"/>
+    <!--<many-to-one name="JudicialUser" fetch="select" cascade="none">
+			<column name="WaiverApproveUserId"/>
+		</many-to-one>-->
+    <property name="WaiverApproveUserId" column="WaiverApproveUserId" />
+
+    <many-to-one name="MCurrency" fetch="select" cascade="none">
+      <column name="CurrencyCode"/>
+    </many-to-one>
+    <many-to-one name="MDocCode" fetch="select" cascade="none">
+      <column name="DOCCode"/>
+    </many-to-one>
+    <many-to-one name="MDocNature" fetch="select" cascade="none">
+      <column name="DocNatureCode"/>
+    </many-to-one>
+    <many-to-one name="MDocSecurity" fetch="select" cascade="none">
+      <column name="DocSecurityCode"/>
+    </many-to-one>
+    <many-to-one name="MDocStatus" fetch="select" cascade="none">
+      <column name="DocStatusCode"/>
+    </many-to-one>
+    <many-to-one name="MForumType" fetch="select" cascade="none">
+      <column name="ForumID"/>
+    </many-to-one>
+
+    <one-to-one name="MOSDocDetail"  fetch="select" cascade="none" constrained="false" foreign-key="none"/>
+
+
+
+
+
+    <!--<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>-->
+    <property name="SubCaseInfoId" column="SubCaseInfoId"/>
+
+  </class>
+  <sql-query name="ProcedureForPromotingBEAffidavit">
+    exec FilingBroker_PromoteReferAffidavitBE
+    :ReferAffidavitDocID,:DocID,:PromotedDocID,:IsSameForum
+  </sql-query>
+
+  <sql-query name="SP_PartyStatusFlip_GetCaveatList">
+    exec PartyStatusFlip_GetCaveatList
+    :CaseTypeCode
+  </sql-query>
+
+  <sql-query name="GetDocumentByDocId">
+    exec Mediator_Common_GetDocumentInfoByDocId
+    :DocId
+  </sql-query>
+
+  <sql-query name="SaveOrUpdateDocumentInfo">
+    AllInOne_Mediator_DocumentInfo
+    :DOCID,
+    :DOCCode,
+    :DocType,
+    :DocSerialNo,
+    :DocYear,
+    :DocTitle,
+    :ParentDocId,
+    :Version,
+    :FilingType,
+    :DocNatureCode,
+    :FilingDateTime,
+    :ActualFilingDateTime,
+    :InTrayDateTime,
+    :ProcessedBy,
+    :ProcessedTime,
+    :ForumID,
+    :SubmissionGroupID,
+    :DocStatusCode,
+    :NumberOfPages,
+    :ExpungeInd,
+    :DocSecurityCode,
+    :BackdateApprInd,
+    :BackDateTime,
+    :JOUserIdApprBackDate,
+    :BackDateReasonFrLawFirm,
+    :BackDateReasonFrCourt,
+    :HearingDateTime,
+    :SpecHandlingReqInd,
+    :SpecHandlingReqRsn,
+    :SpecHandlingReqRem,
+    :WaiverInd,
+    :CurrencyCode,
+    :LFWaiverReqFee,
+    :LFWaiverReqReason,
+    :WaiverApproveInd,
+    :WaiverApproveUserId,
+    :WaiverApprFee,
+    :WaiverApprReason,
+    :Remarks,
+    :LFID,
+    :EndorsementType,
+    :DraftFileName,
+    :DraftLocation,
+    :DraftProcessType,
+    :DraftFormName,
+    :DraftDateTime,
+    :SentFileName,
+    :SentLocation,
+    :SentProcessType,
+    :SentFormName,
+    :SentDateTime,
+    :RecFileName,
+    :RecLocation,
+    :RecProcessType,
+    :RecFormName,
+    :RecDateTime,
+    :ObsInd,
+    :LastModifiedBy,
+    :LastModifiedDate,
+    :Isvalidated,
+    :ProcessType,
+    :FiledBy,
+    :HRGID,
+    :IsUrgent,
+    :RelatedDocID,
+    :FECopy,
+    :OCRInd,
+    :DraftFNID,
+    :SentFNID,
+    :RecFNID,
+    :IsReplyProcessed,
+    :DisplayName,
+    :NoOfAttachments,
+    :HideInd,
+    :DraftFileSize,
+    :SentFileSize,
+    :RecFileSize,
+    :RequestDocID,
+    :FileType,
+    :DocSystemInd,
+    :WorkflowSerialNo,
+    :SubmSignature,
+    :CaseInfoId,
+    :SubCaseInfoId,
+    :AutoTestingMode,
+    :OCRPdfFNID,
+    :PrivateAnnoPdfFNID,
+    :OCRStatus,
+    :DIYHrgTypeCode,
+    :DIYHrgslotcode,
+    :JOLInd,
+    :DocInitiated,
+
+    :ReqDecision,
+    :ReqDecisionRemark,
+    :HrgDateToBeFixedInd,
+    :IsCrossCourt,
+    :RejectionFeeActionType,
+    :IsConfidential,
+    :HashCode,
+    :FiledByLoginId,
+    :Step4TermAndConditionVersion,
+    :DocNo,
+    :DIYSelectbyUser
+  </sql-query>
+</hibernate-mapping>

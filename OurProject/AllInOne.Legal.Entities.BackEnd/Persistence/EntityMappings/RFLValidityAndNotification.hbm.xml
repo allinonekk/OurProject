@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+
+	<class name="RFLValidityAndNotification" table="[dbo].[RFLValidityAndNotification]" optimistic-lock="none" >
+		<id name="RFLValidityNotificationID" column="RFLValidityNotificationID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="SubmissionGroupID" column="SubmissiongroupId" />
+		<property name="RFLCaseInfoId" column="RFLCaseInfoId" />
+		<property name="ValidFrom" column="ValidFrom" />
+		<property name="ValidTo" column="ValidTo" />
+		<property name="MonthsNotifiCation" column="MonthsNotifiCation" />
+		<property name="WeeksNotifiCation" column="WeeksNotifiCation" />
+		<property name="DaysNotifiCation" column="DaysNotifiCation" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastmodifiedBy"/>
+		<property name="LastModifiedDate" column="LastmodifiedDate"/>
+    <property name="RFLVerNo" column="RFLVerNo"/>
+	</class>
+</hibernate-mapping>

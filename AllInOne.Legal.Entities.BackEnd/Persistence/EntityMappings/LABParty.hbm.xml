@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LABParty" table="[dbo].[LABParty]" optimistic-lock="none" >
+		<id name="LABPartyId" column="LABPartyId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ContactTypeInd" column="ContactTypeInd" />
+		<property name="Email" column="Email" />
+		<property name="FaxAreaCode" column="FaxAreaCode" />
+		<property name="FaxCountryCode" column="FaxCountryCode" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<property name="FullName" column="FullName" />
+		<property name="IdNumber" column="IdNumber" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MobileCountryCode" column="MobileCountryCode" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="TelAreaCode" column="TelAreaCode" />
+		<property name="TelCountryCode" column="TelCountryCode" />
+		<property name="TelNumber" column="TelNumber" />
+    <property name="LFFileRefNumber" column="LFFileRefNumber" />
+		<set name="LABPartyAddresses" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LABPartyAddress"/>
+		</set>
+		<set name="LABPartyAddressHistories" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LABPartyAddressHistory"/>
+		</set>
+		<set name="LABPartyHistories" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LABPartyHistory"/>
+		</set>
+		<set name="LABPartySolicitorHistories" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LABPartySolicitorHistory"/>
+		</set>
+		<set name="LABPartySolicitors" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LABPartySolicitor"/>
+		</set>
+		<set name="LACInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="LABPartyId"/>
+			</key>
+			<one-to-many class="LACInfo"/>
+		</set>
+		<many-to-one name="MGender" fetch="select" cascade="none">
+			<column name="GenderCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDType" fetch="select" cascade="none">
+			<column name="IdTypeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

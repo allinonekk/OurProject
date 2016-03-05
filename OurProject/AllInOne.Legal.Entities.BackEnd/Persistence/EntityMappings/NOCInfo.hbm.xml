@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+
+  <class name="NOCInfo" table="[dbo].[NOCInfo]" optimistic-lock="none" >
+    <id name="NOCInfoId" column="NOCInfoId" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId"  type="AnsiString"/>
+    <property name="DOCID" column="DOCID" />
+    <property name="SubCaseInfoID" column="SubCaseInfoID" />
+    <property name="IsCeased" column="Isceased" />
+    <property name="CeasedDate" column="Ceaseddate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="CeasedRemarks" column="CeseadRemarks" />
+    <property name="IsPresentlyEmployed" column="IsPresentlyEmployeed" />
+    <property name="IsDisqualifiedR26" column="IsDisqaulifiedR26" />
+    <property name="IsDisqualifiedRemarks" column="IsDisqualifiedRemarks" />
+    <property name="PCCERT_IND" column="PCCERT_IND" />
+
+    <property name="CertificateRegNumber" column="CertificateRegNumber" />
+    <property name="CertificateRegYear" column="CertificateRegYear" />
+    <property name="CertificateRegPeriodFrom" column="CertificateRegPeriodFrom" />
+    <property name="CertificateRegPeriodTo" column="CertificateRegPeriodTo" />
+
+    <many-to-one name="MLawPracticeType" fetch="select" cascade="none">
+      <column name="LawPracticeType"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

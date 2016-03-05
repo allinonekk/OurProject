@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="LawFirmAddress" table="[dbo].[LawFirmAddress]" optimistic-lock="none" >
+    <id name="LFAddressId" column="LFAddressID" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="Addr1" column="Addr1" />
+    <property name="Addr2" column="Addr2" />
+    <property name="Addr3" column="Addr3" />
+    <property name="Addr4" column="Addr4" />
+    <property name="Address" column="Address" />
+    <property name="AddrType" column="AddrType" />
+    <property name="BlockOrHouseNumber" column="BlockOrHouseNumber" />
+    <property name="BuildingName" column="BuildingName" />
+    <property name="Countrycode" column="countrycode" />
+    <property name="FaxAreaCode" column="FaxAreaCode" />
+    <property name="FaxCountryCode" column="FaxCountryCode" />
+    <property name="FaxNumber" column="FaxNumber" />
+    <property name="FloorNumber" column="FloorNumber" />
+    <property name="FormatInd" column="FormatInd" />
+    <property name="ItemNo" column="ItemNo" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="MailingInd" column="MailingInd" />
+    <property name="PostalCode" column="PostalCode" />
+    <property name="StreetName" column="StreetName" />
+    <property name="TelAreaCode" column="TelAreaCode" />
+    <property name="TelCountryCode" column="TelCountryCode" />
+    <property name="TelNumber" column="TelNumber" />
+    <property name="UnitNumber" column="UnitNumber" />
+    <property name="UpdateByBEInd" column="UpdateByBEInd" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="MinLawInd" column="MinLawInd" />
+    <set name="CaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LFAddressID"/>
+      </key>
+      <one-to-many class="CaseParty"/>
+    </set>
+    <set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LFAddressID"/>
+      </key>
+      <one-to-many class="DocCaseParty"/>
+    </set>
+    <many-to-one name="LawFirm" fetch="select" cascade="none">
+      <column name="LFID"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CheckListSubmission" table="[dbo].[CheckListSubmission]" optimistic-lock="none" >
+		<id name="CheckListSubmissionId" column="CheckListSubmissionID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CheckListDocId" column="CheckListDocID" />
+		<property name="DocName" column="DocName"  type="StringClob"/>
+		<property name="EFormInd" column="EFormInd" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MandatoryInd" column="MandatoryInd" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ProcessedInd" column="ProcessedInd" />
+		<property name="Remarks" column="Remarks"  type="StringClob"/>
+		<property name="Status" column="Status" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="TemplateId" column="TemplateID" />
+		<property name="Version" column="Version" />
+		<property name="WFInstanceId" column="WFInstanceID" type="AnsiString"/>
+		<property name="WFStatus" column="WFStatus" />
+		<!--<many-to-one name="ChecklistInstance" fetch="select" cascade="none">
+			<column name="ChecklistInstanceID"/>
+		</many-to-one>-->
+		<property name="ChecklistInstanceId" column="ChecklistInstanceID" type="AnsiString"/>
+    		<!--<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DOCID"/>
+		</many-to-one>-->
+    		<property name="DocId" column="DOCID" type="AnsiString"/>
+    		<many-to-one name="MDocCode" fetch="select" cascade="none">
+			<column name="DocCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

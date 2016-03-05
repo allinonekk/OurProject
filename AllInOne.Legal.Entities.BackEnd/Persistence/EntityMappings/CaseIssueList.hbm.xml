@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CaseIssueList" table="[dbo].[CaseIssueList]" optimistic-lock="none" >
+		<id name="CaseIssueListId" column="CaseIssueListId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+    <property name="PriorityOrder" column="priorityOrder" />
+    <property name="IssueOutcome" column="IssueOutcome" />
+		<property name="CaseInfoId" column="CaseInfoId" />
+    <property name="HRGID" column="HRGID" />
+		<property name="SubCaseInfoId" column="SubCaseInfoId" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OtherDetails" column="OtherDetails" />
+    <many-to-one name="MCaseIssue" fetch="select" cascade="none">
+			<column name="CaseIssueCode"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

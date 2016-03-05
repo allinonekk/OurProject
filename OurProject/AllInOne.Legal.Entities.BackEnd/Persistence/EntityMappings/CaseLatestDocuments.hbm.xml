@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CaseLatestDocuments" table="[dbo].[CaseLatestDocuments]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="CaseInfoId" column="CaseInfoID" />
+      <key-property name="DocId" column="DocID" type="AnsiString"/>
+  </composite-id>
+<property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <many-to-one name="MDocCode" fetch="select" cascade="none">
+      <column name="DOCCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

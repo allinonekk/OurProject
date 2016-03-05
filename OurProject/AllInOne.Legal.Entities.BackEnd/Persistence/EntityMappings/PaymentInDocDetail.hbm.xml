@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PaymentInDocDetail" table="[dbo].[PaymentInDocDetail]" optimistic-lock="none" >
+		<id name="PaymentInId" column="PaymentInID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AGRefNumber" column="AGRefNumber" />
+		<property name="Amount" column="Amount" />
+		<property name="AmountSGD" column="AmountSGD" />
+		<property name="HasTransferredOut" column="HasTransferredOut" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="PayingInType" column="PayingInType" />
+		<property name="PaymentInReason" column="PaymentInReason" />
+		<property name="Reason" column="Reason" />
+		<property name="RuleNo" column="RuleNo" />
+		<property name="RuleOrderNo" column="RuleOrderNo" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="TransferredOutAmount" column="TransferredOutAmount" />
+		<property name="TransferredOutDate" column="TransferredOutDate" />
+		<many-to-one name="MCurrency" fetch="select" cascade="none">
+			<column name="CurrencyCode"/>
+		</many-to-one>
+		<set name="NotPaymentToCourtDocDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentInID"/>
+			</key>
+			<one-to-many class="NotPaymentToCourtDocDetail"/>
+		</set>
+		<set name="PaymentInDocFSDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentInID"/>
+			</key>
+			<one-to-many class="PaymentInDocFSDetail"/>
+		</set>
+		<set name="PaymentOutPayInDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentInID"/>
+			</key>
+			<one-to-many class="PaymentOutPayInDetail"/>
+		</set>
+		<!--<many-to-one name="RefOrderDetail" fetch="select" cascade="none">
+			<column name="RefOrderDetailId"/>
+		</many-to-one>-->
+    	<property name="RefOrderDetailId" column="RefOrderDetailId" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

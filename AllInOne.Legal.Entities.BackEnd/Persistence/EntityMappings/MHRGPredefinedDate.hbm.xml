@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MHRGPredefinedDate" table="[dbo].[MHRGPredefinedDate]" optimistic-lock="none" >
+		<id name="HRGPredefinedDateId" column="HRGPredefinedDateId" >
+			<generator class="assigned"/>
+		</id>
+		<property name="HRGTypeCode" column="HRGTypeCode" />
+		<property name="FixInfoDescription" column="FixInfoDescription" />
+		<property name="HrgDateTime" column="HrgDateTime" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="CoramCode" column="CoramCode" />
+    <property name="UserID" column="UserID" />
+    <property name="DSGCode" column="DSGCode" />
+    <property name="HRGRoomCode" column="HRGRoomCode" />
+	
+	</class>
+</hibernate-mapping>

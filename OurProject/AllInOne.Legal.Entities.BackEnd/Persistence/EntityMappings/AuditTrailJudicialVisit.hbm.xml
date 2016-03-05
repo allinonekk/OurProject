@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1" namespace="AllInOne.Legal.Entities.BackEnd">
+	<class name="AuditTrailJudicialVisit" table="dbo.AuditTrailVisit" optimistic-lock="none">
+		<id name="AuditTrailVisitId" column="AuditTrailVisitId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property  name="LoginSessionId" column="LoginSessionId" type="AnsiString"/>
+		<property  name="UserId" column="UserId" type="AnsiString"/>
+		<property  name="UserName" column="UserName" type="AnsiString"/>
+		<property  name="VisitStatus" column="VisitStatus" />
+		<property  name="Module" column="Module" type="AnsiString"/>
+		<property  name="SubModule" column="SubModule" type="AnsiString"/>
+		<property  name="FunctionType" column="FunctionType" type="AnsiString"/>
+		<property  name="ActionType" column="ActionType" />
+		<property  name="MessageDescription" column="MessageDescription" />
+    <property  name="CaseInfoId" column="CaseInfoId" />
+    <property  name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property  name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property  name="CreatedDateTime" column="CreatedDateTime" />
+    <property  name="LastModifiedBy" column="LastModifiedBy" />
+    <property  name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+
+	<class name="ForeignUserPracticeInformation" table="[dbo].[ForeignUserPracticeInformation]" optimistic-lock="none" >
+		<id name="ForeignUserPracticeInfoId" column="ForeignUserPracticeInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="PartyId" column="PartyId" />
+		<property name="TypeOfDegree" column="TypeOfDegree" />
+		<property name="University" column="University" />
+		<property name="IssuingCountry" column="IssuingCountry" />
+		<property name="ConferementOfDegree" column="ConferementOfDegree" />
+		<property name="Qualification" column="Qualification" />
+		<property name="Remarks" column="Remarks" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RegistrationOfForeignLawyerId" column="RegistrationOfForeignLawyerId"/>
+    <property name="YearOfConferement" column="YearOfConferement"/>
+    <property name="AdmissionYear" column="AdmissionYear"/>
+    <property name="InformationType" column="InformationType"/>
+    <property name="SequenceNo" column="SequenceNo"/>
+	</class>
+</hibernate-mapping>

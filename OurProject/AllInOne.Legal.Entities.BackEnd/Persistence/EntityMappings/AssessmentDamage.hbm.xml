@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="AssessmentDamage" table="[dbo].[AssessmentDamage]" optimistic-lock="none" >
+    <id name="ADId" column="ADID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AwardDate" column="AwardDate" />
+    <property name="IsDependencyClaimed" column="IsDependencyClaimed" />
+    <property name="Coram" column="Coram" />
+    <property name="PartyAge" column="PartyAge" />
+    <property name="Multiplier" column="Multiplier" />
+    <property name="LOFEAmountAwarded" column="LOFEAmountAwarded" />
+    <property name="PSAmountAwarded" column="PSAmountAwarded" />
+    <property name="LOAAmountAwarded" column="LOAAmountAwarded" />
+    <property name="LOELAmountAwarded" column="LOELAmountAwarded" />
+    <property name="TGenDamAwarded" column="TGenDamAwarded" />
+    <property name="Comments" column="Comments" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="CasePartyId" column="CasePartyId" type="AnsiString"/>
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property name="LOECAmountAwarded" column="LOECAmountAwarded" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="SolicitorAddress" table="[dbo].[SolicitorAddress]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="ItemNo" column="ItemNo" />
+      <key-property name="SolicitorID" column="SolicitorID" />
+    </composite-id>
+    <property name="FormatInd" column="FormatInd" />
+    <property name="AddrType" column="AddrType" />
+    <property name="BlkNo" column="BlkNo" />
+    <property name="StreetName" column="StreetName" />
+    <property name="FloorNo" column="FloorNo" />
+    <property name="UnitNo" column="UnitNo" />
+    <property name="BuildingName" column="BuildingName" />
+    <property name="PostalCode" column="PostalCode" />
+    <property name="Address" column="Address" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+  <sql-query name="SaveOrUpdateSolicitorAddressProcedure">
+    exec MDM_BackEnd_SaveOrUpdateSolicitorAddress
+    :ItemNo,:SolicitorID,:FormatInd,:AddrType,:BlkNo,:StreetName,:FloorNo,:UnitNo,:BuildingName,:PostalCode,:Address,:ObsInd,:LastModifiedBy,:LastModifiedDate
+  </sql-query>
+</hibernate-mapping>

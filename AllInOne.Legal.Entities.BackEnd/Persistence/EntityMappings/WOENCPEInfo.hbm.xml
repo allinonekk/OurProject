@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="WOENCPEInfo" table="[dbo].[WOENCPEInfo]" optimistic-lock="none" >
+		<id name="WOENCPEInfoId" column="WOENCPEInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="ClaimObject" column="ClaimObject" />
+		<property name="ItemClaimed" column="ItemClaimed" />
+		<many-to-one name="CurrencyCode" fetch="select" cascade="none">
+			<column name="CurrencyCode"/>
+		</many-to-one>
+		<property name="AmountClaimed" column="AmountClaimed" />
+		<property name="ClaimRemarks" column="ClaimRemarks" />
+		<property name="ClaimDesc" column="ClaimDesc" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PropertyClaimed" column="PropertyClaimed" />
+	</class>
+</hibernate-mapping>

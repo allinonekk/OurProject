@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ForeignLPSolicitorRegDetail" table="[dbo].[ForeignLPSolicitorRegDetail]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="ForeignLPSolicitorRegId" column="ForeignLPSolicitorRegId" type="AnsiString"/>
+      <key-property name="ItemNo" column="ItemNo"/>
+    </composite-id>
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="SingaporeLFID" column="SingaporeLFID" />
+    <property name="ForeignLFID" column="ForeignLFID" />
+    <many-to-one name="MLawPracticeType" fetch="select" cascade="none">
+      <column name="ForeignLPTypeCode"/>
+    </many-to-one>
+
+  </class>
+  <sql-query name="SaveOrUpdateForeignLPSolicitorRegDetailProcedure">
+    exec Mediator_BackEnd_SaveOrUpdateForeignLPSolicitorRegDetail
+    :ForeignLPSolicitorRegId,:ItemNo,:ForeignLPTypeCode,:SingaporeLFID,:ForeignLFID,:LastModifiedBy,:LastModifiedDate,:ObsInd
+  </sql-query>
+</hibernate-mapping>

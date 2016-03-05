@@ -1,0 +1,1943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35E2D4CF-780C-49E5-B14F-B48BB983DAE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllInOne.Legal.Entities.BackEnd</RootNamespace>
+    <AssemblyName>AllInOne.Legal.Entities.BackEnd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\SNK Files\CrimsonLogic.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Bin\InHouse\Release\BackEnd\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\External\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Entities\AASInfo.cs" />
+    <Compile Include="Model\Entities\AASObjection.cs" />
+    <Compile Include="Model\Entities\AccountantsReportInfo.cs" />
+    <Compile Include="Model\Entities\ADDependant.cs" />
+    <Compile Include="Model\Entities\ADIADetail.cs" />
+    <Compile Include="Model\Entities\ADIDetail.cs" />
+    <Compile Include="Model\Entities\ADMBBDefInfo.cs" />
+    <Compile Include="Model\Entities\ADMBBSecInfo.cs" />
+    <Compile Include="Model\Entities\ADMInfo.cs" />
+    <Compile Include="Model\Entities\ADMRSVCBBInfo.cs" />
+    <Compile Include="Model\Entities\ADMWAInfo.cs" />
+    <Compile Include="Model\Entities\ADSDDetail.cs" />
+    <Compile Include="Model\Entities\AffidavitDeponentDetail.cs" />
+    <Compile Include="Model\Entities\AffidavitInfo.cs" />
+    <Compile Include="Model\Entities\AppealTimeEstimationDetail.cs" />
+    <Compile Include="Model\Entities\AreaOfLegalPractice.cs" />
+    <Compile Include="Model\Entities\AssessmentDamage.cs" />
+    <Compile Include="Model\Entities\AuditModuleVisit.cs" />
+    <Compile Include="Model\Entities\BankruptcyDebtInfo.cs" />
+    <Compile Include="Model\Entities\BankruptcyInfo.cs" />
+    <Compile Include="Model\Entities\BankruptcyOtherDefDetail.cs" />
+    <Compile Include="Model\Entities\BillOfSaleInfo.cs" />
+    <Compile Include="Model\Entities\BillOfSaleSubInfo.cs" />
+    <Compile Include="Model\Entities\BOTDetails.cs" />
+    <Compile Include="Model\Entities\BTSRoutingQueue.cs" />
+    <Compile Include="Model\Entities\CaseCounterClaim.cs" />
+    <Compile Include="Model\Entities\CaseCounterClaimDetails.cs" />
+    <Compile Include="Model\Entities\CaseInfo.cs" />
+    <Compile Include="Model\Entities\CaseIssueList.cs" />
+    <Compile Include="Model\Entities\CaseOriginatingCase.cs" />
+    <Compile Include="Model\Entities\CaseParty.cs" />
+    <Compile Include="Model\Entities\CasePartyAddress.cs" />
+    <Compile Include="Model\Entities\CasePartyAICAddress.cs" />
+    <Compile Include="Model\Entities\CasePartyAICAlias.cs" />
+    <Compile Include="Model\Entities\CasePartyAICDetail.cs" />
+    <Compile Include="Model\Entities\CasePartyAlias.cs" />
+    <Compile Include="Model\Entities\CasePartyAuthorisedOfficerDetail.cs" />
+    <Compile Include="Model\Entities\CasePartyBailorAddress.cs" />
+    <Compile Include="Model\Entities\CasePartyBailorInfo.cs" />
+    <Compile Include="Model\Entities\CasePartyCitizenship.cs" />
+    <Compile Include="Model\Entities\CasePartyCriminalInfo.cs" />
+    <Compile Include="Model\Entities\CasePartyLACDetail.cs" />
+    <Compile Include="Model\Entities\CasePartyLACDetailsHistory.cs" />
+    <Compile Include="Model\Entities\CasePartyVesselDetail.cs" />
+    <Compile Include="Model\Entities\CaseRegister.cs" />
+    <Compile Include="Model\Entities\CaseRegisterHistory.cs" />
+    <Compile Include="Model\Entities\CaseSolicitor.cs" />
+    <Compile Include="Model\Entities\CaseSolicitorHistory.cs" />
+    <Compile Include="Model\Entities\CaseStatusHistory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\CaseStatusRuleInfo.cs" />
+    <Compile Include="Model\Entities\CaveatAAInfo.cs" />
+    <Compile Include="Model\Entities\CaveatInfo.cs" />
+    <Compile Include="Model\Entities\CDRInfo.cs" />
+    <Compile Include="Model\Entities\CertSecurityOfCostsInfo.cs" />
+    <Compile Include="Model\Entities\ChargeInfo.cs" />
+    <Compile Include="Model\Entities\ChecklistInstance.cs" />
+    <Compile Include="Model\Entities\ChecklistSubmission.cs" />
+    <Compile Include="Model\Entities\ChildInfo.cs" />
+    <Compile Include="Model\Entities\ClaimAmount.cs" />
+    <Compile Include="Model\Entities\ContinuingLegalEducationInfo.cs" />
+    <Compile Include="Model\Entities\CaseLatestDocuments.cs" />
+    <Compile Include="Model\Entities\BankruptcyDRSInfo.cs" />
+    <Compile Include="Model\Entities\BizMonitoringInfo.cs" />
+    <Compile Include="Model\Entities\CasePartyStatusHistory.cs" />
+    <Compile Include="Model\Entities\ArchiveNumberOfJudgeAssignDetail.cs" />
+    <Compile Include="Model\Entities\ArchiveNumberOfJudgeAssignDetailHistory.cs" />
+    <Compile Include="Model\Entities\ArchiveWorkitemDetails.cs" />
+    <Compile Include="Model\Entities\ArchiveWorkitemRecipient.cs" />
+    <Compile Include="Model\Entities\ArchiveTaskList.cs" />
+    <Compile Include="Model\Entities\CheckListComments.cs" />
+    <Compile Include="Model\Entities\AuditTrailJudicialVisit.cs" />
+    <Compile Include="Model\Entities\CaseInfoNumber.cs" />
+    <Compile Include="Model\Entities\CaseLegalExperienceInfo.cs" />
+    <Compile Include="Model\Entities\RDocCounterClaimFiled.cs" />
+    <Compile Include="Model\Entities\DocCaseCounterClaim.cs" />
+    <Compile Include="Model\Entities\DocCaseCounterClaimDetails.cs" />
+    <Compile Include="Model\Entities\MHarassPlace.cs" />
+    <Compile Include="Model\Entities\CORSolicitorRegDetails.cs" />
+    <Compile Include="Model\Entities\CORSolicitorReg.cs" />
+    <Compile Include="Model\Entities\DocLegalExperienceInfo.cs" />
+    <Compile Include="Model\Entities\DirectionDetails.cs" />
+    <Compile Include="Model\Entities\LawFirmRegistration.cs" />
+    <Compile Include="Model\Entities\MDirections.cs" />
+    <Compile Include="Model\Entities\MIncome.cs" />
+    <Compile Include="Model\Entities\MResidential.cs" />
+    <Compile Include="Model\Entities\FeeCollectionDetail.cs" />
+    <Compile Include="Model\Entities\RMDocControlExclusion.cs" />
+    <Compile Include="Model\Entities\JMOtherInfo.cs" />
+    <Compile Include="Model\Entities\RMHrgSlotLegis.cs" />
+    <Compile Include="Model\Entities\MDefaultLoginPage.cs" />
+    <Compile Include="Model\Entities\JMChecklistInfo.cs" />
+    <Compile Include="Model\Entities\RequestForExemption.cs" />
+    <Compile Include="Model\Entities\RMDocTierSensitive.cs" />
+    <Compile Include="Model\Entities\DashboardCaseMilestoneDetail.cs" />
+    <Compile Include="Model\Entities\DashboardCaseMilestoneDetailHistory.cs" />
+    <Compile Include="Model\Entities\DashboardSubCaseMilestoneDetail.cs" />
+    <Compile Include="Model\Entities\DashboardSubCaseMilestoneDetailHistory.cs" />
+    <Compile Include="Model\Entities\RMHrgSlotNOC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Entities\Temp_ProcessingInfo.cs" />
+    <Compile Include="Model\Entities\PBAdminBond.cs" />
+    <Compile Include="Model\Entities\PBSupNExm.cs" />
+    <Compile Include="Model\Entities\PBPADetails.cs" />
+    <Compile Include="Model\Entities\SICCFeeLedger.cs" />
+    <Compile Include="Model\Entities\MDocControlForum.cs" />
+    <Compile Include="Model\Entities\SubCaseStatusHistory.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeForumHRGTypeMSType.cs" />
+    <Compile Include="Model\Entities\RFLValidityAndNotification.cs" />
+    <Compile Include="Model\Entities\RegistrationOfForeignLawyer.cs" />
+    <Compile Include="Model\Entities\ReqExaminationFeedetail.cs" />
+    <Compile Include="Model\Entities\DocPartyCaseFileRefNumber.cs" />
+    <Compile Include="Model\Entities\ForeignUserPracticeInformation.cs" />
+    <Compile Include="Model\Entities\ForeignUserRegAddressDetails.cs" />
+    <Compile Include="Model\Entities\ForeignUserRegistrationDetails.cs" />
+    <Compile Include="Model\Entities\HearingOutcomeFlag.cs" />
+    <Compile Include="Model\Entities\InterfaceNBSReport.cs" />
+    <Compile Include="Model\Entities\LawFirmDocCaseFileRefNumber.cs" />
+    <Compile Include="Model\Entities\NOCInfo.cs" />
+    <Compile Include="Model\Entities\PartyCaseFileRefNumber.cs" />
+    <Compile Include="Model\Entities\PCInfoAccReport.cs" />
+    <Compile Include="Model\Entities\TransferOrderOfCourt.cs" />
+    <Compile Include="Model\Entities\RPTNOCGroup.cs" />
+    <Compile Include="Model\Entities\InterimCasePartyStatus.cs" />
+    <Compile Include="Model\Entities\MCourtVacation.cs" />
+    <Compile Include="Model\Entities\RPTDisposalKPIConfig.cs" />
+    <Compile Include="Model\Entities\RPTNOCGroupNOC.cs" />
+    <Compile Include="Model\Entities\UndoSerialNumber.cs" />
+    <Compile Include="Model\Entities\HearingCoram.cs" />
+    <Compile Include="Model\Entities\DocCaseTierType.cs" />
+    <Compile Include="Model\Entities\RMHRGTypePaperMinuteSheetType.cs" />
+    <Compile Include="Model\Entities\MPaperMinuteSheetType.cs" />
+    <Compile Include="Model\Entities\DutyJudgeAssignment.cs" />
+    <Compile Include="Model\Entities\MLawPracticeType.cs" />
+    <Compile Include="Model\Entities\PrintDocumentQueueDetail.cs" />
+    <Compile Include="Model\Entities\OGCProcessingInfo.cs" />
+    <Compile Include="Model\Entities\RCaseTransferHistory.cs" />
+    <Compile Include="Model\Entities\RAlertEventSubscribers.cs" />
+    <Compile Include="Model\Entities\RLawFirmSolicitorHistory.cs" />
+    <Compile Include="Model\Entities\RMAlertEventTypeRole.cs" />
+    <Compile Include="Model\Entities\MAlertEventType.cs" />
+    <Compile Include="Model\Entities\EMSAttendanceFee.cs" />
+    <Compile Include="Model\Entities\EMSAdmCharges.cs" />
+    <Compile Include="Model\Entities\EMSSaleAuctioneer.cs" />
+    <Compile Include="Model\Entities\MEMSCrmCasePrefix.cs" />
+    <Compile Include="Model\Entities\MSensitiveFilingACL.cs" />
+    <Compile Include="Model\Entities\RCaseConsolidate.cs" />
+    <Compile Include="Model\Entities\RefOrderJOInfo.cs" />
+    <Compile Include="Model\Entities\RMHearingRoutingSectionConfig.cs" />
+    <Compile Include="Model\Entities\RMSubCaseTypeHRGTypeMSType.cs" />
+    <Compile Include="Model\Entities\DocumentInfoSP.cs" />
+    <Compile Include="Model\Entities\InterfaceLawSocLawFirmAddress.cs" />
+    <Compile Include="Model\Entities\InterfaceLawSocLawFirm.cs" />
+    <Compile Include="Model\Entities\MHRGPredefinedDate.cs" />
+    <Compile Include="Model\Entities\MSummonsGrounds.cs" />
+    <Compile Include="Model\Entities\MSummonsPrayers.cs" />
+    <Compile Include="Model\Entities\RASInfo.cs" />
+    <Compile Include="Model\Entities\ReportConfigTaskInfo.cs" />
+    <Compile Include="Model\Entities\DCACAOriginatingCasePartyInfo.cs" />
+    <Compile Include="Model\Entities\MFilingFeeLegislationAct.cs" />
+    <Compile Include="Model\Entities\MVSAConfigPrayer.cs" />
+    <Compile Include="Model\Entities\MVSAConfigGround.cs" />
+    <Compile Include="Model\Entities\MVSAConfigDetail.cs" />
+    <Compile Include="Model\Entities\MEMSADMExecLocation.cs" />
+    <Compile Include="Model\Entities\ILawFirm.cs" />
+    <Compile Include="Model\Entities\MLawFirmGroup.cs" />
+    <Compile Include="Model\Entities\MPrinter.cs" />
+    <Compile Include="Model\Entities\NumberOfJudgeAssignDetail.cs" />
+    <Compile Include="Model\Entities\NumberOfJudgeAssignDetailHistory.cs" />
+    <Compile Include="Model\Entities\PrintDocumentQueue.cs" />
+    <Compile Include="Model\Entities\MChargeOutcome.cs" />
+    <Compile Include="Model\Entities\MMassCallHrgDate.cs" />
+    <Compile Include="Model\Entities\NoticeToReferAffidavit.cs" />
+    <Compile Include="Model\Entities\RespondentCaseDetailInfo.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeHRGTypeJOL.cs" />
+    <Compile Include="Model\Entities\RMDocFilterGroup.cs" />
+    <Compile Include="Model\Entities\RUserPA.cs" />
+    <Compile Include="Model\Entities\DocComments.cs" />
+    <Compile Include="Model\Entities\IAudit.cs" />
+    <Compile Include="Model\Entities\RMPartyTypeCaseType.cs" />
+    <Compile Include="Model\Entities\MIDType.cs" />
+    <Compile Include="Model\Entities\MEMSOldSCTCasePrefix.cs" />
+    <Compile Include="Model\Entities\MHRGOutComeFlag.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeNOC.cs" />
+    <Compile Include="Model\Entities\RMHRGTypeHRGOutComeHRGOutComeFlag.cs" />
+    <Compile Include="Model\Entities\RMHearingTypeCourtType.cs" />
+    <Compile Include="Model\Entities\RMForumCoramDSG.cs" />
+    <Compile Include="Model\Entities\MHearingType.cs" />
+    <Compile Include="Model\Entities\MEMSSecurityGuard.cs" />
+    <Compile Include="Model\Entities\DocAppProcessByExAgency.cs" />
+    <Compile Include="Model\Entities\MCoram.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucherMisc.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeHRGTypeMSType.cs" />
+    <Compile Include="Model\Entities\MAASDisciplinaryResultType.cs" />
+    <Compile Include="Model\Entities\MJudicialOfficer.cs" />
+    <Compile Include="Model\Entities\MFormTemplateLocation.cs" />
+    <Compile Include="Model\Entities\MLimitations.cs" />
+    <Compile Include="Model\Entities\MMinuteSheetType.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeForum.cs" />
+    <Compile Include="Model\Entities\RMUserPS.cs" />
+    <Compile Include="Model\Entities\SolicitorAddress.cs" />
+    <Compile Include="Model\Entities\SystemParameters.cs" />
+    <Compile Include="Model\Entities\RMSectionAccessCtrl.cs" />
+    <Compile Include="Model\Entities\MSequenceKey.cs" />
+    <Compile Include="Model\Entities\EMSRoundRobinAuctioneer.cs" />
+    <Compile Include="Model\Entities\MHoliday.cs" />
+    <Compile Include="Model\Entities\MFormSignature.cs" />
+    <Compile Include="Model\Entities\OGCIncomingQueue.cs" />
+    <Compile Include="Model\Entities\RMRoutingSectionConfig.cs" />
+    <Compile Include="Model\Entities\MHRGUserAvailability.cs" />
+    <Compile Include="Model\Entities\VoteInfo.cs" />
+    <Compile Include="Model\Entities\VoteInfoDelta.cs" />
+    <Compile Include="Model\Entities\WOECaseExecutionAddress.cs" />
+    <Compile Include="Model\Entities\WorkflowOutgoingQueue.cs" />
+    <Compile Include="Model\Entities\WorkflowPostAcceptQueue.cs" />
+    <Compile Include="Model\Entities\WorkflowOnAcceptQueue.cs" />
+    <Compile Include="Model\Entities\MApptOrganisation.cs" />
+    <Compile Include="Model\Entities\RelationalSubCaseInfo.cs" />
+    <Compile Include="Model\Entities\RequestNEGDDetail.cs" />
+    <Compile Include="Model\Entities\SentenceCriminalOrderInfo.cs" />
+    <Compile Include="Model\Entities\RUserFunctions.cs" />
+    <Compile Include="Model\Entities\SerialNumber.cs" />
+    <Compile Include="Model\Entities\EMSRecapitDetails.cs" />
+    <Compile Include="Model\Entities\EMSADMSaleOthers.cs" />
+    <Compile Include="Model\Entities\MEMSWritAppt.cs" />
+    <Compile Include="Model\Entities\OrdersMade.cs" />
+    <Compile Include="Model\Entities\OutgoingCorrespondenceCourtFee.cs" />
+    <Compile Include="Model\Entities\OutgoingCorrespondenceInfo.cs" />
+    <Compile Include="Model\Entities\RMPartyStatusCaseType.cs" />
+    <Compile Include="Model\Entities\EMSCashBookItem.cs" />
+    <Compile Include="Model\Entities\EMSCashBookReconcile.cs" />
+    <Compile Include="Model\Entities\HearingAdminSupport.cs" />
+    <Compile Include="Model\Entities\RefSubCase.cs" />
+    <Compile Include="Model\Entities\MBusinessJobLegalDetail.cs" />
+    <Compile Include="Model\Entities\MBusinessJobLegalInfo.cs" />
+    <Compile Include="Model\Entities\MinuteSheetDocList.cs" />
+    <Compile Include="Model\Entities\MMonitoringType.cs" />
+    <Compile Include="Model\Entities\MEMSDisburseRate.cs" />
+    <Compile Include="Model\Entities\TaxationInfo.cs" />
+    <Compile Include="Model\Entities\TaxationClaim.cs" />
+    <Compile Include="Model\Entities\PBWillCodicil.cs" />
+    <Compile Include="Model\Entities\PBPrevGrantDetail.cs" />
+    <Compile Include="Model\Entities\PBExecutorDetails.cs" />
+    <Compile Include="Model\Entities\PBCoAdminDetails.cs" />
+    <Compile Include="Model\Entities\ProbateInfo.cs" />
+    <Compile Include="Model\Entities\PBBeneficiaryDetails.cs" />
+    <Compile Include="Model\Entities\OSMADetails.cs" />
+    <Compile Include="Model\Entities\OSJudicialManagerDetail.cs" />
+    <Compile Include="Model\Entities\DeputyDetail.cs" />
+    <Compile Include="Model\Entities\MAccomodationType.cs" />
+    <Compile Include="Model\Entities\PatientDetail.cs" />
+    <Compile Include="Model\Entities\Temp_EMSAppointment.cs" />
+    <Compile Include="Model\Entities\Users.cs" />
+    <Compile Include="Model\Entities\WOSInfo.cs" />
+    <Compile Include="Model\Entities\InterfaceCriminal.cs" />
+    <Compile Include="Model\Entities\MinuteSheetGroundInfo.cs" />
+    <Compile Include="Model\Entities\MinuteSheetFamilyRelatedInfo.cs" />
+    <Compile Include="Model\Entities\MinuteSheetPartySolicitorInfo.cs" />
+    <Compile Include="Model\Entities\MinuteSheetPartyRepInfo.cs" />
+    <Compile Include="Model\Entities\MinuteSheetInfo.cs" />
+    <Compile Include="Model\Entities\RAccusedStatementInfo.cs" />
+    <Compile Include="Model\Entities\RCaseTransfer.cs" />
+    <Compile Include="Model\Entities\WitnessInfo.cs" />
+    <Compile Include="Model\Entities\WOEInfo.cs" />
+    <Compile Include="Model\Entities\WOEMOMSCTInfo.cs" />
+    <Compile Include="Model\Entities\WOENCPEInfo.cs" />
+    <Compile Include="Model\Entities\WOENECPEInfo.cs" />
+    <Compile Include="Model\Entities\WorkitemRecipient.cs" />
+    <Compile Include="Model\Entities\WorkitemDetails.cs" />
+    <Compile Include="Model\Entities\MCaseIssue.cs" />
+    <Compile Include="Model\Entities\DivorceSubInfo.cs" />
+    <Compile Include="Model\Entities\MWithDrawalOfType.cs" />
+    <Compile Include="Model\Entities\MWithDrawalInType.cs" />
+    <Compile Include="Model\Entities\DisWithDocPtyDetail.cs" />
+    <Compile Include="Model\Entities\MEMSAttendanceFee.cs" />
+    <Compile Include="Model\Entities\MEMSCourtComm.cs" />
+    <Compile Include="Model\Entities\EMSAdmCharge.cs" />
+    <Compile Include="Model\Entities\EMSAdmClaim.cs" />
+    <Compile Include="Model\Entities\RequestHearingAdminSupport.cs" />
+    <Compile Include="Model\Entities\RMCaseTypeNOA.cs" />
+    <Compile Include="Model\Entities\RRoleFunctions.cs" />
+    <Compile Include="Model\Entities\MFunctions.cs" />
+    <Compile Include="Model\Entities\RMHRGOutComePartyStatus.cs" />
+    <Compile Include="Model\Entities\EMSStateFund.cs" />
+    <Compile Include="Model\Entities\EMSRecapitulation.cs" />
+    <Compile Include="Model\Entities\RLawFirmSolicitors.cs" />
+    <Compile Include="Model\Entities\MTaskListType.cs" />
+    <Compile Include="Model\Entities\DocGCRDetails.cs" />
+    <Compile Include="Model\Entities\RCaseLinked.cs" />
+    <Compile Include="Model\Entities\NatureOfAppeal.cs" />
+    <Compile Include="Model\Entities\RARASDetail.cs" />
+    <Compile Include="Model\Entities\DCADetail.cs" />
+    <Compile Include="Model\Entities\MScheduleJobLegalDetail.cs" />
+    <Compile Include="Model\Entities\MScheduleJobLegalInfo.cs" />
+    <Compile Include="Model\Entities\EMSChequeHistory.cs" />
+    <Compile Include="Model\Entities\ForeignLPSolicitorRegDetail.cs" />
+    <Compile Include="Model\Entities\ICriminalFinance.cs" />
+    <Compile Include="Model\Entities\CriminalClaimHonorariumInfo.cs" />
+    <Compile Include="Model\Entities\CriminalClaimInfo.cs" />
+    <Compile Include="Model\Entities\CriminalClaimInterpreterFeeInfo.cs" />
+    <Compile Include="Model\Entities\CriminalClaimMiscellaneousInfo.cs" />
+    <Compile Include="Model\Entities\CriminalClaimProfessionalFeeInfo.cs" />
+    <Compile Include="Model\Entities\CriminalClaimWitnessInfo.cs" />
+    <Compile Include="Model\Entities\DegreeInfo.cs" />
+    <Compile Include="Model\Entities\DisciplinaryActionInfo.cs" />
+    <Compile Include="Model\Entities\DocCasePartyCitizenship.cs" />
+    <Compile Include="Model\Entities\EMSCheque.cs" />
+    <Compile Include="Model\Entities\EMSPaymentCheque.cs" />
+    <Compile Include="Model\Entities\LegalExperienceInfo.cs" />
+    <Compile Include="Model\Entities\MAASDisciplinaryType.cs" />
+    <Compile Include="Model\Entities\MAASLawDegree.cs" />
+    <Compile Include="Model\Entities\MAASSection.cs" />
+    <Compile Include="Model\Entities\MAASUniversity.cs" />
+    <Compile Include="Model\Entities\MCriminalClaimantType.cs" />
+    <Compile Include="Model\Entities\MCriminalClaimType.cs" />
+    <Compile Include="Model\Entities\MEMSLedger.cs" />
+    <Compile Include="Model\Entities\EMSRecChequeAudit.cs" />
+    <Compile Include="Model\Entities\IndexDocDetail.cs" />
+    <Compile Include="Model\Entities\EMSExecLedger.cs" />
+    <Compile Include="Model\Entities\EMSOutstandingPayment.cs" />
+    <Compile Include="Model\Entities\EMSAdmPropertyList.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucherFinalOther.cs" />
+    <Compile Include="Model\Entities\EMSMiscClaim.cs" />
+    <Compile Include="Model\Entities\ILAP.cs" />
+    <Compile Include="Model\Entities\IndexDocInfo.cs" />
+    <Compile Include="Model\Entities\MEMSNatureOfPayment.cs" />
+    <Compile Include="Model\Entities\MEMSParam.cs" />
+    <Compile Include="Model\Entities\MExternalAgencyAddress.cs" />
+    <Compile Include="Model\Entities\MNatureOfDeputyShip.cs" />
+    <Compile Include="Model\Entities\EMSCrmCaseExecAddr.cs" />
+    <Compile Include="Model\Entities\EMSSale.cs" />
+    <Compile Include="Model\Entities\EMSCourtCommission.cs" />
+    <Compile Include="Model\Entities\CriminalInfo.cs" />
+    <Compile Include="Model\Entities\CriminalOtherOrderInfo.cs" />
+    <Compile Include="Model\Entities\CWUChecklistInfo.cs" />
+    <Compile Include="Model\Entities\CWUInfo.cs" />
+    <Compile Include="Model\Entities\DCACAInfo.cs" />
+    <Compile Include="Model\Entities\DeceasedAlias.cs" />
+    <Compile Include="Model\Entities\DeceasedIdentification.cs" />
+    <Compile Include="Model\Entities\DeceasedInfo.cs" />
+    <Compile Include="Model\Entities\DivorceInfo.cs" />
+    <Compile Include="Model\Entities\DocCaseParty.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAddress.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAICAddress.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAICAlias.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAICDetail.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAlias.cs" />
+    <Compile Include="Model\Entities\DocCasePartyAuthorisedOfficerDetail.cs" />
+    <Compile Include="Model\Entities\DocCasePartyBailorAddress.cs" />
+    <Compile Include="Model\Entities\DocCasePartyBailorInfo.cs" />
+    <Compile Include="Model\Entities\DocCasePartyCriminalInfo.cs" />
+    <Compile Include="Model\Entities\DocCasePartyLACDetail.cs" />
+    <Compile Include="Model\Entities\DocCasePartyVesselDetail.cs" />
+    <Compile Include="Model\Entities\DocCaseSolicitor.cs" />
+    <Compile Include="Model\Entities\DocOrderDetail.cs" />
+    <Compile Include="Model\Entities\DocRequestDetail.cs" />
+    <Compile Include="Model\Entities\DocumentBatesList.cs" />
+    <Compile Include="Model\Entities\DocumentInfo.cs" />
+    <Compile Include="Model\Entities\DrugInfo.cs" />
+    <Compile Include="Model\Entities\EmploymentInfo.cs" />
+    <Compile Include="Model\Entities\EMSAccount.cs" />
+    <Compile Include="Model\Entities\EMSAdmExec.cs" />
+    <Compile Include="Model\Entities\EMSAdmProperty.cs" />
+    <Compile Include="Model\Entities\EMSAdmRelease.cs" />
+    <Compile Include="Model\Entities\EMSAppointment.cs" />
+    <Compile Include="Model\Entities\EMSApptDateTime.cs" />
+    <Compile Include="Model\Entities\EMSApptDebtor.cs" />
+    <Compile Include="Model\Entities\EMSBailiffUnavailability.cs" />
+    <Compile Include="Model\Entities\EMSCivCaseAbort.cs" />
+    <Compile Include="Model\Entities\EMSCivCrmMissing.cs" />
+    <Compile Include="Model\Entities\EMSCivCrmRelease.cs" />
+    <Compile Include="Model\Entities\EMSCivCrmSeizure.cs" />
+    <Compile Include="Model\Entities\EMSCivCrmSettlement.cs" />
+    <Compile Include="Model\Entities\EMSCrmCase.cs" />
+    <Compile Include="Model\Entities\EMSCrmCaseWLDet.cs" />
+    <Compile Include="Model\Entities\EMSDisburseClaim.cs" />
+    <Compile Include="Model\Entities\EMSFileMovement.cs" />
+    <Compile Include="Model\Entities\EMSPayment.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucher.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucherAdm.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucherCheque.cs" />
+    <Compile Include="Model\Entities\EMSPaymentVoucherFinal.cs" />
+    <Compile Include="Model\Entities\EMSRecAudit.cs" />
+    <Compile Include="Model\Entities\EMSReceipt.cs" />
+    <Compile Include="Model\Entities\EMSRecTrans.cs" />
+    <Compile Include="Model\Entities\EMSSaleAdvert.cs" />
+    <Compile Include="Model\Entities\EMSSaleAgent.cs" />
+    <Compile Include="Model\Entities\EMSSaleAppraiser.cs" />
+    <Compile Include="Model\Entities\EMSSaleBuyer.cs" />
+    <Compile Include="Model\Entities\EMSTeamMgmt.cs" />
+    <Compile Include="Model\Entities\EMSTptClaim.cs" />
+    <Compile Include="Model\Entities\FileInspection.cs" />
+    <Compile Include="Model\Entities\FileInspectionDocDetail.cs" />
+    <Compile Include="Model\Entities\FilingFeeDetail.cs" />
+    <Compile Include="Model\Entities\FilingFeeRequestDetail.cs" />
+    <Compile Include="Model\Entities\ForeignLawPracticeReg.cs" />
+    <Compile Include="Model\Entities\ForeignLawPracticeRegAddress.cs" />
+    <Compile Include="Model\Entities\ForeignLPSolicitorReg.cs" />
+    <Compile Include="Model\Entities\GroundInfo.cs" />
+    <Compile Include="Model\Entities\Hearing.cs" />
+    <Compile Include="Model\Entities\IBackEndSpecific.cs" />
+    <Compile Include="Model\Entities\ICase.cs" />
+    <Compile Include="Model\Entities\ICaseSpecific.cs" />
+    <Compile Include="Model\Entities\ICommon.cs" />
+    <Compile Include="Model\Entities\IDocument.cs" />
+    <Compile Include="Model\Entities\IEnforcement.cs" />
+    <Compile Include="Model\Entities\IMaster.cs" />
+    <Compile Include="Model\Entities\InfantInfo.cs" />
+    <Compile Include="Model\Entities\InfantOriginalName.cs" />
+    <Compile Include="Model\Entities\InterfaceICA.cs" />
+    <Compile Include="Model\Entities\InvestigatingOfficerInfo.cs" />
+    <Compile Include="Model\Entities\ISubCase.cs" />
+    <Compile Include="Model\Entities\ISubCaseSpecific.cs" />
+    <Compile Include="Model\Entities\ISubsequent.cs" />
+    <Compile Include="Model\Entities\JudicialUser.cs" />
+    <Compile Include="Model\Entities\LABParty.cs" />
+    <Compile Include="Model\Entities\LABPartyAddress.cs" />
+    <Compile Include="Model\Entities\LABPartyAddressHistory.cs" />
+    <Compile Include="Model\Entities\LABPartyHistory.cs" />
+    <Compile Include="Model\Entities\LABPartySolicitor.cs" />
+    <Compile Include="Model\Entities\LABPartySolicitorHistory.cs" />
+    <Compile Include="Model\Entities\LABSection17CertInfo.cs" />
+    <Compile Include="Model\Entities\LACCancellationInfo.cs" />
+    <Compile Include="Model\Entities\LACDocumentDetail.cs" />
+    <Compile Include="Model\Entities\LACDocumentDraft.cs" />
+    <Compile Include="Model\Entities\LACDocumentRemark.cs" />
+    <Compile Include="Model\Entities\LACInfo.cs" />
+    <Compile Include="Model\Entities\LawFirm.cs" />
+    <Compile Include="Model\Entities\LawFirmAddress.cs" />
+    <Compile Include="Model\Entities\LawFirmCaseFileRefNumber.cs" />
+    <Compile Include="Model\Entities\LegislationProvision.cs" />
+    <Compile Include="Model\Entities\LiquidatedClaim.cs" />
+    <Compile Include="Model\Entities\Liquidator.cs" />
+    <Compile Include="Model\Entities\LiquidatorAddress.cs" />
+    <Compile Include="Model\Entities\LiquidatorAlias.cs" />
+    <Compile Include="Model\Entities\LiquidatorPIC.cs" />
+    <Compile Include="Model\Entities\LiquidatorPICAddress.cs" />
+    <Compile Include="Model\Entities\LiquidatorPICAlias.cs" />
+    <Compile Include="Model\Entities\LPOthLegalOrgAddrInfo.cs" />
+    <Compile Include="Model\Entities\LPOthLegalOrgInfo.cs" />
+    <Compile Include="Model\Entities\MAASOrganisationType.cs" />
+    <Compile Include="Model\Entities\MAASQualification.cs" />
+    <Compile Include="Model\Entities\MActingInCapacity.cs" />
+    <Compile Include="Model\Entities\MActingInCapacityGroup.cs" />
+    <Compile Include="Model\Entities\MAdpChecklistGroup.cs" />
+    <Compile Include="Model\Entities\MAdpChecklistItem.cs" />
+    <Compile Include="Model\Entities\MAdpPrayer.cs" />
+    <Compile Include="Model\Entities\MAlertEvent.cs" />
+    <Compile Include="Model\Entities\MAlertType.cs" />
+    <Compile Include="Model\Entities\MApplicantCapacity.cs" />
+    <Compile Include="Model\Entities\MBailType.cs" />
+    <Compile Include="Model\Entities\MBankruptcyBasis.cs" />
+    <Compile Include="Model\Entities\MBankruptcyType.cs" />
+    <Compile Include="Model\Entities\MBasisForTaxation.cs" />
+    <Compile Include="Model\Entities\MBasisOfTaxationType.cs" />
+    <Compile Include="Model\Entities\MBillNature.cs" />
+    <Compile Include="Model\Entities\MBillType.cs" />
+    <Compile Include="Model\Entities\MBodyPart.cs" />
+    <Compile Include="Model\Entities\MCalendarType.cs" />
+    <Compile Include="Model\Entities\MCaseSecurity.cs" />
+    <Compile Include="Model\Entities\MCaseStatus.cs" />
+    <Compile Include="Model\Entities\MCaseType.cs" />
+    <Compile Include="Model\Entities\MCaseTypeGroup.cs" />
+    <Compile Include="Model\Entities\MChargeType.cs" />
+    <Compile Include="Model\Entities\MCheckList.cs" />
+    <Compile Include="Model\Entities\MCheckListDocument.cs" />
+    <Compile Include="Model\Entities\MClaimType.cs" />
+    <Compile Include="Model\Entities\MCountry.cs" />
+    <Compile Include="Model\Entities\MCourtType.cs" />
+    <Compile Include="Model\Entities\MCriminalOrder.cs" />
+    <Compile Include="Model\Entities\MCurrency.cs" />
+    <Compile Include="Model\Entities\MDamage.cs" />
+    <Compile Include="Model\Entities\MDeedType.cs" />
+    <Compile Include="Model\Entities\MDesignation.cs" />
+    <Compile Include="Model\Entities\MDialect.cs" />
+    <Compile Include="Model\Entities\MDocCategory.cs" />
+    <Compile Include="Model\Entities\MDocCode.cs" />
+    <Compile Include="Model\Entities\MDocControl.cs" />
+    <Compile Include="Model\Entities\MDocLegislation.cs" />
+    <Compile Include="Model\Entities\MDocNature.cs" />
+    <Compile Include="Model\Entities\MDocSecurity.cs" />
+    <Compile Include="Model\Entities\MDocStatus.cs" />
+    <Compile Include="Model\Entities\MDrivingLicense.cs" />
+    <Compile Include="Model\Entities\MDrug.cs" />
+    <Compile Include="Model\Entities\MEMSAdvertIn.cs" />
+    <Compile Include="Model\Entities\MEMSAdvertiser.cs" />
+    <Compile Include="Model\Entities\MEMSAppraiser.cs" />
+    <Compile Include="Model\Entities\MEMSApptOutcome.cs" />
+    <Compile Include="Model\Entities\MEMSApptReason.cs" />
+    <Compile Include="Model\Entities\MEMSApptType.cs" />
+    <Compile Include="Model\Entities\MEMSAuctioneer.cs" />
+    <Compile Include="Model\Entities\MEMSFileMoveDesc.cs" />
+    <Compile Include="Model\Entities\MEMSRecBank.cs" />
+    <Compile Include="Model\Entities\MEMSRecTransMode.cs" />
+    <Compile Include="Model\Entities\MEMSRecTransType.cs" />
+    <Compile Include="Model\Entities\MEMSSalesAgent.cs" />
+    <Compile Include="Model\Entities\MEndorsementType.cs" />
+    <Compile Include="Model\Entities\MEntityType.cs" />
+    <Compile Include="Model\Entities\MEscalationRule.cs" />
+    <Compile Include="Model\Entities\MExternalAgency.cs" />
+    <Compile Include="Model\Entities\MFilingFee.cs" />
+    <Compile Include="Model\Entities\MFilingFeeChargingMechanism.cs" />
+    <Compile Include="Model\Entities\MFilingFeeTier.cs" />
+    <Compile Include="Model\Entities\MFilingFeeType.cs" />
+    <Compile Include="Model\Entities\MFilterGroup.cs" />
+    <Compile Include="Model\Entities\MFormNode.cs" />
+    <Compile Include="Model\Entities\MFormProcess.cs" />
+    <Compile Include="Model\Entities\MFormTemplate.cs" />
+    <Compile Include="Model\Entities\MFormTemplateLocationHistory.cs" />
+    <Compile Include="Model\Entities\MForumType.cs" />
+    <Compile Include="Model\Entities\MGender.cs" />
+    <Compile Include="Model\Entities\MHRGBeforeType.cs" />
+    <Compile Include="Model\Entities\MHRGOutCome.cs" />
+    <Compile Include="Model\Entities\MHRGOutComeReason.cs" />
+    <Compile Include="Model\Entities\MHRGRoom.cs" />
+    <Compile Include="Model\Entities\MHRGRoomType.cs" />
+    <Compile Include="Model\Entities\MHRGSlot.cs" />
+    <Compile Include="Model\Entities\MHRGTimeLine.cs" />
+    <Compile Include="Model\Entities\MHRGType.cs" />
+    <Compile Include="Model\Entities\MIconItem.cs" />
+    <Compile Include="Model\Entities\MinuteSheet.cs" />
+    <Compile Include="Model\Entities\MIOOrganisation.cs" />
+    <Compile Include="Model\Entities\MJudGDCatchWord.cs" />
+    <Compile Include="Model\Entities\MLegalPractice.cs" />
+    <Compile Include="Model\Entities\MLegislationAct.cs" />
+    <Compile Include="Model\Entities\MLocation.cs" />
+    <Compile Include="Model\Entities\MMaritalStatus.cs" />
+    <Compile Include="Model\Entities\MMessageType.cs" />
+    <Compile Include="Model\Entities\MModeOfTrafficking.cs" />
+    <Compile Include="Model\Entities\MNAAAlertEventRecipient.cs" />
+    <Compile Include="Model\Entities\MNAAAlertEventsTemplate.cs" />
+    <Compile Include="Model\Entities\MNAACategory.cs" />
+    <Compile Include="Model\Entities\MNAAPlaceHolder.cs" />
+    <Compile Include="Model\Entities\MNAASubCategory.cs" />
+    <Compile Include="Model\Entities\MNationality.cs" />
+    <Compile Include="Model\Entities\MNatureOfAppeal.cs" />
+    <Compile Include="Model\Entities\MNatureOfInjury.cs" />
+    <Compile Include="Model\Entities\MNatureOfOffence.cs" />
+    <Compile Include="Model\Entities\MNatureOfProceeding.cs" />
+    <Compile Include="Model\Entities\MNatureOfWork.cs" />
+    <Compile Include="Model\Entities\MNOACode.cs" />
+    <Compile Include="Model\Entities\MNOC.cs" />
+    <Compile Include="Model\Entities\MOccupation.cs" />
+    <Compile Include="Model\Entities\MOSDocDetail.cs" />
+    <Compile Include="Model\Entities\MOSType.cs" />
+    <Compile Include="Model\Entities\MParameterList.cs" />
+    <Compile Include="Model\Entities\MPartyAmendmentConfig.cs" />
+    <Compile Include="Model\Entities\MPartyAmendmentFieldConfig.cs" />
+    <Compile Include="Model\Entities\MPartySection.cs" />
+    <Compile Include="Model\Entities\MPartyStatus.cs" />
+    <Compile Include="Model\Entities\MPartyType.cs" />
+    <Compile Include="Model\Entities\MPCCondition.cs" />
+    <Compile Include="Model\Entities\MPersonIDGroup.cs" />
+    <Compile Include="Model\Entities\MPersonIDType.cs" />
+    <Compile Include="Model\Entities\MPrayerOutcome.cs" />
+    <Compile Include="Model\Entities\MPrison.cs" />
+    <Compile Include="Model\Entities\MProbateNature.cs" />
+    <Compile Include="Model\Entities\MProbateNatureGroup.cs" />
+    <Compile Include="Model\Entities\MProbatePrayer.cs" />
+    <Compile Include="Model\Entities\MPropertyType.cs" />
+    <Compile Include="Model\Entities\MProvision.cs" />
+    <Compile Include="Model\Entities\MPTCMilestone.cs" />
+    <Compile Include="Model\Entities\MQualification.cs" />
+    <Compile Include="Model\Entities\MRace.cs" />
+    <Compile Include="Model\Entities\MRDocCategoryCaseType.cs" />
+    <Compile Include="Model\Entities\MRelationship.cs" />
+    <Compile Include="Model\Entities\MRelief.cs" />
+    <Compile Include="Model\Entities\MReligion.cs" />
+    <Compile Include="Model\Entities\MRoutingType.cs" />
+    <Compile Include="Model\Entities\MRulesOfCourtOrder.cs" />
+    <Compile Include="Model\Entities\MSalutation.cs" />
+    <Compile Include="Model\Entities\MSection.cs" />
+    <Compile Include="Model\Entities\MSentence.cs" />
+    <Compile Include="Model\Entities\MServeStatus.cs" />
+    <Compile Include="Model\Entities\MSubProvision.cs" />
+    <Compile Include="Model\Entities\MSummonsParam.cs" />
+    <Compile Include="Model\Entities\MTypeOfForeignLawPractice.cs" />
+    <Compile Include="Model\Entities\MUserGroup.cs" />
+    <Compile Include="Model\Entities\MUserRole.cs" />
+    <Compile Include="Model\Entities\MWorkFlow.cs" />
+    <Compile Include="Model\Entities\MWorkPeriod.cs" />
+    <Compile Include="Model\Entities\NatureOfApplication.cs" />
+    <Compile Include="Model\Entities\NatureOfCase.cs" />
+    <Compile Include="Model\Entities\NotPaymenttoCourtDocDetail.cs" />
+    <Compile Include="Model\Entities\OffenceInfo.cs" />
+    <Compile Include="Model\Entities\OriginatingCase.cs" />
+    <Compile Include="Model\Entities\OSInfo.cs" />
+    <Compile Include="Model\Entities\OSPDRelation.cs" />
+    <Compile Include="Model\Entities\OtherITMO.cs" />
+    <Compile Include="Model\Entities\OtherReliefsClaim.cs" />
+    <Compile Include="Model\Entities\PADeedRole.cs" />
+    <Compile Include="Model\Entities\PartyAmendment.cs" />
+    <Compile Include="Model\Entities\PartyAmendmentDetail.cs" />
+    <Compile Include="Model\Entities\PartyAmendmentLeaveOfCourt.cs" />
+    <Compile Include="Model\Entities\PaymentInDocDetail.cs" />
+    <Compile Include="Model\Entities\PaymentInDocDetailManual.cs" />
+    <Compile Include="Model\Entities\PaymentInDocFSDetail.cs" />
+    <Compile Include="Model\Entities\PaymentOutDocDetail.cs" />
+    <Compile Include="Model\Entities\PaymentOutDocDetailManual.cs" />
+    <Compile Include="Model\Entities\PaymentOutPayInDetail.cs" />
+    <Compile Include="Model\Entities\PCAppDatesFromSAL.cs" />
+    <Compile Include="Model\Entities\PCAppDetailsFromLawSoc.cs" />
+    <Compile Include="Model\Entities\PCConditionInfo.cs" />
+    <Compile Include="Model\Entities\PCInfo.cs" />
+    <Compile Include="Model\Entities\PracticeOfLawInfo.cs" />
+    <Compile Include="Model\Entities\PracticeTrainingPeriodInfo.cs" />
+    <Compile Include="Model\Entities\Prayer.cs" />
+    <Compile Include="Model\Entities\RARASInfo.cs" />
+    <Compile Include="Model\Entities\RCaseLawFirm.cs" />
+    <Compile Include="Model\Entities\RCaseSubmission.cs" />
+    <Compile Include="Model\Entities\RCriminalLegislationInfo.cs" />
+    <Compile Include="Model\Entities\RDocCase.cs" />
+    <Compile Include="Model\Entities\RDocCaseParty.cs" />
+    <Compile Include="Model\Entities\RefCaveatCase.cs" />
+    <Compile Include="Model\Entities\RefOrderDetail.cs" />
+    <Compile Include="Model\Entities\RelatedProceeding.cs" />
+    <Compile Include="Model\Entities\ReportConfigInfo.cs" />
+    <Compile Include="Model\Entities\ReportConfigUser.cs" />
+    <Compile Include="Model\Entities\RequestDocDetail.cs" />
+    <Compile Include="Model\Entities\RequestHearingFeeDetail.cs" />
+    <Compile Include="Model\Entities\RMAASSectionExternalAgency.cs" />
+    <Compile Include="Model\Entities\RMCDRAutoFixTimeLine.cs" />
+    <Compile Include="Model\Entities\RMDocCodeHRGType.cs" />
+    <Compile Include="Model\Entities\RMDocCodeLawfirmGroup.cs" />
+    <Compile Include="Model\Entities\RMDocCodePCCondition.cs" />
+    <Compile Include="Model\Entities\RMHRGTypeHRGSlot.cs" />
+    <Compile Include="Model\Entities\RMNOAForumHrgType.cs" />
+    <Compile Include="Model\Entities\RSubCaseSubmission.cs" />
+    <Compile Include="Model\Entities\RUserRoleSection.cs" />
+    <Compile Include="Model\Entities\SentenceInfo.cs" />
+    <Compile Include="Model\Entities\ServiceOfDocDocStatusHistory.cs" />
+    <Compile Include="Model\Entities\ServiceOfDocDocument.cs" />
+    <Compile Include="Model\Entities\ServiceOfDocInfo.cs" />
+    <Compile Include="Model\Entities\ServiceOfDocInfoDetail.cs" />
+    <Compile Include="Model\Entities\SetDownInfo.cs" />
+    <Compile Include="Model\Entities\Solicitor.cs" />
+    <Compile Include="Model\Entities\SubCaseInfo.cs" />
+    <Compile Include="Model\Entities\SubCaseParty.cs" />
+    <Compile Include="Model\Entities\SubmissionInfo.cs" />
+    <Compile Include="Model\Entities\SubpoenaDocDetail.cs" />
+    <Compile Include="Model\Entities\SubpoenaInfo.cs" />
+    <Compile Include="Model\Entities\SubpoenaWitnessDetail.cs" />
+    <Compile Include="Model\Entities\TaskList.cs" />
+    <Compile Include="Model\Entities\TravelPassInfo.cs" />
+    <Compile Include="Model\Entities\UnliquidatedClaim.cs" />
+    <Compile Include="Model\Entities\VacHRGDatesReqInfo.cs" />
+    <Compile Include="Model\Entities\WOEExecutionAddress.cs" />
+    <Compile Include="Model\Entities\WOERequest.cs" />
+    <Compile Include="Model\TypedView\FunctionsByRole.cs" />
+    <Compile Include="Model\TypedView\FunctionsByUser.cs" />
+    <Compile Include="Model\TypedView\VSectionUserACL.cs" />
+    <Compile Include="Model\TypedView\VSecuredCaseAccessInfo.cs" />
+    <Compile Include="Model\TypedView\VSecuredDocAccessInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Entities\PaymentHRGDatesDocDetail.cs" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseOriginatingCase.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseStatusHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASDisciplinaryType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OriginatingCase.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BankruptcyInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MActingInCapacity.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MActingInCapacityGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAdpChecklistGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAdpChecklistItem.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAdpPrayer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAlertEvent.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAlertType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MApplicantCapacity.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBankruptcyBasis.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBankruptcyType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBasisForTaxation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBasisOfTaxationType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBillNature.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBillType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCalendarType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCaseSecurity.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCaseStatus.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCaseType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCaseTypeGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCheckList.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCheckListDocument.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MClaimType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCountry.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCourtType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCurrency.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDamage.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDeedType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDesignation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDialect.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocCategory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocCode.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocControl.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocLegislation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocNature.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocSecurity.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocStatus.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEndorsementType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEntityType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEscalationRule.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilingFee.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilingFeeChargingMechanism.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilingFeeType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilterGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFormNode.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFormProcess.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFormTemplate.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFormTemplateLocationHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MForumType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MGender.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGOutCome.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGOutComeReason.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGRoom.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGRoomType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGSlot.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGTimeLine.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MIconItem.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheet.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MJudGDCatchWord.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MLegislationAct.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MLocation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MMaritalStatus.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MMessageType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNAAAlertEventRecipient.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNAAAlertEventsTemplate.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNAACategory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNAAPlaceHolder.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNAASubCategory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNationality.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfWork.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNOACode.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNOC.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MOccupation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MOSDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MOSType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MParameterList.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPartyAmendmentConfig.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPartyAmendmentFieldConfig.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPartySection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPartyStatus.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPartyType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPersonIDGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPersonIDType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPrayerOutcome.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MProbateNature.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MProbateNatureGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MProbatePrayer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPropertyType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MProvision.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPTCMilestone.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MQualification.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MRace.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MRDocCategoryCaseType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MRelationship.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MRelief.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MReligion.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MRoutingType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSalutation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSubProvision.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSummonsParam.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MUserGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MUserRole.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MWorkFlow.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MWorkPeriod.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ADMInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AffidavitInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\BTSRoutingQueue.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocumentInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\Hearing.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\TypedList\" />
+    <Folder Include="Model\ValueTypes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseParty.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAICAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAICAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAICDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyAuthorisedOfficerDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyVesselDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseSolicitor.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseSolicitorHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaveatInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ChildInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DeceasedAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DeceasedIdentification.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DeceasedInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DivorceInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCaseParty.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAICAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAICAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAICDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyAuthorisedOfficerDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyVesselDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCaseSolicitor.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\InfantInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\InfantOriginalName.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LegislationProvision.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatedClaim.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\Liquidator.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatorAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatorAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatorPIC.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatorPICAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LiquidatorPICAlias.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\NatureOfApplication.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\NatureOfCase.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OtherITMO.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OtherReliefsClaim.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RefCaveatCase.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RelatedProceeding.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\UnliquidatedClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CWUInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DCACAInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RARASInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocOrderDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\FilingFeeDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LawFirmCaseFileRefNumber.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfProceeding.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseLawFirm.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseSubmission.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RDocCaseParty.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubCaseInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ADIADetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ADIDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ADSDDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AssessmentDamage.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBodyPart.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfInjury.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\FilingFeeRequestDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RefOrderDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyLACDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyLACDetailsHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyLACDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABParty.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABPartyAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABPartyAddressHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABPartyHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABPartySolicitor.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABPartySolicitorHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LABSection17CertInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LACCancellationInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LACDocumentDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LACDocumentDraft.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LACDocumentRemark.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LACInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BankruptcyOtherDefDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterfaceICA.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MRulesOfCourtOrder.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentInDocDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentInDocFSDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentOutDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentOutPayInDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MServeStatus.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\NotPaymenttoCourtDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ServiceOfDocDocStatusHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ServiceOfDocDocument.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ServiceOfDocInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ServiceOfDocInfoDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAccount.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmExec.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmProperty.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmRelease.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAppointment.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSApptDateTime.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSApptDebtor.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCivCaseAbort.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCivCrmMissing.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCivCrmRelease.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCivCrmSeizure.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCivCrmSettlement.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSDisburseClaim.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSFileMovement.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPayment.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucher.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucherAdm.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucherCheque.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucherFinal.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSReceipt.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRecTrans.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSaleAdvert.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSaleAgent.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSaleAppraiser.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSaleBuyer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSTeamMgmt.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSTptClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSAdvertIn.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSAdvertiser.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSAppraiser.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSApptOutcome.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSApptReason.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSApptType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSAuctioneer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSFileMoveDesc.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSRecBank.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSRecTransMode.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSRecTransType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSSalesAgent.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ADMBBDefInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ADMBBSecInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ADMRSVCBBInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ADMWAInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\BillOfSaleInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\BillOfSaleSubInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCrmCase.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RSubCaseSubmission.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubCaseParty.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ADDependant.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AffidavitDeponentDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSBailiffUnavailability.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCrmCaseWLDet.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LawFirm.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LawFirmAddress.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LLBLGenProjectFiles\CrimsonLogic.Legal.Entities.BackEnd.llblgenproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RDocCase.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentHRGDatesDocDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\LPOthLegalOrgAddrInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LPOthLegalOrgInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASOrganisationType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASQualification.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MExternalAgency.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGBeforeType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MLegalPractice.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPCCondition.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MTypeOfForeignLawPractice.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PCAppDatesFromSAL.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PCConditionInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PCInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ReportConfigInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ReportConfigUser.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocCodeLawfirmGroup.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocCodePCCondition.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RUserRoleSection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SetDownInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\Solicitor.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubmissionInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\TravelPassInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\VacHRGDatesReqInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\Prayer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRecAudit.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ChecklistInstance.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ChecklistSubmission.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\GroundInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AccountantsReportInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AreaOfLegalPractice.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CaveatAAInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CDRInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EmploymentInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignLawPracticeReg.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignLawPracticeRegAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignLPSolicitorReg.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\JudicialUser.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CertSecurityOfCostsInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentInDocDetailManual.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PaymentOutDocDetailManual.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\OSInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyBailorAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyBailorInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyCriminalInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ChargeInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalOtherOrderInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CWUChecklistInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyBailorAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyBailorInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyCriminalInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocRequestDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocumentBatesList.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DrugInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\FileInspection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\FileInspectionDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\InvestigatingOfficerInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MBailType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MChargeType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCriminalOrder.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDrivingLicense.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MDrug.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilingFeeTier.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MIOOrganisation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MModeOfTrafficking.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfAppeal.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfOffence.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MPrison.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSentence.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OffenceInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\PartyAmendment.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PartyAmendmentDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PartyAmendmentLeaveOfCourt.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RCriminalLegislationInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RequestDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SentenceInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubpoenaDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubpoenaInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SubpoenaWitnessDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCDRAutoFixTimeLine.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCourtCommission.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSale.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCrmCaseExecAddr.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSParam.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSNatureOfPayment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSMiscClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucherFinalOther.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmPropertyList.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSOutstandingPayment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSExecLedger.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRecChequeAudit.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSLedger.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MNatureOfDeputyShip.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\AASInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AASObjection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyCitizenship.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\ContinuingLegalEducationInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimHonorariumInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimInterpreterFeeInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimMiscellaneousInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimProfessionalFeeInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CriminalClaimWitnessInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DegreeInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DisciplinaryActionInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCasePartyCitizenship.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\LegalExperienceInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASLawDegree.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASSection.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASUniversity.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCriminalClaimantType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCriminalClaimType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OSPDRelation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PADeedRole.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PCAppDetailsFromLawSoc.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\PracticeOfLawInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\PracticeTrainingPeriodInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RequestHearingFeeDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMAASSectionExternalAgency.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocCodeHRGType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHRGTypeHRGSlot.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMNOAForumHrgType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MExternalAgencyAddress.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentCheque.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCheque.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\IndexDocDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\IndexDocInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\Tasklist.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignLPSolicitorRegDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSChequeHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MScheduleJobLegalInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MScheduleJobLegalDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DCADetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RARASDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\NatureOfAppeal.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseLinked.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocGCRDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MTaskListType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseLatestDocuments.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RLawFirmSolicitors.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BankruptcyDRSInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRecapitulation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSStateFund.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHRGOutComePartyStatus.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MFunctions.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RRoleFunctions.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOEExecutionAddress.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmCharge.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSCourtComm.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSAttendanceFee.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCaseTypeNOA.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOERequest.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MWithDrawalOfType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MWithDrawalInType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DisWithDocPtyDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseIssueList.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MCaseIssue.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DivorceSubInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RequestHearingAdminSupport.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WorkitemDetails.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WorkitemRecipient.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RAccusedStatementInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WitnessInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetPartyRepInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetPartySolicitorInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetFamilyRelatedInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetGroundInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOEInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOENECPEInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOEMOMSCTInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOENCPEInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterfaceCriminal.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseTransfer.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOSInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MAccomodationType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\OSJudicialManagerDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\OSMADetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBBeneficiaryDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ProbateInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBCoAdminDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBExecutorDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBPrevGrantDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBWillCodicil.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BOTDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\TaxationInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\TaxationClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MMonitoringType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BizMonitoringInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MBusinessJobLegalInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MBusinessJobLegalDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSDisburseRate.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MinuteSheetDocList.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\HearingAdminSupport.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RefSubCase.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCashBookReconcile.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSCashBookItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMPartyStatusCaseType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCaseTypeNOC.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMUserPS.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\WOECaseExecutionAddress.hbm.xml" />
+    <EmbeddedResource Include="Persistence\TypedViewMappings\VSecuredCaseAccessInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\TypedViewMappings\VSecuredDocAccessInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\TypedViewMappings\VSectionUserACL.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MApptOrganisation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RequestNEGDDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\Users.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\TypedViewMappings\FunctionsByRole.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\TypedViewMappings\FunctionsByUser.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\Temp_EMSAppointment.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\CasePartyStatusHistory.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSWritAppt.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSADMSaleOthers.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRecapitDetails.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\SerialNumber.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OrdersMade.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RUserFunctions.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\SentenceCriminalOrderInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RelationalSubCaseInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\WorkflowOnAcceptQueue.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\WorkflowPostAcceptQueue.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGUserAvailability.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMRoutingSectionConfig.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OGCIncomingQueue.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MFormSignature.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCourtVacation.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSRoundRobinAuctioneer.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MSequenceKey.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMSectionAccessCtrl.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MAASDisciplinaryResultType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MMinuteSheetType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCaseTypeHRGTypeMSType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSPaymentVoucherMisc.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MCoram.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocAppProcessByExAgency.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MLimitations.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSSecurityGuard.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHearingType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMForumCoramDSG.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHearingTypeCourtType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHRGTypeHRGOutComeHRGOutComeFlag.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGOutComeFlag.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSOldSCTCasePrefix.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MIDType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RMPartyTypeCaseType.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\AuditModuleVisit.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\DocComments.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\RUserPA.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persistence\EntityMappings\AppealTimeEstimationDetail.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\NoticeToReferAffidavit.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\MMassCallHrgDate.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OutgoingCorrespondenceCourtFee.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\OutgoingCorrespondenceInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MChargeOutcome.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PrintDocumentQueue.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ClaimAmount.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\NumberOfJudgeAssignDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\NumberOfJudgeAssignDetailHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MLawFirmGroup.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSADMExecLocation.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MVSAConfigDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MVSAConfigGround.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MVSAConfigPrayer.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MFilingFeeLegislationAct.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DCACAOriginatingCasePartyInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ReportConfigTaskInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MSummonsGrounds.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MSummonsPrayers.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocFilterGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\SolicitorAddress.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ArchiveNumberOfJudgeAssignDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ArchiveNumberOfJudgeAssignDetailHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ArchiveWorkitemDetails.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ArchiveWorkitemRecipient.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ArchiveTaskList.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RespondentCaseDetailInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MHRGPredefinedDate.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCaseTypeHRGTypeJOL.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterfaceLawSocLawFirm.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterfaceLawSocLawFirmAddress.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RASInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMSubCaseTypeHRGTypeMSType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CheckListComments.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseConsolidate.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MSensitiveFilingACL.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RefOrderJOInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseStatusRuleInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\AuditTrailJudicialVisit.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSSaleAuctioneer.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAdmCharges.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\EMSAttendanceFee.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MEMSCrmCasePrefix.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHearingRoutingSectionConfig.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\SystemParameters.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MAlertEventType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMAlertEventTypeRole.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RAlertEventSubscribers.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RCaseTransferHistory.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\OGCProcessingInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\WorkflowOutgoingQueue.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PrintDocumentQueueDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MPrinter.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RLawFirmSolicitorHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DutyJudgeAssigment.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MlawPracticeType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MPaperMinuteSheetType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHRGTypePaperMinuteSheetType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCaseTierType.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\HearingCoram.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\BankruptcyDebtInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\UndoSerialNumber.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MHoliday.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterimCasePartyStatus.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RPTDisposalKPIConfig.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\RPTNOCGroupNOC.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RPTNOCGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\HearingOutcomeFlag.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\NOCInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PCInfoAccReport.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\InterfaceNBSReport.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\VoteInfo.hbm.xml" />
+    <EmbeddedResource Include="Persistence\EntityMappings\VoteInfoDelta.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\LawFirmDocCaseFileRefNumber.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\TransferOrderOfCourt.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignUserPracticeInformation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignUserRegAddressDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ForeignUserRegistrationDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PartyCaseFileRefNumber.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocPartyCaseFileRefNumber.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\ReqExaminationFeedetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RegistrationOfForeignLawyer.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RFLValidityAndNotification.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseInfoNumber.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMCaseTypeForumHRGTypeMSType.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\SubCaseStatusHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MDocControlForum.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\SICCFeeLedger.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBPADetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBSupNExm.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\PBAdminBond.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseRegister.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseRegisterHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DashboardCaseMilestoneDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DashboardCaseMilestoneDetailHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DashboardSubCaseMilestoneDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DashboardSubCaseMilestoneDetailHistory.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\Temp_ProcessingInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocTierSensitive.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RequestForExemption.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHrgSlotNOC.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\JMChecklistInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MDefaultLoginPage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMHrgSlotLegis.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\JMOtherInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RMDocControlExclusion.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\FeeCollectionDetail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MResidential.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MIncome.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MDirections.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DirectionDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\LawFirmRegistration.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocLegalExperienceInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseLegalExperienceInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CORSolicitorReg.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CORSolicitorRegDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\MHarassPlace.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseCounterClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\CaseCounterClaimDetails.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCaseCounterClaim.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\DocCaseCounterClaimDetails.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Persistence\EntityMappings\RDocCounterClaimFiled.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

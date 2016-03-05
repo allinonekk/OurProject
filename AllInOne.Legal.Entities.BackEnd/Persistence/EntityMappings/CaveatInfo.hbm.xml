@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CaveatInfo" table="[dbo].[CaveatInfo]" optimistic-lock="none" >
+		<id name="CaveatInfoId" column="CaveatInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseNo" column="CaseNo" type="AnsiString"/>
+		<property name="CaveatLapsedDate" column="CaveatLapsedDate" />
+		<property name="CaveatType" column="CaveatType" />
+		<property name="CaveatWithdrawnDate" column="CaveatWithdrawnDate" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+
+    <property name="ForumId" column="ForumID" />
+    <property name="CaseInfoId" column="CaseInfoID" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+
+	</class>
+</hibernate-mapping>

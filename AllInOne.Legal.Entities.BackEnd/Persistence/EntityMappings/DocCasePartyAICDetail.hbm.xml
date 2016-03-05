@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DocCasePartyAICDetail" table="[dbo].[DocCasePartyAICDetails]" optimistic-lock="none" >
+    <id name="DCPAICID" column="DCPAICID" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="AddressAvailabilityInd" column="AddressAvailabilityInd" />
+    <property name="CompanyName" column="CompanyName" />
+    <property name="DateOfRegistration" column="DateOfRegistration" />
+    <property name="FormerCompanyName" column="FormerCompanyName" />
+    <property name="FormerPersonName" column="FormerPersonName" />
+    <property name="FullName" column="FullName" />
+    <property name="IdNumber" column="IDNumber" />
+    <property name="IdRemarks" column="IDRemarks" />
+    <property name="IMONumber" column="IMONumber" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PortOfRegistration" column="PortOfRegistration" />
+    <property name="RegistrationNumber" column="RegistrationNumber" />
+    <property name="UEN" column="UEN" />
+    <property name="VesselIdType" column="VesselIdType" />
+    <property name="VesselName" column="VesselName" />
+
+    <!--<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>-->
+    <property name="DCPID" column="DCPID" type="AnsiString" />
+    <many-to-one name="MActingInCapacity" fetch="select" cascade="none">
+      <column name="AICCode"/>
+    </many-to-one>
+    <many-to-one name="MDCPAICDCompanyIdTypeCode" fetch="select" cascade="none">
+      <column name="CompanyIdTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MDCPAICDCountryOfRegistration" fetch="select" cascade="none">
+      <column name="CountryOfRegistration"/>
+    </many-to-one>
+    <many-to-one name="MDCPAICDIdCountryCode" fetch="select" cascade="none">
+      <column name="IDCountryCode"/>
+    </many-to-one>
+    <many-to-one name="MDCPAICDPersonIdTypeCode" fetch="select" cascade="none">
+      <column name="PersonIdTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MEntityType" fetch="select" cascade="none">
+      <column name="EntityTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="GenderCode"/>
+    </many-to-one>
+    <many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+      <column name="IDGroupCode"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

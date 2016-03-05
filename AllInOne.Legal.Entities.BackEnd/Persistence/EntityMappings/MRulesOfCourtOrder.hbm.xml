@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MRulesOfCourtOrder" table="[dbo].[MRulesOfCourtOrder]" optimistic-lock="none" >
+		<id name="RuleOrderCode" column="RuleOrderCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Amount" column="Amount" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrderNo" column="OrderNo" />
+		<property name="PaymentInReason" column="PaymentInReason" />
+		<property name="RuleNo" column="RuleNo" />
+		<many-to-one name="MForumType" fetch="select" cascade="none">
+			<column name="FORUMID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

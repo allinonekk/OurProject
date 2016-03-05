@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd" namespace="AllInOne.Legal.Entities.BackEnd">
+	<class name="AuditModuleVisit" table="dbo.AuditModuleVisit" optimistic-lock="none">
+		<id name="AuditModuleVisitId" column="AuditModuleVisitId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property  name="UserId" column="UserId" type="AnsiString"/>
+		<property  name="Module" column="Module" type="AnsiString"/>
+		<property  name="ActionType" column="ActionType" type="AnsiString"/>
+		<property  name="Description" column="Description" />
+		<property  name="CreatedDateTime" column="CreatedDateTime" />
+		<property  name="AlertUserId" column="AlertUserId" type="AnsiString"/>
+		<property  name="AlertDescription" column="AlertDescription" />
+		<property  name="LastModifiedBy" column="LastModifiedBy" />
+		<property  name="LastModifiedDate" column="LastModifiedDate" />		
+	</class>
+</hibernate-mapping>

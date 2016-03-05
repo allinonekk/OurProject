@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PartyAmendmentLeaveOfCourt" table="[dbo].[PartyAmendmentLeaveOfCourt]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="AmendmentId" column="AmendmentID" type="AnsiString"/>
+    		<key-property name="ItemNo" column="ItemNo" />
+		</composite-id>
+		<property name="AdditionalDetails" column="AdditionalDetails" />
+		<property name="DateOfOrder" column="DateOfOrder" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OrderCoram" column="OrderCoram" />
+		<property name="OrderNumber" column="OrderNumber" />
+		<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>
+		<many-to-one name="MDesignation" fetch="select" cascade="none">
+			<column name="CoramDesignation"/>
+		</many-to-one>
+		<!--<many-to-one name="PartyAmendment" fetch="select" cascade="none">
+			<column name="AmendmentID"/>
+		</many-to-one>-->
+
+	</class>
+</hibernate-mapping>

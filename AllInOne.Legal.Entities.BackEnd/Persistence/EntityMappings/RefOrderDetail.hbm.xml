@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RefOrderDetail" table="[dbo].[RefOrderDetail]" optimistic-lock="none" >
+		<id name="RefOrderDetailId" column="RefOrderDetailId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AdditionalDetails" column="AdditionalDetails" />
+		<property name="HasObtainedLOC" column="HasObtainedLOC" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OrderCoram" column="OrderCoram" />
+		<property name="OrderDate" column="OrderDate" />
+		<property name="OrderMadeIn" column="OrderMadeIn" />
+		<property name="OrderNumber" column="OrderNumber" />
+		<property name="OrderType" column="OrderType" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="JOUserId" column="JOUserId"></property>
+    <property name="OrderOfCourtNotshownOrderNO" column="OrderOfCourtNotshownOrderNO"></property>
+    <property name="PurposeOfOrder" column="PurposeOfOrder"></property>
+    <property name="CaseNo" column="CaseNo"></property>
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+		<property name="CaseInfoId" column="CaseInfoId"/>
+		<many-to-one name="MDesignation" fetch="select" cascade="none">
+			<column name="CoramDesignation"/>
+		</many-to-one>
+    <many-to-one name="MCoram" fetch="select" cascade="none">
+      <column name="CoramCode"/>
+    </many-to-one>
+		
+
+	</class>
+</hibernate-mapping>

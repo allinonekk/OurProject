@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MMaritalStatus" table="[dbo].[MMaritalStatus]" optimistic-lock="none" >
+		<id name="MaritalStatusCode" column="MaritalStatusCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="IsProbateInd" column="IsProbateInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MaritalCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="ChildInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MaritalStatusCode"/>
+			</key>
+			<one-to-many class="ChildInfo"/>
+		</set>
+		<set name="DeceasedInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MaritalStatus"/>
+			</key>
+			<one-to-many class="DeceasedInfo"/>
+		</set>
+		<set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MaritalCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

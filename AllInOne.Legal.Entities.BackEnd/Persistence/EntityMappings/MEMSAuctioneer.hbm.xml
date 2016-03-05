@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSAuctioneer" table="[dbo].[MEMSAuctioneer]" optimistic-lock="none" >
+		<id name="EMSAuctioneerCode" column="EMSAuctioneerCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="AddrBlkNo" column="AddrBlkNo" />
+		<property name="AddrStreetName" column="AddrStreetName" />
+		<property name="AddrFloorNo" column="AddrFloorNo" />
+		<property name="AddrUnitNo" column="AddrUnitNo" />
+		<property name="AddrBuildingName" column="AddrBuildingName" />
+		<property name="AddrPostalCode" column="AddrPostalCode" />
+		<property name="IsRoundRobin" column="IsRoundRobin" />
+		<property name="AuctioneerName" column="AuctioneerName" />
+		<property name="PersonInCharge" column="PersonInCharge" />
+		<property name="TelNumber" column="TelNumber" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<property name="Email" column="Email" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="RRSequenceNo" column="RRSequenceNo" />
+		<!--<property name="IsLastRRSequenceNo" column="IsLastRRSequenceNo" />-->
+		<set name="EMSSales" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="Auctioneer"/>
+		  </key>
+		  <one-to-many class="EMSSale"/>
+		</set>
+	</class>
+</hibernate-mapping>

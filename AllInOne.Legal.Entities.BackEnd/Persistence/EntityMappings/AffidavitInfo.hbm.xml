@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="AffidavitInfo" table="[dbo].[AffidavitInfo]" optimistic-lock="none" >
+		<id name="AffidavitId" column="AffidavitID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AEICType" column="AEICType" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="SwornDate" column="SwornDate" />
+		<set name="AffidavitDeponentDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AffidavitID"/>
+			</key>
+			<one-to-many class="AffidavitDeponentDetail"/>
+		</set>
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>
+		<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DOCID"/>
+		</many-to-one>
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoID"/>
+		</many-to-one>-->
+		<property name="CaseInfoId" column="CaseInfoID"/>
+		<property name="DocId" column="DOCID" type="AnsiString"/>
+		<property name="SubCaseInfoId" column="SubCaseInfoID"/>
+    <property name="HasFiledSummons" column="HasFiledSummons"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Repositories.BackEnd.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Repositories.BackEnd.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\AllInOne.Legal.Repositories.BackEnd.dll
+C:\AllInOne\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\AllInOne.Legal.Repositories.BackEnd.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Repositories.BackEnd.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Repositories.BackEnd.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\AllInOne.Legal.Repositories.BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\AllInOne.Legal.Repositories.BackEnd.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Repositories.BackEnd\obj\Debug\AllInOne.Legal.Repositories.BackEnd.pdb

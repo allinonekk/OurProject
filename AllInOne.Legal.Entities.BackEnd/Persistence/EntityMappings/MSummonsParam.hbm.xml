@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MSummonsParam" table="[dbo].[MSummonsParams]" optimistic-lock="none" >
+		<id name="ParamId" column="ParamID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="CorrespondingFormNo" column="CorrespondingFormNo" />
+		<property name="DocCode" column="DOCCode" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MainBodyText" column="MainBodyText"  type="StringClob"/>
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ShowGrounds" column="ShowGrounds" />
+		<property name="ShowPrayers" column="ShowPrayers" />
+    <property name="DefaultEndorsementType" column="DefaultEndorsementType" />
+    <many-to-one name="MCaseType" fetch="select" cascade="none">
+      <column name="CaseTypeCode"/>
+    </many-to-one>
+		<many-to-one name="MCourtType" fetch="select" cascade="none">
+			<column name="CourtID"/>
+		</many-to-one>
+		<many-to-one name="MNOACode" fetch="select" cascade="none">
+			<column name="NOACode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

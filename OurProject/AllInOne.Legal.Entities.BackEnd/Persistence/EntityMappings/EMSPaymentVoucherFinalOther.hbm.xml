@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSPaymentVoucherFinalOther" table="[dbo].[EMSPaymentVoucherFinalOther]" optimistic-lock="none" >
+		<id name="EMSPaymentVoucherFinalOtherId" column="EMSPaymentVoucherFinalOtherId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="PaymentToOtherIdentifier" column="PaymentToOtherIdentifier" />
+		<property name="PayeeName" column="PayeeName" />
+		<property name="PayeeRefNo" column="PayeeRefNo" />
+		<property name="PaymentAmt" column="PaymentAmt" />
+		<property name="BlkNo" column="BlkNo" />
+		<property name="StreetName" column="StreetName" /> 
+		<property name="FloorNo" column="FloorNo" />
+		<property name="UnitNo" column="UnitNo" />
+		<property name="BuildingName" column="BuildingName" />
+		<property name="PostalCode" column="PostalCode" />
+		<property name="Remarks" column="Remarks" />
+		<property name="FormatInd" column="FormatInd" />
+		<property name="Address" column="Address" />
+		<property name="Addr1" column="Addr1" />
+		<property name="Addr2" column="Addr2" />
+		<property name="Addr3" column="Addr3" />
+		<property name="Addr4" column="Addr4" />
+		<property name="Reason" column="Reason" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<many-to-one name="MEMSNatureOfPayment" fetch="select" cascade="none" lazy="false">
+				<column name="NatureOfPayment"/>
+			</many-to-one>
+		<many-to-one name="CaseParty" fetch="select" cascade="none" lazy="false">
+		  <column name="CasePartyId"/>
+		</many-to-one>
+		<many-to-one name="EMSPaymentVoucherFinal" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSPaymentVoucherFinalId"/>
+		</many-to-one>
+		<many-to-one name="EMSPaymentVoucher" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSPaymentVoucherId"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LawFirm" table="[dbo].[LawFirm]" optimistic-lock="none" >
+		<id name="LFID" column="LFID" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="GSTNumber" column="GSTNumber" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrganizationName" column="OrganizationName" />
+		<property name="UEN" column="UEN" />
+    <property name="LawPracticeType" column="LawPracticeType" />
+    <property name="LFEmail" column="LFemail" />
+    <property name="LicenseYear" column="LicenseYear" />
+    <property name="LicenseNumber" column="LicenseNumber" />
+    <many-to-one name="MLawFirmGroup" fetch="select" cascade="none">
+      <column name="LFGroupCode"/>
+    </many-to-one>
+  	</class>
+</hibernate-mapping>

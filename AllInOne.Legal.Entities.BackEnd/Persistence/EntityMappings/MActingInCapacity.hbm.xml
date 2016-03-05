@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MActingInCapacity" table="[dbo].[MActingInCapacity]" optimistic-lock="none" >
+		<id name="AICCode" column="AICCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AICGroupCode" column="AICGroupCode" />
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CasePartyAICDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AICCode"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="DocCasePartyAICDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AICCode"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="LiquidatorPICs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AICCode"/>
+			</key>
+			<one-to-many class="LiquidatorPIC"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

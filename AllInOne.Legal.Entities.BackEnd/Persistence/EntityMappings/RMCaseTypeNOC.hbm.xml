@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd" namespace="AllInOne.Legal.Entities.BackEnd">
+	<class name="RMCaseTypeNOC" table="dbo.RMCaseTypeNOC" optimistic-lock="none">
+		<composite-id>
+			<key-property name="CaseTypeCode" column="CaseTypeCode" />
+			<key-property name="NOCCode" column="NOCCode" />
+		</composite-id>
+		<!--<bag name="RMCaseTypeNOCs" inverse="true" lazy="true" generic="true" >
+			<key column="CaseTypeCode" />
+			<one-to-many class="RMCaseTypeNOC" />
+		</bag>
+		<bag name="RMCaseTypeNOCs" inverse="true" lazy="true" generic="true" >
+			<key column="NOCCode" />
+			<one-to-many class="RMCaseTypeNOC" />
+		</bag>-->
+		<property  name="ObsInd" column="ObsInd" />
+		<property  name="IsInterfaced" column="IsInterfaced" />
+		<property  name="LastModifiedBy" column="LastModifiedBy" />
+		<property  name="LastModifiedDate" column="LastModifiedDate" />
+		
+	</class>
+</hibernate-mapping>

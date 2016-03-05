@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MNAAPlaceHolder" table="[dbo].[MNAAPlaceHolders]" optimistic-lock="none" >
+		<id name="PlaceHolderId" column="PlaceHolderID" >
+			<generator class="identity"/>
+		</id>
+		<property name="AdditionalRemarks" column="AdditionalRemarks" />
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="PlaceHolderName" column="PlaceHolderName" />
+		<property name="PlaceHolderType" column="PlaceHolderType" />
+		<property name="SampleOutput" column="SampleOutput" />
+		<property name="SampleUsage" column="SampleUsage" />
+		<property name="SampleValue" column="SampleValue" />
+
+	</class>
+</hibernate-mapping>

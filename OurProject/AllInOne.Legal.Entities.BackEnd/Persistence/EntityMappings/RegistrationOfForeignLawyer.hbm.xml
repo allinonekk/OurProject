@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RegistrationOfForeignLawyer" table="[dbo].[RegistrationOfForeignLawyer]" optimistic-lock="none" >
+		<id name="RegistrationOfForeignLawyerId" column="RegistrationOfForeignLawyerId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ForeignUserRegistrationId" column="ForeignUserRegistrationId"/>
+		<property name="Salutation" column="Salutation" />
+		<property name="FullName" column="FullName" />
+		<property name="IDTypeCode" column="IDTypeCode" />
+		<property name="IDNumber" column="IDNumber" />
+		<many-to-one name="MGender" fetch="select" cascade="none">
+			<column name="GenderCode"/>
+		</many-to-one>
+		<many-to-one name="MNationality" fetch="select" cascade="none">
+			<column name="NationalityCode"/>
+		</many-to-one>
+		<property name="MobileCountryCode" column="MobileCountryCode" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="TelCountryCode" column="TelCountryCode" />
+		<property name="TelAreaCode"  column="TelAreaCode" />
+		<property name="TelNumber" column="TelNumber" />
+		<property name="FaxCountryCode" column="FaxCountryCode" />
+		<property name="FaxAreaCode" column="FaxAreaCode" />
+		<property name="Email" column="Email" />
+		<property name="UserDetailId" column="UserDetailId" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="FaxNumber"  column="FaxNumber" />
+		<property name="RFLType" column="RFLType" />
+		<property name="SubmissionGroupID" column="SubmissionGroupID" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="FileRefNo" column="FileRefNo" />
+    <many-to-one name="MCaseType" fetch="select" cascade="none">
+      <column name="CaseTypeCode"/>
+    </many-to-one>
+    <property name="OrderNumber" column="OrderNumber" />
+    <property name="CaseNo" column="CaseNo" />
+    <property name="PaymentMode" column="PaymentMode" />
+	</class>
+</hibernate-mapping>

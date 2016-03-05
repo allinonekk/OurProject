@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MAdpChecklistItem" table="[dbo].[MAdpChecklistItem]" optimistic-lock="none" >
+		<id name="AdpCLItemCode" column="AdpCLItemCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="IsMoreInfo" column="IsMoreInfo" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<many-to-one name="MAdpChecklistGroup" fetch="select" cascade="none">
+			<column name="AdpCLGroupCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

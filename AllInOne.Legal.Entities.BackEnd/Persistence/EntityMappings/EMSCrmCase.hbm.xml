@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSCrmCase" table="[dbo].[EMSCrmCase]" optimistic-lock="none" >
+		<id name="EMSCrmCaseId" column="EMSCrmCaseId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AccusedAbsCourtNo" column="AccusedAbsCourtNo" />
+		<property name="AccusedAbsDateTime" column="AccusedAbsDateTime" />
+		<property name="AccusedAddrBlkNo" column="AccusedAddrBlkNo" />
+		<property name="AccusedAddrBuildingName" column="AccusedAddrBuildingName" />
+		<property name="AccusedAddrFloorNo" column="AccusedAddrFloorNo" />
+		<property name="AccusedAddrPostalCode" column="AccusedAddrPostalCode" />
+		<property name="AccusedAddrStreetName" column="AccusedAddrStreetName" />
+		<property name="AccusedAddrUnitNo" column="AccusedAddrUnitNo" />
+		<property name="AccusedICUEN" column="AccusedICUEN" />
+		<property name="AccusedName" column="AccusedName" />
+		<property name="Amount" column="Amount" />
+		<property name="AmtToEnforce" column="AmtToEnforce" />
+		<property name="BailBondAmt" column="BailBondAmt" />
+		<property name="BailBondDate" column="BailBondDate" />
+		<property name="IsCaseRegistered" column="IsCaseRegistered" />
+		<property name="IssuingCourtNo" column="IssuingCourtNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NSNo" column="NSNo" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrgSuitNo" column="OrgSuitNo" />
+		<property name="RegDate" column="RegDate" />
+		<property name="Remarks" column="Remarks" />
+		<property name="WarrantIssuedDate" column="WarrantIssuedDate" />
+    <property name="OrderDate" column="OrderDate" />
+    <property name="OffenceStatute" column="OffenceStatute" />
+    <property name="ReferenceNo" column="ReferenceNo" />
+    <property name="CreditorAddr" column="CreditorAddr" />
+    <property name="CaseGroupId" column="CaseGroupId" />
+    <property name="AccusedFormatInd" column="AccusedFormatInd" />
+    <property name="AccusedAddress" column="AccusedAddress" />
+    <property name="AccusedAddr1" column="AccusedAddr1" />
+    <property name="AccusedAddr2" column="AccusedAddr2" />
+    <property name="AccusedAddr3" column="AccusedAddr3" />
+    <property name="AccusedAddr4" column="AccusedAddr4" />
+    <many-to-one name="CaseParty" fetch="select" cascade="none" lazy="false">
+      <column name="CasePartyId"/>
+    </many-to-one>
+		<many-to-one name="CaseInfo" fetch="select" cascade="none" lazy="false">
+			<column name="CaseInfoId"/>
+		</many-to-one>
+		<set name="EMSCrmCaseWLDets" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSCrmCaseId"/>
+			</key>
+			<one-to-many class="EMSCrmCaseWLDet"/>
+		</set>
+    <set name="EMSCrmCaseExecAddrs" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="EMSCrmCaseId"/>
+      </key>
+      <one-to-many class="EMSCrmCaseExecAddr"/>
+    </set>
+	</class>
+</hibernate-mapping>

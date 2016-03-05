@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SubCaseStatusHistory" table="[dbo].[SubCaseStatusHistory]" optimistic-lock="none" >
+		<id name="SubCaseStatusHistoryId" column="SubCaseStatusHistoryId"  type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="SubCaseInfoID" column="SubCaseInfoID"/>
+    <many-to-one name="MCaseStatus" fetch="select" cascade="none">
+      <column name="SubCaseStatusCode"/>
+    </many-to-one>
+		<property name="SubCaseStatusDate" column="SubCaseStatusDate" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="Remarks" column="Remarks" />
+	</class>
+</hibernate-mapping>

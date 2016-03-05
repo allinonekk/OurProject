@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="Solicitor" table="[dbo].[Solicitor]" optimistic-lock="none" >
+		<id name="SolicitorId" column="SolicitorID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseInfoId" column="CaseInfoID" />
+    <property name="IdNumber" column="IDNumber" />
+    <property name="AdmissionDate" column="AdmissionDate" />
+    <property name="Name" column="Name" type="AnsiString"/>
+    <property name="Alias" column="alias" />
+    <property name="RaceRemarks" column="RaceRemarks" />
+    <property name="NationalityRemarks" column="NationalityRemarks" />
+    <property name="ReligionRemarks" column="ReligionRemarks" />
+    <property name="DateOfBirth" column="DateOfBirth" />
+    <property name="DeceasedDate" column="DeceasedDate" />
+    <property name="RulesCode" column="RulesCode" />
+    <property name="AdmissionQualification" column="AdmissionQualification" />
+    <property name="QualifiedPersonDate" column="QualifiedPersonDate" />
+    <property name="NoticePostingDate" column="NoticePostingDate" />
+    <property name="OSFilingDate" column="OSFilingDate" />
+    <property name="AffidavitFilingDate" column="AffidavitFilingDate" />
+    <property name="UniversityName" column="UniversityName" />
+    <property name="Degree" column="Degree" />
+    <property name="DegreeClass" column="degreeclass" />
+    <property name="FaxCountryCode" column="FaxCountryCode" />
+    <property name="FaxAreaCode" column="FaxAreaCode" />
+    <property name="FaxNumber" column="FaxNumber" />
+    <property name="TelCountryCode" column="TelCountryCode" />
+    <property name="TelAreaCode" column="TelAreaCode" />
+    <property name="TelNumber" column="TelNumber" />
+    <property name="MobileCountryCode" column="MobileCountryCode" />
+    <property name="MobileNumber" column="MobileNumber" />
+    <property name="Email" column="Email" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="AdmittedToBarInd" column="AdmittedToBarInd" />
+    <property name="BLERegistrationInd" column="BLERegistrationInd" />
+
+
+    <many-to-one name="IdCountryCode" fetch="select" cascade="none">
+      <column name="IDCountryCode"/>
+    </many-to-one>
+
+    <many-to-one name="Gender" fetch="select" cascade="none">
+      <column name="Gender"/>
+    </many-to-one>
+
+    <many-to-one name="MaritalStatusCode" fetch="select" cascade="none">
+      <column name="MaritalStatusCode"/>
+    </many-to-one>
+
+    <many-to-one name="RaceCode" fetch="select" cascade="none">
+      <column name="RaceCode"/>
+    </many-to-one>
+
+    <many-to-one name="MNationality" fetch="select" cascade="none">
+      <column name="Nationality"/>
+    </many-to-one>
+
+    <many-to-one name="ReligionCode" fetch="select" cascade="none">
+      <column name="ReligionCode"/>
+    </many-to-one>
+
+    <many-to-one name="CountryOfBirth" fetch="select" cascade="none">
+      <column name="CountryOfBirth"/>
+    </many-to-one>
+
+    <many-to-one name="IdTypeCode" fetch="select" cascade="none">
+      <column name="IdTypeCode"/>
+    </many-to-one>
+    
+    
+	</class>
+</hibernate-mapping>

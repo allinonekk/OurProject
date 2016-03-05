@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RUserPA" table="[dbo].[RUserPA]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="UserId" column="UserId" />
+      <key-property name="PAUserId" column="PAUserId" />
+      <key-property name="StartDate" column="StartDate" />
+    </composite-id>
+    <property  name="EndDate" column="EndDate" />
+    <property  name="ObsInd" column="ObsInd" />
+    <property  name="LastModifiedBy" column="LastModifiedBy" />
+    <property  name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

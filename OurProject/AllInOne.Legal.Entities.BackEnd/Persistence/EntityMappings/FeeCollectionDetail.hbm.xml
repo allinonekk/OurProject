@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="FeeCollectionDetail" table="[dbo].[FeeCollectionDetail]" optimistic-lock="none" >
+		<id name="FeeCollectionDetailid" column="FeeCollectionDetailid" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseNo" column="CaseNo" />
+    <property name="Caseinfoid" column="Caseinfoid" />
+		<property name="Docid" column="Docid" />
+		<property name="Doccode" column="Doccode" />
+		<property name="DocTitle" column="DocTitle" />
+		<property name="Submissiongroupid" column="Submissiongroupid" />
+		<property name="GenaratedDatetime" column="GenaratedDatetime" />
+		<property name="Amounttobecollected" column="Amounttobecollected" />
+    <property name="Name" column="Name" />
+		<property name="Collectionstatus" column="Collectionstatus" />
+    <property name="CollectionAmount" column="CollectionAmount" />
+    <property name="CollectionRemarks" column="CollectionRemarks" />
+    <property name="PaymentTxnNo" column="PaymentTxnNo" />
+    <property name="AddtionalFeeCollectType" column="AddtionalFeeCollectType" />
+    <property name="CollectedBy" column="CollectedBy" />
+    <property name="CollectionDate" column="CollectionDate" />
+    <property name="SupportuplDocid" column="SupportuplDocid" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedby" column="LastModifiedby" />
+    <property name="LastModifieddate" column="LastModifieddate" />
+    
+	</class>
+</hibernate-mapping>

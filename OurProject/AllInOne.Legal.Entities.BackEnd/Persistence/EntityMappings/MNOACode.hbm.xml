@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MNOACode" table="[dbo].[MNOACode]" optimistic-lock="none" >
+		<id name="NOACode" column="NOACode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="MSummonsParams" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="NOACode"/>
+			</key>
+			<one-to-many class="MSummonsParam"/>
+		</set>
+		<set name="NatureOfApplications" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="NOACode"/>
+			</key>
+			<one-to-many class="NatureOfApplication"/>
+		</set>
+		<set name="RMNOAForumHrgTypes" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="NOACode"/>
+			</key>
+			<one-to-many class="RMNOAForumHrgType"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

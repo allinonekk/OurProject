@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CaseCounterClaim" table="[dbo].[CaseCounterClaim]" optimistic-lock="none" >
+    <id name="CaseCounterClaimID" column="CaseCounterClaimID" type="AnsiString" >
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoID" column="CaseInfoID"/>
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

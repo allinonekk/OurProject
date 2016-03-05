@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="WorkitemRecipient" table="[dbo].[WorkitemRecipient]" optimistic-lock="none" >
+		<composite-id>
+			<key-property name="WorkflowSerialNo" column="WorkflowSerialNo" type="AnsiString"/>
+			<key-property name="LFID" column="LFID" type="AnsiString"/>
+		</composite-id>
+		<property name="Status" column="Status" />
+		<property name="FileRefNo" column="FileRefNo" />
+		<property name="SolicitorID" column="SolicitorID" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		
+	</class>
+</hibernate-mapping>

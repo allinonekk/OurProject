@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MNatureOfInjury" table="[dbo].[MNatureOfInjury]" optimistic-lock="none" >
+		<id name="NOICode" column="NOICode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Descripton" column="Descripton" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="ADIADetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="NOICode"/>
+			</key>
+			<one-to-many class="ADIADetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

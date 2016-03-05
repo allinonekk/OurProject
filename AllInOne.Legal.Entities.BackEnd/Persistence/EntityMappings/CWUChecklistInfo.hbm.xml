@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CWUChecklistInfo" table="[dbo].[CWUChecklistInfo]" optimistic-lock="none" >
+    <id name="CWUChecklistInfoId" column="CWUChecklistInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AmountOfDeposit" column="AmountOfDeposit" />
+    <property name="ChineseNewspaperName" column="ChineseNewspaperName" />
+    <property name="ChineseNewspaperPubDate" column="ChineseNewspaperPubDate" />
+    <property name="DateOfConsent" column="DateOfConsent" />
+    <property name="DateofDeposit" column="DateofDeposit" />
+    <property name="DateOfService" column="DateOfService" />
+    <property name="EnglishNewspaperName" column="EnglishNewspaperName" />
+    <property name="EnglishNewspaperPubDate" column="EnglishNewspaperPubDate" />
+    <property name="GazetteNotificationDate" column="GazetteNotificationDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ReceiptNumber" column="ReceiptNumber" type="AnsiString"/>
+    <property name="DocId" column="DocId" type="AnsiString"/>
+  </class>
+</hibernate-mapping>

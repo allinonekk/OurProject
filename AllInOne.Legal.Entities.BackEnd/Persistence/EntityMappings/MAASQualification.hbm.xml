@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MAASQualification" table="[dbo].[MAASQualification]" optimistic-lock="none" >
+		<id name="AASQualificationCode" column="AASQualificationCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="AASInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AASQualificationCode"/>
+			</key>
+			<one-to-many class="AASInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

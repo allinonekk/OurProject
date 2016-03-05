@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MMonitoringType" table="[dbo].[MMonitoringType]" optimistic-lock="none" >
+    <id name="MonitoringTypeCode" column="MonitoringTypeCode" >
+      <generator class="assigned"/>
+    </id>
+    <property name="Description" column="Description" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="MonitoringGroup" column="MonitoringGroup" />
+    <property name="MonitoringJobClassName" column="MonitoringJobClassName" />
+  </class>
+</hibernate-mapping>

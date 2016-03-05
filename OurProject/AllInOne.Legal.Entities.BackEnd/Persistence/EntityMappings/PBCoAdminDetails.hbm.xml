@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PBCoAdminDetails" table="[dbo].[PBCoAdminDetails]" optimistic-lock="none" >
+    <id name="PBCoAdminDetailId" column="PBCoAdminDetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="ItemNo" column="ItemNo" />
+    <property name="FullName" column="FullName" />
+    <property name="IdNumber" column="IDNumber" />
+    <property name="IdRemarks" column="IDRemarks" />
+    <property name="RelationshipRemarks" column="RelationshipRemarks" />
+    <property name="ApplicantCapacityRemarks" column="ApplicantCapacityRemarks" />
+    <property name="FormatInd" column="FormatInd" />
+    <property name="Address" column="Address" />
+    <property name="BlkNo" column="BlkNo" />
+    <property name="StreetName" column="StreetName" />
+    <property name="FloorNo" column="FloorNo" />
+    <property name="UnitNo" column="UnitNo" />
+    <property name="BuildingName" column="BuildingName" />
+    <property name="PostalCode" column="PostalCode" />
+    <property name="Addr1" column="Addr1" />
+    <property name="Addr2" column="Addr2" />
+    <property name="Addr3" column="Addr3" />
+    <property name="Addr4" column="Addr4" />
+    <property name="AddrInd" column="AddrInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+
+    <many-to-one name="MPersonIDType" fetch="select" cascade="none">
+      <column name="IdTypeCode"/>
+    </many-to-one>
+    
+    <many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+      <column name="IDGroupCode"/>
+    </many-to-one>
+    <many-to-one name="MRelationship" fetch="select" cascade="none">
+      <column name="RelationshipCode"/>
+    </many-to-one>
+
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="CountryCode"/>
+    </many-to-one>
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="GenderCode"/>
+    </many-to-one>
+
+    <many-to-one name="MIdCountry" fetch="select" cascade="none">
+      <column name="IdCountryCode"/>
+    </many-to-one>
+
+    <many-to-one name="MApplicantCapacity" fetch="select" cascade="none">
+      <column name="ApplicantCapacityCode"/>
+    </many-to-one>
+    
+  </class>
+</hibernate-mapping>

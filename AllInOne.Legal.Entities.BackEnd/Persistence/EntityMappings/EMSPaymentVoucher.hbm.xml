@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSPaymentVoucher" table="[dbo].[EMSPaymentVoucher]" optimistic-lock="none" >
+		<id name="EMSPaymentVoucherId" column="EMSPaymentVoucherId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ApprovedBy" column="ApprovedBy" />
+		<property name="ApprovedDate" column="ApprovedDate" />
+		<property name="IssueDate" column="IssueDate" />
+		<property name="IsUrgent" column="IsUrgent" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="PaymentVoucherNo" column="PaymentVoucherNo" />
+		<property name="PaymentVoucherType" column="PaymentVoucherType" />
+		<property name="Remarks" column="Remarks" />
+		<property name="Status" column="Status" />
+		<property name="TransDateFrom" column="TransDateFrom" />
+		<property name="TransDateTo" column="TransDateTo" />
+		<property name="VettedBy" column="VettedBy" />
+		<property name="VettedDate" column="VettedDate" />
+    <property name="BailiffMisc" column="BailiffMisc" />
+    <property name="BailiffTransport" column="BailiffTransport" />
+    <property name="BailiffDisburse" column="BailiffDisburse" />
+		<property name="SubmittedBySigPath" column="SubmittedBySigPath" />
+		<property name="ApprovedBySigPath" column="ApprovedBySigPath" />
+		<property name="OCDocId" column="OCDocId" />
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+    <many-to-one name="Bailiff" fetch="select" cascade="none" lazy="false">
+      <column name="BailiffId"/>
+    </many-to-one>
+		<set name="EMSDisburseClaims" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentVoucherId"/>
+			</key>
+			<one-to-many class="EMSDisburseClaim"/>
+		</set>
+		<set name="EMSPaymentVoucherCheques" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSPaymentVoucherId"/>
+			</key>
+			<one-to-many class="EMSPaymentVoucherCheque"/>
+		</set>
+    <set name="EMSMiscClaims" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="EMSPaymentVoucherId"/>
+      </key>
+      <one-to-many class="EMSMiscClaim"/>
+    </set>
+		<set name="EMSPaymentVoucherFinals" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSPaymentVoucherId"/>
+			</key>
+			<one-to-many class="EMSPaymentVoucherFinal"/>
+		</set>
+		<set name="EMSTptClaims" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentVoucherId"/>
+			</key>
+			<one-to-many class="EMSTptClaim"/>
+		</set>
+    <set name="EMSPayments" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PaymentVoucherId"/>
+			</key>
+			<one-to-many class="EMSPayment"/>
+		</set>
+    <set name="EMSAdmClaims" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="PaymentVoucherId"/>
+      </key>
+      <one-to-many class="EMSAdmClaim"/>
+    </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ChildInfo" table="[dbo].[ChildInfo]" optimistic-lock="none" >
+    <id name="ChildInfoId" column="ChildInfoID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="Age" column="Age" />
+    <property name="ArrangementDetails" column="ArrangementDetails" />
+    <property name="ChildDisableDetail" column="ChildDisableDetail" />
+    <property name="ChildOf" column="ChildOf" />
+    <property name="ChildTrainingDetails" column="ChildTrainingDetails" />
+    <property name="DateOfBirth" column="DateOfBirth" />
+    <property name="DisputeDetails" column="DisputeDetails" />
+    <property name="IdNumber" column="IDNumber" type="AnsiString"/>
+    <property name="IsChildOfCurrentMarriageInd" column="IsChildOfCurrentMarriageInd" />
+    <property name="Itemno" column="Itemno" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="Name" column="Name" />
+    <property name="RaceRemarks" column="RaceRemarks" />
+    <property name="NationalityRemarks" column="NationalityRemarks" />
+    <property name="ReligionRemarks" column="ReligionRemarks" />
+    <property name="OccupationRemarks" column="OccupationRemarks" />
+    <property name="OtherFacts" column="OtherFacts" />
+    <property name="ProtectionDetails" column="ProtectionDetails" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="IdCountryCode"/>
+    </many-to-one>
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="GenderCode"/>
+    </many-to-one>
+    <many-to-one name="MMaritalStatus" fetch="select" cascade="none">
+      <column name="MaritalStatusCode"/>
+    </many-to-one>
+    <many-to-one name="MNationality" fetch="select" cascade="none">
+      <column name="NationalityCode"/>
+    </many-to-one>
+    <many-to-one name="MOccupation" fetch="select" cascade="none">
+      <column name="OccupationCode"/>
+    </many-to-one>
+    <many-to-one name="MPersonIDType" fetch="select" cascade="none">
+      <column name="IdTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MQualification" fetch="select" cascade="none">
+      <column name="QualificationCode"/>
+    </many-to-one>
+    <many-to-one name="MRace" fetch="select" cascade="none">
+      <column name="RaceCode"/>
+    </many-to-one>
+    <many-to-one name="MReligion" fetch="select" cascade="none">
+      <column name="ReligionCode"/>
+    </many-to-one>
+
+  </class>
+</hibernate-mapping>

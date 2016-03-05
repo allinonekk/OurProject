@@ -1,0 +1,5 @@
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Domain.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Domain.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.Domain\AllInOne.Legal.Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\AllInOne.Legal.Domain\AllInOne.Legal.Domain\obj\Debug\AllInOne.Legal.Domain.dll
+C:\AllInOne\OurProject\AllInOne.Legal.Domain\AllInOne.Legal.Domain\obj\Debug\AllInOne.Legal.Domain.pdb

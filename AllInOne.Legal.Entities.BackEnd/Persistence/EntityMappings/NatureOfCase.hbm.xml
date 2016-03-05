@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="NatureOfCase" table="[dbo].[NatureOfCase]" optimistic-lock="none" >
+		<id name="NatureOfCaseId" column="NatureOfCaseId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MainNOCInd" column="MainNOCInd" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OtherText" column="OtherText" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+    <property name="CaseInfoId" column="CaseInfoID"/>
+		<many-to-one name="MNOC" fetch="select" cascade="none">
+			<column name="NOCCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmProperty" table="[dbo].[EMSAdmProperty]" optimistic-lock="none" >
+		<id name="EMSAdmPropertyId" column="EMSAdmPropertyId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AdmType" column="AdmType" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SyncRequired" column="SyncRequired" />
+		<set name="EMSSales" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmPropertyId"/>
+		  </key>
+		  <one-to-many class="EMSSale"/>
+		</set> 
+		<set name="EMSAdmExecs" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmPropertyId"/>
+		  </key>
+		  <one-to-many class="EMSAdmExec"/>
+		</set>
+		<set name="EMSAdmReleases" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmPropertyId"/>
+		  </key>
+		  <one-to-many class="EMSAdmRelease"/>
+		</set>
+		<set name="EMSAdmPropertyLists" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmPropertyId"/>
+		  </key>
+		  <one-to-many class="EMSAdmPropertyList"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmRelease" table="[dbo].[EMSAdmRelease]" optimistic-lock="none" >
+		<id name="EMSAdmReleaseId" column="EMSAdmReleaseId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AircraftRemarks" column="AircraftRemarks" />
+		<property name="CommissionRemarks" column="CommissionRemarks" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ReleaseDateTime" column="ReleaseDateTime" />
+		<property name="ReleaseRemarks" column="ReleaseRemarks" />
+		<property name="ReleaseRequester" column="ReleaseRequester" />
+		<property name="ReleaseRequesterDesc" column="ReleaseRequesterDesc" />
+		<property name="ReleaseTo" column="ReleaseTo" />
+		<property name="ReleaseToDesc" column="ReleaseToDesc" />
+		<property name="Remarks" column="Remarks" />
+		<property name="InvoiceNumber" column="InvoiceNumber" />
+		<property name="BillNumber" column="BillNumber" />
+		<property name="LetterUsed" column="LetterUsed" />
+		<property name="GuardCharges" column="GuardCharges" />
+		<property name="AttendanceFee" column="AttendanceFee" />
+    <property name="SyncRequired" column="SyncRequired" />
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+		<many-to-one name="EMSAdmProperty" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAdmPropertyId"/>
+		</many-to-one>
+		<many-to-one name="EMSReceipt" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSReceiptID"/>
+		</many-to-one>
+		<set name="EMSAdmClaims" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSAdmReleaseId"/>
+		  </key>
+		  <one-to-many class="EMSAdmClaim"/>
+		</set>
+	</class>
+</hibernate-mapping>

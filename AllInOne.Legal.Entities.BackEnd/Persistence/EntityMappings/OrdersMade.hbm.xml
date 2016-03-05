@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="OrdersMade" table="[dbo].[OrdersMade]" optimistic-lock="none" >
+		<id name="OrdersMadeId" column="OrdersMadeId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="DocId" column="DocID" type="AnsiString"/>
+		<property name="OrderDetails" column="OrderDetails" />
+		<property name="OrderType" column="OrderType" />
+		<property name="OrderStatus" column="OrderStatus" />
+		<property name="BERemarks" column="BERemarks" />
+		<property name="LastModifiedDate" column="Lastmodifieddate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="HRGId" column="HRGId" />
+    <property name="PrayerId" column="PrayerID" />
+	</class>
+</hibernate-mapping>

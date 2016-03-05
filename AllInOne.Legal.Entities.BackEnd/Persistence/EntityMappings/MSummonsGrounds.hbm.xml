@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MSummonsGrounds" table="[dbo].[MSummonsGrounds]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="ItemNo" column="ItemNo" />
+      <key-property name="ParamID" column="ParamID" />
+    </composite-id>
+
+    <property name="GroundsText" column="GroundsText" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+	</class>
+  <sql-query name="SaveOrUpdateMSummonsGroundsProcedure">
+    exec MDM_BackEnd_SaveOrUpdateMSummonsGrounds
+    :ItemNo,:GroundsText,:ObsInd,:LastModifiedBy,:LastModifiedDate,:ParamID
+  </sql-query>
+</hibernate-mapping>

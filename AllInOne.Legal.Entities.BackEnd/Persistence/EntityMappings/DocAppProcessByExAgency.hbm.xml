@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="DocAppProcessByExAgency" table="[dbo].[DocAppProcessByExAgency]" optimistic-lock="none" >
+    <id name="DocAppByExAgId" column="DocAppByExAgId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="Date" column="Date" />
+    <property name="DecisionReason" column="DecisionReason" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="MessageType" column="MessageType" />
+    <property name="VerifiedApplicantDetail" column="VerifiedApplicantDetail" />
+    <property name="VerifiedAppointmentDetail" column="VerifiedAppointmentDetail" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="IsD1Saved" column="IsD1Saved" />
+    <property name="IsD2Saved" column="IsD2Saved" />
+    <property name="IsD3Saved" column="IsD3Saved" />
+    <property name="DocId" column="DocId" type="AnsiString"/>
+    <property name="IsAccRptLawSoc" column="IsAccRptLawSoc" />
+    <many-to-one name="CaseInfo" fetch="select" cascade="none">
+      <column name="CaseInfoId"/>
+    </many-to-one>
+
+    <!--<many-to-one name="LawFirmDAPBEALFID" fetch="select" cascade="none">
+			<column name="LFID"/>
+		</many-to-one>-->
+    <many-to-one name="MExternalAgency" fetch="select" cascade="none">
+      <column name="ExternalAgencyCode"/>
+    </many-to-one>
+    <many-to-one name="LawFirmDAPBEALFIDToDisplay" fetch="select" cascade="none">
+      <column name="LFIDToDisplay"/>
+    </many-to-one>
+
+    <many-to-one name="MDocStatus" fetch="select" cascade="none">
+      <column name="DocStatusCode"/>
+    </many-to-one>
+    <!--<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoId"/>
+		</many-to-one>-->
+    <property name="SubCaseInfoId" column="SubCaseInfoId"/>
+  </class>
+</hibernate-mapping>

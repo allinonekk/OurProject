@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSPaymentVoucherAdm" table="[dbo].[EMSPaymentVoucherAdm]" optimistic-lock="none" >
+		<id name="EMSPaymentVoucherAdmId" column="EMSPaymentVoucherAdmId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AdvertFee" column="AdvertFee" />
+		<property name="AuctioneerCharges" column="AuctioneerCharges" />
+		<property name="BunkerComm" column="BunkerComm" />
+		<property name="BunkerSaleValue" column="BunkerSaleValue" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SheriffComm" column="SheriffComm" />
+		<property name="VesselSaleValue" column="VesselSaleValue" />
+		<many-to-one name="EMSPaymentVoucherFinal" fetch="select" cascade="none" lazy="false">
+			<column name="EMSPaymentVoucherFinalId"/>
+		</many-to-one>
+    <many-to-one name="EMSAdmCharge" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAdmChargeId"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

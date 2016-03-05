@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MAASLawDegree" table="[dbo].[MAASLawDegree]" optimistic-lock="none" >
+		<id name="AASLawDegreeCode" column="AASLawDegreeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+    <property name="CountryCode" column="CountryCode" />
+		<set name="DegreeInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="AASLawDegreeCode"/>
+			</key>
+			<one-to-many class="DegreeInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

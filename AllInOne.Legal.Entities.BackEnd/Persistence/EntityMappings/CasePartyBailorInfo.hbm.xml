@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CasePartyBailorInfo" table="[dbo].[CasePartyBailorInfo]" optimistic-lock="none" >
+		<id name="CasePartyBailorInfoId" column="CasePartyBailorInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="BailAmount" column="BailAmount" />
+		<property name="BailorName" column="BailorName" type="AnsiString"/>
+		<property name="BailRemarks" column="BailRemarks" />
+		<property name="ContactTypeInd" column="ContactTypeInd" />
+		<property name="DateBailDischarged" column="DateBailDischarged" />
+		<property name="DateBailFurnished" column="DateBailFurnished" />
+		<property name="DateBailGranted" column="DateBailGranted" />
+		<property name="Email" column="Email" />
+		<property name="FaxAreaCode" column="FaxAreaCode" />
+		<property name="FaxCountryCode" column="FaxCountryCode" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<property name="IdNumber" column="IdNumber" type="AnsiString"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MobileCountryCode" column="MobileCountryCode" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="TelAreaCode" column="TelAreaCode" />
+		<property name="TelCountryCode" column="TelCountryCode" />
+		<property name="TelNumber" column="TelNumber" />
+    <property name="IdRemarks" column="IdRemarks" />
+		<!--<many-to-one name="CaseParty" fetch="select" cascade="none">
+			<column name="CasePartyId"/>
+		</many-to-one>-->
+		<property name="CasePartyId" column="CasePartyId" type="AnsiString"/>
+	
+		<many-to-one name="MBailType" fetch="select" cascade="none">
+			<column name="BailTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="IdCountryCode"/>
+		</many-to-one>
+		<many-to-one name="MIDType" fetch="select" cascade="none">
+			<column name="BailorIdTypeCode"/>
+		</many-to-one>
+		<many-to-one name="IDGroupCode" fetch="select" cascade="none">
+			<column name="IdGroupCode"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

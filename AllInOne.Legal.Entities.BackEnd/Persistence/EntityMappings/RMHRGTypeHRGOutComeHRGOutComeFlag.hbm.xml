@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RMHRGTypeHRGOutComeHRGOutComeFlag" table="[dbo].[RMHRGTypeHRGOutComeHRGOutComeFlag]" optimistic-lock="none" >
+    <id name="RMHRGTypeOutcomeFlagId" column="RMHRGTypeOutcomeFlagId" >
+      <generator class="assigned"/>
+    </id>
+    <property name="HRGTypeCode" column="HRGTypeCode" />
+    <property name="HRGOutComeCode" column="HRGOutComeCode" />
+    <property name="HRGOutComeFlagCode" column="HRGOutComeFlagCode" />
+    <property name="CourtId" column="CourtId" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

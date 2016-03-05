@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SubmissionInfo" table="[dbo].[SubmissionInfo]" optimistic-lock="none" >
+		<id name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AccountId" column="AccountId" />
+		<property name="ETA" column="ETA" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Stage" column="Stage" />
+		<property name="SubmissionNumber" column="SubmissionNumber" />
+    <property name="IsCaseArchived" column="IsCaseArchived"/>
+		<!--<many-to-one name="LawFirm" fetch="select" cascade="none">
+			<column name="LFID"/>
+		</many-to-one>-->
+		<property name="LFID" column="LFID" type="AnsiString"/>
+    <property name="LFAccountIdToCharge" column="LFAccountIdToCharge" />
+  </class>
+</hibernate-mapping>

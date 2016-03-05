@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PBWillCodicil" table="[dbo].[PBWillCodicil]" optimistic-lock="none" >
+    <id name="PBWillCodicilId" column="PBWillCodicilId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="CaseInfoID" />
+    <property name="DOCId" column="DOCID" type="AnsiString"/>
+   <property name="CodicilWillDate" column="CodicilWillDate" />
+    <property name="DateRemarks" column="DateRemarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="RegisterVolumeNo" column="RegisterVolumeNo" />
+    <property name="RegisterPageNo" column="RegisterPageNo" />
+    <property name="SubmitDate" column="SubmitDate" />
+    <many-to-one name="MDocCode" fetch="select" cascade="none">
+      <column name="DOCCode"/>
+    </many-to-one>
+    
+   </class>
+</hibernate-mapping>

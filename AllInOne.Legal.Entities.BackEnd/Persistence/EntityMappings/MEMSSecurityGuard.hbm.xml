@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSSecurityGuard" table="[dbo].[MEMSSecurityGuard]" optimistic-lock="none" >
+		<id name="EMSSecurityGuardCode" column="EMSSecurityGuardCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="SecurityGuardCompanyName" column="SecurityGuardCompanyName" />
+		<property name="AddrBlkNo" column="AddrBlkNo" />
+		<property name="AddrStreetName" column="AddrStreetName" />
+		<property name="AddrFloorNo" column="AddrFloorNo" />
+		<property name="AddrUnitNo" column="AddrUnitNo" />
+		<property name="AddrBuildingName" column="AddrBuildingName" />
+		<property name="AddrPostalCode" column="AddrPostalCode" />
+		<property name="PersonInCharge" column="PersonInCharge" />
+		<property name="TelNumber" column="TelNumber" />
+		<property name="FaxNumber" column="FaxNumber" />
+		<property name="Email" column="Email" />
+		<property name="MobileNumber" column="MobileNumber" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+	</class>
+</hibernate-mapping>

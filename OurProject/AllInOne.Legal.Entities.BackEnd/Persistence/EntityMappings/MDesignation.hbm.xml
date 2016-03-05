@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MDesignation" table="[dbo].[MDesignation]" optimistic-lock="none" >
+		<id name="DSGCode" column="DSGCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="DSGCategory" column="DSGCategory" />
+		<property name="IsPAAllowed" column="IsPAAllowed" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="Hearings" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DSGCode"/>
+			</key>
+			<one-to-many class="Hearing"/>
+		</set>
+		<set name="PartyAmendmentLeaveOfCourts" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CoramDesignation"/>
+			</key>
+			<one-to-many class="PartyAmendmentLeaveOfCourt"/>
+		</set>
+		<set name="RefOrderDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CoramDesignation"/>
+			</key>
+			<one-to-many class="RefOrderDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

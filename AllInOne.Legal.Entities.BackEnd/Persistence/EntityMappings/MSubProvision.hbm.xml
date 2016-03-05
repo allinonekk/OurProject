@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MSubProvision" table="[dbo].[MSubProvisions]" optimistic-lock="none" >
+		<id name="SubProvisionCode" column="SubProvisionCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SeqNo" column="SeqNo" />
+		<set name="LegislationProvisions" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubProvisionCode"/>
+			</key>
+			<one-to-many class="LegislationProvision"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

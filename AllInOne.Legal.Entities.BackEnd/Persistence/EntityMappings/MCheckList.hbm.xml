@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MChecklist" table="[dbo].[MCheckList]" optimistic-lock="none" >
+		<id name="CheckListId" column="CheckListID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseType" column="CaseType" />
+		<property name="Description" column="Description" />
+		<property name="EffectiveFromDate" column="EffectiveFromDate" />
+		<property name="EffectiveToDate" column="EffectiveToDate" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Name" column="Name" />
+		<property name="Notes" column="Notes" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="StageDescription" column="StageDescription"  type="StringClob"/>
+		<property name="TotalStages" column="TotalStages" />
+		<set name="CheckListInstances" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CheckListID"/>
+			</key>
+			<one-to-many class="CheckListInstance"/>
+		</set>
+		<set name="MCheckListDocuments" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ChecklistID"/>
+			</key>
+			<one-to-many class="MChecklistDocument"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

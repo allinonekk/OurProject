@@ -1,0 +1,5 @@
+C:\AllInOne\OurProject\AllInOne.Legal.Binder.BackEnd\AllInOne.Legal.Binder.BackEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Binder.BackEnd.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Binder.BackEnd.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.Binder.BackEnd\AllInOne.Legal.Binder.BackEnd\obj\Debug\AllInOne.Legal.Binder.BackEnd.dll
+C:\AllInOne\OurProject\AllInOne.Legal.Binder.BackEnd\AllInOne.Legal.Binder.BackEnd\obj\Debug\AllInOne.Legal.Binder.BackEnd.pdb

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MBodyPart" table="[dbo].[MBodyPart]" optimistic-lock="none" >
+		<id name="BPCode" column="BPCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="BPType" column="BPType" />
+		<property name="Descripton" column="Descripton" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="ADIDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BodyPartCode"/>
+			</key>
+			<one-to-many class="ADIDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

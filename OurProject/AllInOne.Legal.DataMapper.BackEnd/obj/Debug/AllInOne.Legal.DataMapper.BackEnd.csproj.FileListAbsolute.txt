@@ -1,0 +1,5 @@
+C:\AllInOne\OurProject\AllInOne.Legal.DataMapper.BackEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.DataMapper.BackEnd.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.DataMapper.BackEnd.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.DataMapper.BackEnd\obj\Debug\AllInOne.Legal.DataMapper.BackEnd.dll
+C:\AllInOne\OurProject\AllInOne.Legal.DataMapper.BackEnd\obj\Debug\AllInOne.Legal.DataMapper.BackEnd.pdb

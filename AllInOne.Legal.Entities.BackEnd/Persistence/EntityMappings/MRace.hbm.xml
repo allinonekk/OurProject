@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MRace" table="[dbo].[MRace]" optimistic-lock="none" >
+		<id name="RaceCode" column="RaceCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SortingType" column="SortingType" />
+		<set name="CaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="RaceCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="ChildInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="RaceCode"/>
+			</key>
+			<one-to-many class="ChildInfo"/>
+		</set>
+		<set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="RaceCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="InfantInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="RaceCode"/>
+			</key>
+			<one-to-many class="InfantInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

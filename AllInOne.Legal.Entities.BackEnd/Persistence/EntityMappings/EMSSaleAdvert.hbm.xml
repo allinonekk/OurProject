@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSSaleAdvert" table="[dbo].[EMSSaleAdvert]" optimistic-lock="none" >
+		<id name="EMSSaleAdvertId" column="EMSSaleAdvertId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AdvertCharge" column="AdvertCharge" />
+		<property name="AdvertDate" column="AdvertDate" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OtherAdvertiser" column="OtherAdvertiser" />
+		<property name="OtherAdvertIn" column="OtherAdvertIn" />
+		<many-to-one name="EMSSale" fetch="select" cascade="none" lazy="false">
+			<column name="EMSSaleId"/>
+		</many-to-one>
+		<many-to-one name="MEMSAdvertIn" fetch="select" cascade="none" lazy="false">
+			<column name="AdvertIn"/>
+		</many-to-one>
+		<many-to-one name="EMSPaymentVoucher" fetch="select" cascade="none" lazy="false">
+			<column name="PaymentVoucherId "/>
+		</many-to-one>
+		<many-to-one name="MEMSAdvertiser" fetch="select" cascade="none" lazy="false">
+			<column name="Advertiser"/>
+		</many-to-one>
+  </class>
+</hibernate-mapping>

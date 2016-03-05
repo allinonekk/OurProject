@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MFilingFee" table="[dbo].[MFilingFee]" optimistic-lock="none" >
+		<id name="FeeRuleCode" column="FeeRuleCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="FeeRuleType" column="FeeRuleType" />
+		<property name="ForumId" column="ForumID" />
+		<property name="IsSystemRule" column="IsSystemRule" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ROCReferences" column="ROCReferences" />
+		<property name="RuleName" column="RuleName" />
+    <property name="TierType" column="TierType" />
+    <many-to-one name="MFilingFeeLegislationAct" fetch="select" cascade="none">
+      <column name="FeeLegislationActCode"/>
+    </many-to-one>
+		<set name="MFilingFeeChargingMechanisms" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="FeeRuleCode"/>
+			</key>
+			<one-to-many class="MFilingFeeChargingMechanism"/>
+		</set>
+		<many-to-one name="MFilingFeeType" fetch="select" cascade="none">
+			<column name="FeeType"/>
+		</many-to-one>
+		<set name="MHRGBeforeTypes" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="FeeRuleCode"/>
+			</key>
+			<one-to-many class="MHRGBeforeType"/>
+		</set>
+		<set name="RequestDocDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="FeeCode"/>
+			</key>
+			<one-to-many class="RequestDocDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RLawFirmSolicitors" table="[dbo].[RLawFirmSolicitors]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="LFID" column="LFID" type="AnsiString"/>
+      <key-property name="SolicitorID" column="SolicitorID" />
+    </composite-id>
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="StartDate" column="StartDate" />
+    <many-to-one name="MDesignation" fetch="select" cascade="none">
+      <column name="DSGCode"/>
+    </many-to-one>
+  </class>
+  <sql-query name="SaveOrUpdateRLawFirmSolicitorProcedure">
+    exec MDM_BackEnd_SaveOrUpdateRLawFirmSolicitors
+    :LFID,:SolicitorID,:PCID,:DSGCode,:StartDate,:LastModifiedBy,:LastModifiedDate,:UserID
+  </sql-query>
+</hibernate-mapping>

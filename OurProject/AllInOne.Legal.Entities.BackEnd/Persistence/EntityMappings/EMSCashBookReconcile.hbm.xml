@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSCashBookReconcile" table="[dbo].[EMSCashBookReconcile]" optimistic-lock="none" >
+		<id name="EMSCashBookReconcileId" column="EMSCashBookReconcileId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Year" column="Year" />
+		<property name="Month" column="Month" />
+		<property name="CashBookBal" column="CashBookBal" />
+		<property name="PeriodReceipt" column="PeriodReceipt" />
+		<property name="PeriodPayment" column="PeriodPayment" />
+		<property name="CurrIntRec" column="CurrIntRec" />
+		<property name="PrevIntRec" column="PrevIntRec" />
+		<property name="StatementBal" column="StatementBal" />
+		<property name="UnpresentedAmt" column="UnpresentedAmt" />
+		<property name="CashBookEndBal" column="CashBookEndBal" />
+		<property name="Status" column="Status" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="CourtId" column="CourtId" />
+		<set name="EMSCashBookItems" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSCashBookItemId"/>
+		  </key>
+		  <one-to-many class="EMSCashBookItem"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSPaymentVoucherFinal" table="[dbo].[EMSPaymentVoucherFinal]" optimistic-lock="none" >
+		<id name="EMSPaymentVoucherFinalId" column="EMSPaymentVoucherFinalId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CourtCommission" column="CourtCommission" />
+		<property name="DebtCostPayment" column="DebtCostPayment" />
+		<property name="DepositRefund" column="DepositRefund" />
+		<property name="ExFundAmt" column="ExFundAmt" />
+		<property name="ExFundSubCaseNo" column="ExFundSubCaseNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NetProceeds" column="NetProceeds" />
+		<property name="PayeeName" column="PayeeName" />
+		<property name="AttendanceFee" column="AttendanceFee" />
+		<property name="AttendanceFeeVarDesc" column="AttendanceFeeVarDesc" />
+		<property name="AttendanceFeeVarAddLess" column="AttendanceFeeVarAddLess" />
+		<property name="AttendanceFeeVarAmt" column="AttendanceFeeVarAmt" />
+		<property name="CourtCommissionVarDesc" column="CourtCommissionVarDesc" />
+		<property name="CourtCommissionVarAddLess" column="CourtCommissionVarAddLess" />
+		<property name="CourtCommissionVarAmt" column="CourtCommissionVarAmt" />
+		<property name="MiscVarDesc" column="MiscVarDesc" />
+		<property name="MiscVarAddLess" column="MiscVarAddLess" />
+		<property name="MiscVarAmt" column="MiscVarAmt" />
+		<property name="AuctioneerCharges" column="AuctioneerCharges" />
+		<property name="AppraiserCharges" column="AppraiserCharges" />
+		<property name="AdvertismentCharges" column="AdvertismentCharges" />
+		<property name="SaleAgentCharges" column="SaleAgentCharges" />
+		<many-to-one name="LawFirm" fetch="select" cascade="none" lazy="false">
+			<column name="LFID"/>
+		</many-to-one>
+		<many-to-one name="CaseParty" fetch="select" cascade="none" lazy="false">
+			<column name="Payee"/>
+		</many-to-one>
+		<many-to-one name="EMSPaymentVoucher" fetch="select" cascade="none" lazy="false">
+			<column name="EMSPaymentVoucherId"/>
+		</many-to-one>
+		<set name="EMSPaymentVoucherAdms" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSPaymentVoucherFinalId"/>
+			</key>
+			<one-to-many class="EMSPaymentVoucherAdm"/>
+		</set>
+		<set name="EMSCourtCommissions" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSPaymentVoucherFinalId"/>
+		  </key>
+		  <one-to-many class="EMSCourtCommission"/>
+		</set>
+		<set name="EMSPaymentVoucherFinalOthers" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSPaymentVoucherFinalId"/>
+		  </key>
+		  <one-to-many class="EMSPaymentVoucherFinalOther"/>
+		</set>
+	</class>
+</hibernate-mapping>

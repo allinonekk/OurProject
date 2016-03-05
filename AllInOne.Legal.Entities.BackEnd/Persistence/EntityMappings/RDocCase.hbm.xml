@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RDocCase" table="[dbo].[RDocCase]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="CaseInfoId" column="CaseInfoID" />
+    		<key-property name="DocId" column="DocID" />
+		</composite-id>
+		<property name="IsOriginal" column="IsOriginal" />
+		<property name="IsPreceding" column="IsPreceding" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RefDocId" column="RefDocId" />
+		<property name="RefDocNumber" column="RefDocNumber" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>
+		<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocID"/>
+		</many-to-one>
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoID"/>
+		</many-to-one>-->
+    		<property name="SubCaseInfoId" column="SubCaseInfoID"/>
+
+	</class>
+</hibernate-mapping>

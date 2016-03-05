@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="WOEExecutionAddress" table="[dbo].[WOEExecutionAddress]" optimistic-lock="none" >
+		<id name="WOEExecutionAddressId" column="WOEExecutionAddressId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="BlkNo" column="BlkNo" />
+		<property name="StreetName" column="StreetName" />
+		<property name="FloorNo" column="FloorNo" />
+		<property name="UnitNo" column="UnitNo" />
+		<property name="BuildingName" column="BuildingName" />
+		<property name="PostalCode" column="PostalCode" />
+		<property name="FormatInd" column="FormatInd" />
+		<property name="Address" column="Address" />
+		<property name="Addr1" column="Addr1" />
+		<property name="Addr2" column="Addr2" />
+		<property name="Addr3" column="Addr3" />
+		<property name="Addr4" column="Addr4" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="ObsInd" column="ObsInd" />		
+	</class>
+</hibernate-mapping>

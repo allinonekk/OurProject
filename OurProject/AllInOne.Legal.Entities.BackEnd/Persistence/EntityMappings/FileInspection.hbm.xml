@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="FileInspection" table="[dbo].[FileInspection]" optimistic-lock="none" >
+		<id name="FileInspectionId" column="FileInspectionID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="EMail" column="eMail" />
+		<property name="ExpiryDate" column="ExpiryDate" />
+		<property name="IdNumber" column="IDNumber" />
+		<property name="InspectionLocation" column="InspectionLocation" />
+		<property name="InspectionPeriod" column="InspectionPeriod" />
+		<property name="InspectionStartedDate" column="InspectionStartedDate" />
+    <property name="InspectionToken" column="InspectionToken" type="AnsiString"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Status" column="Status" />
+    <property name="DocId" column="DocID" />
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="CountryCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDType" fetch="select" cascade="none">
+			<column name="IDTypeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

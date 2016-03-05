@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmPropertyList" table="[dbo].[EMSAdmPropertyList]" optimistic-lock="none" >
+		<id name="EMSAdmPropertyListId" column="EMSAdmPropertyListId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="PropertyType" column="PropertyType" />
+    <property name="Tonnage" column="Tonnage" />
+    <property name="NetTonnage" column="NetTonnage" />
+    <property name="ReleaseCourtCommission" column="ReleaseCourtCommission" />
+    <property name="ReleaseReceiptNo" column="ReleaseReceiptNo" />
+    <property name="ReleaseReceiptDate" column="ReleaseReceiptDate" />
+    <property name="SaleCourtCommission" column="SaleCourtCommission" />
+    <property name="SaleReceiptNo" column="SaleReceiptNo" />
+    <property name="SaleReceiptDate" column="SaleReceiptDate" />
+    <property name="GrossProceeds" column="GrossProceeds" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <many-to-one name="EMSAdmProperty" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAdmPropertyId"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

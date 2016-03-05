@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MNAAAlertEventsTemplate" table="[dbo].[MNAAAlertEventsTemplate]" optimistic-lock="none" >
+		<id name="AlertEventTemplateId" column="AlertEventTemplateID" >
+			<generator class="identity"/>
+		</id>
+		<property name="BETaskItemMessage" column="BETaskItemMessage" />
+		<property name="EmailMessage" column="EmailMessage" />
+		<property name="EmailSubject" column="EmailSubject" />
+		<property name="FAXMessage" column="FAXMessage"  type="StringClob"/>
+		<property name="FETaskItemMessage" column="FETaskItemMessage" />
+		<property name="IsGroupAllowed" column="IsGroupAllowed" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="RubberBandInd" column="RubberBandInd" />
+		<property name="SMSMessage" column="SMSMessage" />
+		<many-to-one name="MCaseType" fetch="select" cascade="none">
+			<column name="CaseTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MCourtType" fetch="select" cascade="none">
+			<column name="CourtID"/>
+		</many-to-one>
+		<many-to-one name="MNAASubCategory" fetch="select" cascade="none">
+			<column name="SubCategoryID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

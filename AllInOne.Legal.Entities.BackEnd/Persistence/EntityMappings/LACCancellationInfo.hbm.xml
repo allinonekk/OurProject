@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LACCancellationInfo" table="[dbo].[LACCancellationInfo]" optimistic-lock="none" >
+		<id name="CancellationId" column="CancellationId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<!--<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocId"/>
+		</many-to-one>-->
+    <property name="DocId" column="DocId" type="AnsiString"/>
+    
+		<!--<many-to-one name="LACInfo" fetch="select" cascade="none">
+			<column name="LACInfoId"/>
+		</many-to-one>-->
+
+    <property name="LACInfoId" column="LACInfoId" type="AnsiString"/>
+
+
+  </class>
+</hibernate-mapping>

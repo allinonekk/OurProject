@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LiquidatorAlias" table="[dbo].[LiquidatorAlias]" optimistic-lock="none" >
+		<id name="LiquidatorAliasId" column="LiquidatorAliasId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AliasName" column="AliasName" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<!--<many-to-one name="Liquidator" fetch="select" cascade="none">
+			<column name="LiquidatorId"/>
+		</many-to-one>-->
+		<property name="LiquidatorId" column="LiquidatorId" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

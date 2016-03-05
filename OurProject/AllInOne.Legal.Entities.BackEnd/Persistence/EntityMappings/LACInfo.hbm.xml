@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="LACInfo" table="[dbo].[LACInfo]" optimistic-lock="none" >
+    <id name="LACInfoId" column="LACInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CancellationDateTime" column="CancellationDateTime" />
+    <property name="ClosedDateTime" column="ClosedDateTime" />
+    <property name="ConcludedDateTime" column="ConcludedDateTime" />
+    <property name="ExpiredDateTime" column="ExpiredDateTime" />
+    <property name="IssuedDateTime" column="IssuedDateTime" />
+    <property name="LACConcludedStatus" column="LACConcludedStatus" />
+    <property name="LACNo" column="LACNo" />
+    <property name="LACStatus" column="LACStatus" />
+    <property name="LACType" column="LACType" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="RevocationDateTime" column="RevocationDateTime" />
+    <property name="ConcludedByCourtDateTime" column="ConcludedByCourtDateTime" />
+    <!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoId"/>
+		</many-to-one>-->
+
+    <property name="CaseInfoId" column="CaseInfoId"></property>
+
+    <set name="CasePartyLACDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LACInfoId"/>
+      </key>
+      <one-to-many class="CasePartyLACDetail"/>
+    </set>
+    <set name="CasePartyLACDetailsHistories" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LACInfoId"/>
+      </key>
+      <one-to-many class="CasePartyLACDetailsHistory"/>
+    </set>
+    <set name="DocCasePartyLACDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LACInfoId"/>
+      </key>
+      <one-to-many class="DocCasePartyLACDetail"/>
+    </set>
+    <!--<many-to-one name="LABParty" fetch="select" cascade="none">
+			<column name="LABPartyId"/>
+		</many-to-one>-->
+
+    <property name="LABPartyId" column="LABPartyId" type="AnsiString"></property>
+
+    <set name="LACCancellationInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LACInfoId"/>
+      </key>
+      <one-to-many class="LACCancellationInfo"/>
+    </set>
+    <set name="LACDocumentDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="LACInfoId"/>
+      </key>
+      <one-to-many class="LACDocumentDetail"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

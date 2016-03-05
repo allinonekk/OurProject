@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="InvestigatingOfficerInfo" table="[dbo].[InvestigatingOfficerInfo]" optimistic-lock="none" >
+		<id name="InvestigatingOfficerInfoId" column="InvestigatingOfficerInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Designation" column="Designation" />
+		<property name="Email" column="Email" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MobileNo" column="MobileNo" />
+		<property name="Name" column="Name" />
+		<property name="PhoneNo" column="PhoneNo" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" />
+		<many-to-one name="MIOOrganisation" fetch="select" cascade="none">
+			<column name="IOOrganisationCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

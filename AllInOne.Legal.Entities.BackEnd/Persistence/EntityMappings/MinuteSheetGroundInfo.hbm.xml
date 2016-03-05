@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MinuteSheetGroundInfo" table="[dbo].[MinuteSheetGroundInfo]" optimistic-lock="none" >
+    <id name="MinuteSheetGroundInfoId" column="MinuteSheetGroundInfoId" >
+      <generator class="assigned"/>
+    </id>
+    <property name="MinuteSheetInfoId" column="MinuteSheetInfoId" />
+    <property name="ClaimForPNOrDef" column="ClaimForPNOrDef" />
+    <property name="IsAdultery" column="IsAdultery" />
+    <property name="IsUnreasonableBehavior" column="IsUnreasonableBehavior" />
+    <property name="IsDesertionFor2Years" column="IsDesertionFor2Years" />
+    <property name="Is3YearsSeparationWithConsent" column="Is3YearsSeparationWithConsent" />
+    <property name="Is4YearsSeparation" column="Is4YearsSeparation" />
+    <property name="IsNonConsummationRefused" column="IsNonConsummationRefused" />
+    <property name="IsNonConsummationFor" column="IsNonConsummationFor" />
+    <property name="IsNonConsummationOwingToInCap" column="IsNonConsummationOwingToInCap" />
+    <property name="IsOthers" column="IsOthers" />
+    <property name="OtherRemarks" column="OtherRemarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    </class>
+</hibernate-mapping>

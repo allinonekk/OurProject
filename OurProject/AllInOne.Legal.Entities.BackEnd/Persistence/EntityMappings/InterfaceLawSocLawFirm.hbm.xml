@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="InterfaceLawSocLawFirm" table="[dbo].[InterfaceLawSocLawFirm]" optimistic-lock="none" >
+		<id name="LFID" column="LFID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="GSTNumber" column="GSTNumber" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrganizationName" column="OrganizationName" />
+		<property name="UEN" column="UEN" />
+    <property name="LawPracticeType" column="LawPracticeType" />
+    <property name="LFEmail" column="LFemail" />
+   	</class>
+</hibernate-mapping>

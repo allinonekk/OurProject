@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="LegalExperienceInfo" table="[dbo].[LegalExperienceInfo]" optimistic-lock="none" >
+		<id name="LegalExperienceInfoId" column="LegalExperienceInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="EmploymentEndDate" column="EmploymentEndDate" />
+		<property name="EmploymentStartDate" column="EmploymentStartDate" />
+		<property name="ExperienceLength" column="ExperienceLength" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LegalExperienceType" column="LegalExperienceType" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" />
+    <property name="LFID" column="LFID" />
+		<property name="TypeofOrganization" column="TypeofOrganization" />
+    <property name="OrganisationName" column="OrganisationName" />
+    <property name="Designation" column="Designation" />
+	</class>
+</hibernate-mapping>

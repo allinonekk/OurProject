@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CaseSolicitorHistory" table="[dbo].[CaseSolicitorHistory]" optimistic-lock="none" >
+		<id name="RecId" column="RecID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ACLASInd" column="ACLASInd" />
+		<property name="ChangeType" column="ChangeType" />
+		<property name="CLASInd" column="CLASInd" />
+		<property name="CounselInd" column="CounselInd" />
+		<property name="DateAppointed" column="DateAppointed" />
+		<property name="DateDischarged" column="DateDischarged" />
+		<property name="EndDate" column="EndDate" />
+		<property name="JACInd" column="JACInd" />
+		<property name="LASCOInd" column="LASCOInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RepresentedBy" column="RepresentedBy" />
+		<property name="StartDate" column="StartDate" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>
+		<many-to-one name="CaseParty" fetch="select" cascade="none">
+			<column name="CasePartyID"/>
+		</many-to-one>
+		<many-to-one name="LawFirm" fetch="select" cascade="none">
+			<column name="LFId"/>
+		</many-to-one>
+		<many-to-one name="Solicitor" fetch="select" cascade="none">
+			<column name="SolicitorId"/>
+		</many-to-one>-->
+		<property name="CaseInfoId" column="CaseInfoID" />
+		<property name="CasePartyId" column="CasePartyID" type="AnsiString"/>
+		<property name="LFID" column="LFId" type="AnsiString"/>
+		<property name="SolicitorId" column="SolicitorId" />
+
+	</class>
+</hibernate-mapping>

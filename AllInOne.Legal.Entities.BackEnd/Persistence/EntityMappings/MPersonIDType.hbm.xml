@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPersonIDType" table="[dbo].[MIDType]" optimistic-lock="none" >
+		<id name="IdTypeCode" column="IDTypeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="UIDescription" column="UIDescription" />
+		<set name="CasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BailorIdTypeCode"/>
+			</key>
+			<one-to-many class="CasePartyBailorInfo"/>
+		</set>
+		<set name="ChildInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="ChildInfo"/>
+		</set>
+		<set name="DeceasedIdentifications" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="DeceasedIdentification"/>
+		</set>
+		<set name="DocCasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BailorIdTypeCode"/>
+			</key>
+			<one-to-many class="DocCasePartyBailorInfo"/>
+		</set>
+		<set name="FileInspections" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDTypeCode"/>
+			</key>
+			<one-to-many class="FileInspection"/>
+		</set>
+		<set name="LABParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="LABParty"/>
+		</set>
+		<set name="LABPartyHistories" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="LABPartyHistory"/>
+		</set>
+		<set name="LiquidatorPICs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="LiquidatorPIC"/>
+		</set>
+		<set name="MBODDCompanyIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIDTypeCode"/>
+			</key>
+			<one-to-many class="BankruptcyOtherDefDetail"/>
+		</set>
+		<set name="MBODDPersonIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIDTypeCode"/>
+			</key>
+			<one-to-many class="BankruptcyOtherDefDetail"/>
+		</set>
+		<set name="MCPAICDCompanyIdTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIdTypeCode"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="MCPAICDPersonIdTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIdTypeCode"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="MCPCompanyIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIDTypeCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MCPPersonIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIDTypeCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MDCPAICDCompanyIdTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIdTypeCode"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="MDCPAICDPersonIdTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIdTypeCode"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="MDCPCompanyIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIDTypeCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MDCPPersonIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIDTypeCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MLCompanyIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CompanyIdTypeCode"/>
+			</key>
+			<one-to-many class="Liquidator"/>
+		</set>
+		<set name="MLPersonIdType" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PersonIdTypeCode"/>
+			</key>
+			<one-to-many class="Liquidator"/>
+		</set>
+		<set name="TravelPassInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdTypeCode"/>
+			</key>
+			<one-to-many class="TravelPassInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

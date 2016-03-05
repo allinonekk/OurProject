@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SubCaseInfo" table="[dbo].[SubCaseInfo]" optimistic-lock="none" >
+		<id name="SubCaseInfoId" column="SubCaseInfoID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubCaseNo" column="SubCaseNo" type="AnsiString" />
+		<property name="SubCaseSerialNo" column="SubCaseSerialNo" />
+		<property name="SubCaseStatusDate" column="SubCaseStatusDate" />
+		<property name="SubCaseYear" column="SubCaseYear" />
+    <property name="HideDocAccessTillDate" column="HideDocAccessTillDate" />
+    <property name="SubCaseFeeForumID" column="SubCaseFeeForumID" />
+    <property name="SubCaseFeeTierType" column="SubCaseFeeTierType" />
+		<set name="ADMRSVCBBInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="ADMRSVCBBInfo"/>
+		</set>
+		<set name="AffidavitInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoID"/>
+			</key>
+			<one-to-many class="AffidavitInfo"/>
+		</set>
+		<set name="AssessmentDamages" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="AssessmentDamage"/>
+		</set>
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+		<property name="CaseInfoId" column="CaseInfoID" />
+		<set name="CaveatInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="CaveatInfo"/>
+		</set>
+		<set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="DocOrderDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="DocOrderDetail"/>
+		</set>
+		<set name="DocumentInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="DocumentInfo"/>
+		</set>
+		<set name="EMSAccounts" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="EMSAccount"/>
+		</set>
+		
+		<many-to-one name="MCaseStatus" fetch="select" cascade="none">
+			<column name="SubCaseStatusCode"/>
+		</many-to-one>
+		<many-to-one name="MCaseType" fetch="select" cascade="none">
+			<column name="SubCaseType"/>
+		</many-to-one>
+		<set name="NatureOfApplications" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoID"/>
+			</key>
+			<one-to-many class="NatureOfApplication"/>
+		</set>
+		<set name="OSInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="OSInfo"/>
+		</set>
+		<set name="PCAppDatesFromSALs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="PCAppDatesFromSAL"/>
+		</set>
+		<set name="PCAppDetailsFromLawSocs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="PCAppDetailsFromLawSoc"/>
+		</set>
+		<set name="RDocCases" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoID"/>
+			</key>
+			<one-to-many class="RDocCase"/>
+		</set>
+		<set name="RSubCaseSubmissions" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoId"/>
+			</key>
+			<one-to-many class="RSubCaseSubmission"/>
+		</set>
+		<set name="SubCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCaseInfoID"/>
+			</key>
+			<one-to-many class="SubCaseParty"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

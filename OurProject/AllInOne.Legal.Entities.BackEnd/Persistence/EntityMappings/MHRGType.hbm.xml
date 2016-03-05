@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MHRGType" table="[dbo].[MHRGType]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="CourtInd" column="CourtInd" />
+    		<key-property name="HRGTypeCode" column="HRGTypeCode" />
+		</composite-id>
+		<property name="Description" column="Description" />
+		<property name="HeardByIndicator" column="HeardByIndicator" />
+		<property name="HearingModeInd" column="HearingModeInd" />
+		<property name="IsInterfaced" column="IsInterfaced" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+
+	</class>
+</hibernate-mapping>

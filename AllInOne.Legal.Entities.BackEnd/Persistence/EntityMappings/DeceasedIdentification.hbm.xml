@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DeceasedIdentification" table="[dbo].[DeceasedIdentifications]" optimistic-lock="none" >
+		<id name="DeceasedIdentificationId" column="DeceasedIdentificationId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="IdNumber" column="IdNumber" />
+		<property name="IdRemarks" column="IdRemarks" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="IdCountryOtherText" column="IdCountryOtherText" />
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="IdCountryCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDType" fetch="select" cascade="none">
+			<column name="IdTypeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

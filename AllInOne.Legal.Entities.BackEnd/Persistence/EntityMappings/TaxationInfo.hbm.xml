@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="TaxationInfo" table="[dbo].[TaxationInfo]" optimistic-lock="none" >
+    <id name="TaxationInfoId" column="TaxationInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="OGAwardedAmount" column="OGAwardedAmount" />
+    <property name="Allocaturfee" column="Allocaturfee" />
+    <property name="WithdrawalFeeInd" column="WithdrawalFeeInd" />
+    <property name="GstAmount" column="GstAmount" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="BFTRemarks" column="BFTRemarks" />
+    <property name="GstPercentage" column="GstPercentage" />
+    <property name="AmountInvolved" column="AmountInvolved" />
+    <property name="SGDEquivalent" column="SGDEquivalent" />
+    <property name="ReliefClaimed" column="ReliefClaimed" />
+    <property name="NoOfDaysOfTrial" column="NoOfDaysOfTrial" />
+    <property name="TimeSpentGetUp" column="TimeSpentGetUp" />
+    <property name="HrgDays" column="HrgDays" />
+    <property name="HrgHours" column="HrgHours" />
+    <property name="PeriodOfWorkFrom" column="PeriodOfWorkFrom" />
+    <property name="PeriodOfWorkTo" column="PeriodOfWorkTo" />
+    <property name="NatureOfWork" column="NatureOfWork" />
+    <property name="ScopeOfBrief" column="ScopeOfBrief" />
+    <property name="IssueCOC" column="IssueCOC" />
+    <property name="BillNatureRemarks" column="BillNatureRemarks" />
+    <property name="NOWRemarks" column="NOWRemarks" />
+    <property name="PublicTrusteeConsented" column="PublicTrusteeConsented" />
+    <property name="DirectorConsented" column="DirectorConsented" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="BFTCode" column="BFTCode" />
+    <many-to-one name="MBillNature" fetch="select" cascade="none">
+      <column name="BillNatureCode"/>
+    </many-to-one>
+    <many-to-one name="MNatureOfWork" fetch="select" cascade="none">
+      <column name="NOWCode"/>
+    </many-to-one>
+    <many-to-one name="MBillType" fetch="select" cascade="none">
+      <column name="BillTypeCode"/>
+    </many-to-one>
+   <many-to-one name="MCurrency" fetch="select" cascade="none">
+      <column name="CurrencyCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

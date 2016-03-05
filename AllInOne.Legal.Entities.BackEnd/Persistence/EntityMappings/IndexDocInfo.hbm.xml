@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="IndexDocInfo" table="[dbo].[IndexDocInfo]" optimistic-lock="none" >
+    <id name="IndexDocInfoPKID" column="IndexDocInfoPKID">
+      <generator class="native"/>
+    </id>
+    <property name="IndexDocInfoId" column="IndexDocInfoId" type="AnsiString"/>
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="DocId" column="DocId" type="AnsiString"/>
+    <property name="UserId" column="UserId" type="AnsiString"/>
+    <property name="ObsInd" column="ObsInd"/>
+    <property name="DocGroupID" column="DocGroupID"/>
+  </class>
+</hibernate-mapping>

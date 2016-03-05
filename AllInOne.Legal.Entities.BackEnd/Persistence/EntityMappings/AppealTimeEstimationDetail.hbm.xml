@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="AppealTimeEstimationDetail" table="[dbo].[AppealTimeEstimationDetail]" optimistic-lock="none" >
+    <id name="AppealTimeEstimationDetailId" column="AppealTimeEstimationDetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="ItemNo" column="ItemNo" />
+    <property name="PartyType" column="PartyType" />
+    <property name="LawfirmOrPartyName" column="LawfirmOrPartyName" />
+    <property name="SolicitorName" column="SolicitorName" />
+    <property name="TimeNeeded" column="TimeNeeded" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+  </class>
+</hibernate-mapping>

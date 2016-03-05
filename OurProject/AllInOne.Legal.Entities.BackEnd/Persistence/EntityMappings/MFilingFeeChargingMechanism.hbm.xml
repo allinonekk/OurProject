@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MFilingFeeChargingMechanism" table="[dbo].[MFilingFeeChargingMechanism]" optimistic-lock="none" >
+		<id name="FeeChargeId" column="FeeChargeID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AdditionalFee" column="AdditionalFee" />
+		<property name="BaseFee" column="BaseFee" />
+		<property name="EffectiveFrom" column="EffectiveFrom" />
+		<property name="EffectiveTo" column="EffectiveTo" />
+		<property name="FlatFeeRate" column="FlatFeeRate" />
+		<property name="IsInterfaced" column="isInterfaced" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MinimumFee" column="[Minimum Fee]" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="PerRateFee" column="PerRateFee" />
+		<property name="PerRateUnit" column="PerRateUnit" />
+		<property name="ProcFee" column="ProcFee" />
+		<property name="TransFee" column="TransFee" />
+		<property name="UrgentFee" column="UrgentFee" />
+    <property name="Perdocument" column="Perdocument" />
+    <property name="InExcessOf" column="InExcessOf" />
+    <property name="CourtFeePercent" column="CourtFeePercent" />
+    <property name="TierType" column="TierType" />
+    <property name="ForumID" column="ForumID" />
+    
+    
+		<many-to-one name="MFilingFee" fetch="select" cascade="none">
+			<column name="FeeRuleCode"/>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>

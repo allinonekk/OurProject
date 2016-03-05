@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DocCasePartyCriminalInfo" table="[dbo].[DocCasePartyCriminalInfo]" optimistic-lock="none" >
+		<id name="DocCasePartyCriminalInfoId" column="DocCasePartyCriminalInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AcquittalDetails" column="AcquittalDetails" />
+		<property name="AgeAtTimeOfOffence" column="AgeAtTimeOfOffence" />
+		<property name="BailAmount" column="BailAmount" />
+		<property name="BailRemarks" column="BailRemarks" />
+		<property name="DateAcquitted" column="DateAcquitted" />
+		<property name="DateBailGranted" column="DateBailGranted" />
+		<property name="DateInCustody" column="DateInCustody" />
+		<property name="DateOfFirstMentioned" column="DateOfFirstMentioned" />
+		<property name="DateOfGD" column="DateOfGD" />
+		<property name="DateOfNoticeOfAppeal" column="DateOfNoticeOfAppeal" />
+		<property name="DateOfPetitionOfAppeal" column="DateOfPetitionOfAppeal" />
+		<property name="DateOfSentence" column="DateOfSentence" />
+		<property name="DateOfVerdict" column="DateOfVerdict" />
+		<property name="DateRemanded" column="DateRemanded" />
+		<property name="DateWAEffected" column="DateWAEffected" />
+		<property name="DateWAIssued" column="DateWAIssued" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="PartyInOthers" column="PartyInOthers" />
+		<property name="PartyInType" column="PartyInType" />
+		<!--<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>-->
+		<property name="DCPID" column="DCPID" type="AnsiString"/>
+		<many-to-one name="MPrisonCustodyPrisonCode" fetch="select" cascade="none">
+			<column name="CustodyPrisonCode"/>
+		</many-to-one>
+		<many-to-one name="MPrisonRemandPrisonCode" fetch="select" cascade="none">
+			<column name="RemandPrisonCode"/>
+		</many-to-one>
+		<property name="DateFiatFiled" column="DateFiatFiled" />
+		<property name="DateOfCommittalHearing" column="DateOfCommittalHearing" />
+		<property name="DateOfFirstCCDC" column="DateOfFirstCCDC" />
+		<property name="DateOfLastCCDC" column="DateOfLastCCDC" />
+		<property name="DateOfFirstFixedTrial" column="DateOfFirstFixedTrial" />
+		<property name="DateOfFirstActualTrial" column="DateOfFirstActualTrial" />
+		<property name="DateOfDisposal" column="DateOfDisposal" />
+    <property name="CustodyPrisonOthers" column="CustodyPrisonOthers" />
+    <property name="RemandPrisonOthers" column="RemandPrisonOthers" />
+	</class>
+</hibernate-mapping>

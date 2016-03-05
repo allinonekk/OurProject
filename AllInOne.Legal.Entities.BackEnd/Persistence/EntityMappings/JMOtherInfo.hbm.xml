@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="JMOtherInfo" table="[dbo].[JMOtherInfo]" optimistic-lock="none" >
+    <id name="JMOtherInfoId" column="JMOtherInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="caseinfoid" column="caseinfoid" />
+    <property name="IsPCRCompliedWith" column="IsPCRCompliedWith" />
+    <property name="AnyOtherInfoRem" column="AnyOtherInfoRem" />
+    <property name="IsInfoSent" column="IsInfoSent" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedby" column="LastModifiedby" />
+    <property name="LastModifieddate" column="LastModifieddate" />
+  </class>
+</hibernate-mapping>

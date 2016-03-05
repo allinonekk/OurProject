@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmCharge" table="[dbo].[EMSAdmCharge]" optimistic-lock="none" >
+		<id name="EMSAdmChargeId" column="EMSAdmChargeId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="IsCharged" column="IsCharged" />
+		<property name="GuardCharges" column="GuardCharges" />
+		<property name="AdvertFee" column="AdvertFee" /> 
+		<property name="AppraiserFee" column="AppraiserFee" />
+		<property name="PSAPortDues" column="PSAPortDues" />
+		<property name="DeliveryFee" column="DeliveryFee" />
+		<property name="NotaryFee" column="NotaryFee" />
+		<property name="AgencyFee" column="AgencyFee" />
+		<property name="CrewWages" column="CrewWages" />
+		<property name="BankTpt" column="BankTpt" />
+		<property name="GazetteNotice" column="GazetteNotice" />
+		<property name="BerthCharges" column="BerthCharges" />
+		<property name="OtherExpenses" column="OtherExpenses" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />		
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+		<many-to-one name="EMSPaymentVoucher" fetch="select" cascade="none" lazy="false">
+			<column name="PaymentVoucherId"/>
+		</many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ServiceOfDocDocStatusHistory" table="[dbo].[ServiceOfDocDocStatusHistory]" optimistic-lock="none" >
+		<id name="ServiceOfDocDocStatusId" column="ServiceOfDocDocStatusID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="RemainderMessage" column="RemainderMessage" />
+		<property name="RemainderSubject" column="RemainderSubject" />
+		<property name="RemainderTo" column="RemainderTo" />
+		<property name="StatusDate" column="StatusDate" />
+		<!--<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="RemainderAttDocId"/>
+		</many-to-one>-->
+		<property name="RemainderAttDocId" column="RemainderAttDocId" type="AnsiString"/>
+		<many-to-one name="MServeStatus" fetch="select" cascade="none">
+			<column name="SerStatusCode"/>
+		</many-to-one>
+		<!--<many-to-one name="ServiceOfDocInfo" fetch="select" cascade="none">
+			<column name="ServiceOfDocInfoID"/>
+		</many-to-one>-->
+		<property name="ServiceOfDocInfoId" column ="ServiceOfDocInfoID" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

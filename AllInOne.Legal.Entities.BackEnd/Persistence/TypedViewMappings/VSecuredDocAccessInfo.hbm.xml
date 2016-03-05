@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="AllInOne.Legal.Entities.BackEnd" namespace="AllInOne.Legal.Entities.BackEnd">
+	<class name="VSecuredDocAccessInfo" table="dbo.VSecuredDocAccessInfo" mutable="false">
+		<composite-id>
+			<key-property name="DocId" column="DocId" />
+			<key-property name="UserID" column="UserID" />			
+		</composite-id>		
+	</class>
+</hibernate-mapping>

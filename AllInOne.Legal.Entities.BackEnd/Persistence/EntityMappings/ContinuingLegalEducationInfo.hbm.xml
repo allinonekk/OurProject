@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ContinuingLegalEducationInfo" table="[dbo].[ContinuingLegalEducationInfo]" optimistic-lock="none" >
+		<id name="ContinuingLegalEducationInfoId" column="ContinuingLegalEducationInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AreaOfLaw" column="AreaOfLaw" />
+		<property name="CLEPoint" column="CLEPoint" />
+		<property name="CLEProvider" column="CLEProvider" />
+		<property name="Date" column="Date" />
+		<property name="Duration" column="Duration" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NameOfCourse" column="NameOfCourse" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="Venue" column="Venue" />
+
+	</class>
+</hibernate-mapping>

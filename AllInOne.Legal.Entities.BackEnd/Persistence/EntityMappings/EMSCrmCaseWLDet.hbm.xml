@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSCrmCaseWLDet" table="[dbo].[EMSCrmCaseWLDet]" optimistic-lock="none" >
+		<id name="EMSCrmCaseWLDetId" column="EMSCrmCaseWLDetId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OtherAddrBlkNo" column="OtherAddrBlkNo" />
+		<property name="OtherAddrBuildingName" column="OtherAddrBuildingName" />
+		<property name="OtherAddrFloorNo" column="OtherAddrFloorNo" />
+		<property name="OtherAddrPostalCode" column="OtherAddrPostalCode" />
+		<property name="OtherAddrStreetName" column="OtherAddrStreetName" />
+		<property name="OtherAddrUnitNo" column="OtherAddrUnitNo" />
+		<property name="OtherICUEN" column="OtherICUEN" />
+		<property name="OtherName" column="OtherName" />
+		<many-to-one name="EMSCrmCase" fetch="select" cascade="none" lazy="false">
+			<column name="EMSCrmCaseId"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

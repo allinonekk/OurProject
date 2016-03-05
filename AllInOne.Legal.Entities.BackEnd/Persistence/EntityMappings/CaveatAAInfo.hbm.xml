@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CaveatAAInfo" table="[dbo].[CaveatAAInfo]" optimistic-lock="none" >
+		<id name="CaveatAAInfoId" column="CaveatAAInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="IMONumber" column="IMONumber" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="PortOfRegistration" column="PortOfRegistration" />
+		<property name="RegistrationNumber" column="RegistrationNumber" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="VesselIdType" column="VesselIdType" />
+		<property name="VesselOrPropertyName" column="VesselOrPropertyName" />
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="CountryOfRegistration"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+			<column name="IdGroupCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

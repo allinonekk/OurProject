@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RASInfo" table="[dbo].[RASInfo]" optimistic-lock="none" >
+		<id name="RASInfoId" column="RASInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AppealAgainstJudOrder" column="AppealAgainstJudOrder" />
+		<property name="AppealAgainstME" column="AppealAgainstME" />
+		<property name="DateofOrder" column="DateofOrder" />
+		<property name="IsEOTOrderObtained" column="IsEOTOrderObtained" />
+		<property name="IsLOCOrderObtainted" column="IsLOCOrderObtainted" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="AppealAgainstUserId" column="AppealAgainstUserId" />
+    <property name="SeekDirectionInd" column="SeekDirectionInd" />
+    <many-to-one name="MDesignation" fetch="select" cascade="none">
+      <column name="AppealAgainstDSGCode"/>
+    </many-to-one>
+    <many-to-one name="MCoram" fetch="select" cascade="none">
+      <column name="CoramCode"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MVSAConfigPrayer" table="[dbo].[MVSAConfigPrayer]" optimistic-lock="none" >
+		<id name="VSAConfigPrayerId" column="VSAConfigPrayerId" >
+			<generator class="assigned"/>
+		</id>
+		<property name="VSAConfigDetailId" column="VSAConfigDetailId" />
+		<property name="Level" column="Level" />
+		<property name="SubLevel" column="SubLevel" />
+		<property name="IsEnabled" column="IsEnabled" />
+    <property name="PrayersText" column="PrayersText" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="PrayerTitle" column="PrayerTitle" />
+    <property name="PrayerCode" column="PrayerCode" />
+  	</class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DrugInfo" table="[dbo].[DrugInfo]" optimistic-lock="none" >
+		<id name="DrugInfoId" column="DrugInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="DrugAmountInGrams" column="DrugAmountInGrams" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MOTOtherText" column="MOTOtherText" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="ChargeInfoId" column="ChargeInfoId" type="AnsiString"/>
+    <property name="DrugRemarks" column="DrugRemarks" />
+    <property name="MOTRemarks" column="MOTRemarks" />
+		<!--
+		<many-to-one name="ChargeInfo" fetch="select" cascade="none">
+			<column name="ChargeInfoId"/>
+		</many-to-one>-->
+		<many-to-one name="MDrug" fetch="select" cascade="none">
+			<column name="DrugCode"/>
+		</many-to-one>
+		<many-to-one name="MModeOfTrafficking" fetch="select" cascade="none">
+			<column name="MOTCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

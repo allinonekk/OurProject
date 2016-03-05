@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSAdmClaim" table="[dbo].[EMSAdmClaim]" optimistic-lock="none" >
+		<id name="EMSAdmClaimId" column="EMSAdmClaimId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ClaimType" column="ClaimType" />
+		<property name="ClaimDesc" column="ClaimDesc" />
+		<property name="ClaimAmt" column="ClaimAmt" /> 
+		<property name="TimeFrom" column="TimeFrom" />
+		<property name="LocationFrom" column="LocationFrom" />
+		<property name="LocationTo" column="LocationTo" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+    <many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAccountId"/>
+    </many-to-one>	
+    <many-to-one name="EMSAdmExec" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAdmExecId"/>
+		</many-to-one>
+    <many-to-one name="EMSAdmRelease" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAdmReleaseId"/>
+    </many-to-one>
+    <many-to-one name="EMSSale" fetch="select" cascade="none" lazy="false">
+      <column name="EMSSaleId"/>
+    </many-to-one>
+    <many-to-one name="EMSPaymentVoucher" fetch="select" cascade="none" lazy="false">
+      <column name="PaymentVoucherId"/>
+    </many-to-one>
+    <many-to-one name="Bailiff" fetch="select" cascade="none" lazy="false">
+      <column name="BailiffId"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CheckListInstance" table="[dbo].[CheckListInstance]" optimistic-lock="none" >
+		<id name="CheckListInstanceId" column="CheckListInstanceID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CreateDate" column="CreateDate" />
+		<property name="CurrentStage" column="CurrentStage" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ProcessedBy" column="ProcessedBy" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+    		<property name="CaseInfoId" column="CaseInfoID"/>
+		<set name="CheckListSubmissions" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CheckListInstanceID"/>
+			</key>
+			<one-to-many class="CheckListSubmission"/>
+		</set>
+		<many-to-one name="MChecklist" fetch="select" cascade="none">
+			<column name="CheckListID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

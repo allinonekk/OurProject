@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MCountry" table="[dbo].[MCountry]" optimistic-lock="none" >
+		<id name="CountryCode" column="CountryCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Category" column="Category" />
+		<property name="Description" column="Description" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SortingType" column="SortingType" />
+		<set name="AreaOfLegalPractices" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="AreaOfLegalPractice"/>
+		</set>
+		<set name="CasePartyBailorAddresses" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="CasePartyBailorAddress"/>
+		</set>
+		<set name="CasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="CasePartyBailorInfo"/>
+		</set>
+		<set name="CasePartyCitizenships" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CitizenshipCountryCode"/>
+			</key>
+			<one-to-many class="CasePartyCitizenship"/>
+		</set>
+		<set name="CaveatAAInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="CaveatAAInfo"/>
+		</set>
+		<set name="ChildInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="ChildInfo"/>
+		</set>
+		<set name="DeceasedIdentifications" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="DeceasedIdentification"/>
+		</set>
+		<set name="DegreeInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="DegreeInfo"/>
+		</set>
+		<set name="DivorceInfosPlaceOfMarriage" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PlaceOfMarriage"/>
+			</key>
+			<one-to-many class="DivorceInfo"/>
+		</set>
+		<set name="DivorceInfosPlaceOfSolemnization" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PlaceOfSolemnization"/>
+			</key>
+			<one-to-many class="DivorceInfo"/>
+		</set>
+		<set name="DocCasePartyBailorAddresses" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="DocCasePartyBailorAddress"/>
+		</set>
+		<set name="DocCasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="DocCasePartyBailorInfo"/>
+		</set>
+		<set name="DocCasePartyCitizenships" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CitizenshipCountryCode"/>
+			</key>
+			<one-to-many class="DocCasePartyCitizenship"/>
+		</set>
+		<set name="FileInspections" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="FileInspection"/>
+		</set>
+		<set name="LiquidatorPICs" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="LiquidatorPIC"/>
+		</set>
+		<set name="MBODDCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="BankruptcyOtherDefDetail"/>
+		</set>
+		<set name="MBODDIdCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDCountryCode"/>
+			</key>
+			<one-to-many class="BankruptcyOtherDefDetail"/>
+		</set>
+		<set name="MCPAICDCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="MCPAICDIdCountryCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="CasePartyAICDetail"/>
+		</set>
+		<set name="MCPBirthCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BirthCountryCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MCPCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MCPIdCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MCPMarriageCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MarriageCtryCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MDCPAICDCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="MDCPAICDIdCountryCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDCountryCode"/>
+			</key>
+			<one-to-many class="DocCasePartyAICDetail"/>
+		</set>
+		<set name="MDCPBirthCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BirthCountryCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MDCPCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MDCPIdCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IDCountryCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MDCPMarriageCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="MarriageCtryCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MDICountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="DeceasedInfo"/>
+		</set>
+		<set name="MDIDomicileCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DomicileCountryCode"/>
+			</key>
+			<one-to-many class="DeceasedInfo"/>
+		</set>
+		<set name="MIIBirthCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BirthCountryCode"/>
+			</key>
+			<one-to-many class="InfantInfo"/>
+		</set>
+		<set name="MIIResidenceCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ResidenceCtry"/>
+			</key>
+			<one-to-many class="InfantInfo"/>
+		</set>
+		<set name="MLIdCountry" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="Liquidator"/>
+		</set>
+		<set name="MLIdCountryOfRegistration" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfRegistration"/>
+			</key>
+			<one-to-many class="Liquidator"/>
+		</set>
+		<set name="OSInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryOfIssue"/>
+			</key>
+			<one-to-many class="OSInfo"/>
+		</set>
+		<set name="PracticeOfLawInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="PracticeOfLawInfo"/>
+		</set>
+		<set name="RelatedProceedings" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="RelatedProceeding"/>
+		</set>
+		<set name="ServiceOfDocInfoDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="ServiceOfDocInfoDetail"/>
+		</set>
+		<set name="SubpoenaWitnessDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CountryCode"/>
+			</key>
+			<one-to-many class="SubpoenaWitnessDetail"/>
+		</set>
+		<set name="TravelPassInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="IdCountryCode"/>
+			</key>
+			<one-to-many class="TravelPassInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

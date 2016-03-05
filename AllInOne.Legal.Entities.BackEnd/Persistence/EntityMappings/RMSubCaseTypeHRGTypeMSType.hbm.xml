@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RMSubCaseTypeHRGTypeMSType" table="[dbo].[RMSubCaseTypeHRGTypeMSType]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="ForumId" column="ForumId" />
+      <key-property name="SubCaseTypeCode" column="SubCaseTypeCode" />
+      <key-property name="HRGTypeCode" column="HRGTypeCode" />
+      <key-property name="MSType" column="MSType" />
+    </composite-id>
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="IsMSConfidential" column="IsMSConfidential" />
+  </class>
+
+  <sql-query name="SaveOrUpdateRMSubCaseTypeHRGTypeMSType">
+    exec MDM_BackEnd_SaveOrUpdateRMSubCaseTypeHRGTypeMSType
+    :ForumId,:SubCaseTypeCode,:HRGTypeCode,:MSType,:LastModifiedBy,:LastModifiedDate,:ObsInd
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSOutstandingPayment" table="[dbo].[EMSOutstandingPayment]" optimistic-lock="none" >
+		<id name="EMSOutstandingPaymentId" column="EMSOutstandingPaymentId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="OutstandingPaymentType" column="OutstandingPaymentType" />
+		<property name="RequestedDate" column="RequestedDate" />
+		<property name="Amount" column="Amount" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+	  <many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAccountId"/>
+	  </many-to-one>
+	</class>
+</hibernate-mapping>

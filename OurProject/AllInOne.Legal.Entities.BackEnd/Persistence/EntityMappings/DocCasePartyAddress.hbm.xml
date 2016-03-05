@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DocCasePartyAddress" table="[dbo].[DocCasePartyAddress]" optimistic-lock="none" >
+		<id name="RecId" column="RecId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Addr1" column="Addr1" />
+		<property name="Addr2" column="Addr2" />
+		<property name="Addr3" column="Addr3" />
+		<property name="Addr4" column="Addr4" />
+		<property name="Address" column="Address" />
+		<property name="AddrType" column="AddrType" />
+		<property name="BlkNo" column="BlkNo" />
+		<property name="BuildingName" column="BuildingName" />
+		<property name="CountryCode" column="CountryCode" />
+		<property name="FloorNo" column="FloorNo" />
+		<property name="FormatInd" column="FormatInd" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LastStayedInd" column="LastStayedInd" />
+		<property name="MailingInd" column="MailingInd" />
+		<property name="PostalCode" column="PostalCode" />
+		<property name="StreetName" column="StreetName" />
+		<property name="UnitNo" column="UnitNo" />
+		<!--<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>-->
+		<property name="DCPID" column="DCPID" type="AnsiString" />
+
+	</class>
+</hibernate-mapping>

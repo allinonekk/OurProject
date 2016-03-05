@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ProbateInfo" table="[dbo].[ProbateInfo]" optimistic-lock="none" >
+    <id name="ProbateInfoId" column="ProbateInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="EstateValue3M" column="EstateValue3M" />
+    <property name="CaveatInd" column="CaveatInd" />
+    <property name="HasOtherApplicant" column="HasOtherApplicant" />
+    <property name="ApplicationWithin6Months" column="ApplicationWithin6Months" />
+    <property name="ReasonOfLapse" column="ReasonOfLapse" />
+    <property name="HasCodicil" column="HasCodicil" />
+    <property name="NoOfCodicil" column="NoOfCodicil" />
+    <property name="Limitations" column="Limitations" />
+    <property name="OtherLimitations" column="OtherLimitations" />
+    <property name="ApplicantType" column="ApplicantType" />
+    <property name="OtherApplicantType" column="OtherApplicantType" />
+    <property name="ApplicantAppointedDate" column="ApplicantAppointedDate" />
+    <property name="TstDidNotNameExec" column="TstDidNotNameExec" />
+    <property name="ExecutorDied" column="ExecutorDied" />
+    <property name="ExecutorRenounced" column="ExecutorRenounced" />
+    <property name="TstDidNotNameRL" column="TstDidNotNameRL" />
+    <property name="OtherAnnexed" column="OtherAnnexed" />
+    <property name="OtherAnnexedReason" column="OtherAnnexedReason" />
+    <property name="OSRelevantInfo" column="OSRelevantInfo" />
+    <property name="FirstCertification" column="FirstCertification" />
+    <property name="SecondCertification" column="SecondCertification" />
+    <property name="ForeignGrantCourtName" column="ForeignGrantCourtName" />
+    <property name="GrantDate" column="GrantDate" />
+    <property name="ForeignPBOption" column="ForeignPBOption" />
+    <property name="ForeignPBDescription" column="ForeignPBDescription" />
+    <property name="ForeignCourtAddr1" column="ForeignCourtAddr1" />
+    <property name="ForeignCourtAddr2" column="ForeignCourtAddr2" />
+    <property name="ForeignCourtAddr3" column="ForeignCourtAddr3" />
+    <property name="ForeignCourtAddr4" column="ForeignCourtAddr4" />
+    <property name="Origin" column="Orgin" />
+    <property name="DeceasedResided" column="DeceasedResided" />
+    <property name="DuefromDeceased" column="DuefromDeceased" />
+    <property name="IsApplyingLAInfant" column="isApplyingLAInfant" />
+    <property name="IsApplyingLAAnnexed" column="isApplyingLAAnnexed" />
+    <property name="IsApplyingLAWithPA" column="isApplyingLAWithPA" />
+    <property name="IsApplyingLAWithUE" column="isApplyingLAWithUE" />
+    <property name="ProbateInfoType" column="ProbateInfoType" />
+    <property name="CaseNo" column="CaseNo" />
+    <property name="NatureOfForeignGrant" column="NatureOfForeignGrant" />
+    <property name="IsWrittenWill" column="IsWrittenWill" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="SOAHardCopyInd" column="SOAHardCopyInd" />
+    <many-to-one name="MProbateNature" fetch="select" cascade="none">
+      <column name="ProbateNatureCode"/>
+    </many-to-one>
+    <many-to-one name="MProbateNatureGroup" fetch="select" cascade="none">
+      <column name="ProbateNatureGroupCode"/>
+    </many-to-one>
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="ForeignGrantCountryCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

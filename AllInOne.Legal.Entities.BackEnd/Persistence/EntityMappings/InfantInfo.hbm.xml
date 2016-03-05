@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="InfantInfo" table="[dbo].[InfantInfo]" optimistic-lock="none" >
+		<id name="InfantInfoId" column="InfantInfoID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Address" column="Address" />
+		<property name="AgeInMonths" column="AgeInMonths" />
+		<property name="AgeInYears" column="AgeInYears" />
+		<property name="BCNumber" column="BCNumber" type="AnsiString"/>
+		<property name="BirthCountryRemarks" column="BirthCountryRemarks" />
+		<property name="BlkNo" column="BlkNo" />
+		<property name="BuildingName" column="BuildingName" />
+		<property name="DateOfBirth" column="DateOfBirth" />
+		<property name="FloorNo" column="FloorNo" />
+		<property name="FormatInd" column="FormatInd" />
+		<property name="IsInfantMarried" column="IsInfantMarried" />
+		<property name="IsInfantProperty" column="IsInfantProperty" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NameInBC" column="NameInBC" type="AnsiString"/>
+		<property name="NationalityRemarks" column="NationalityRemarks" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="PassExpiryDate" column="PassExpiryDate" />
+		<property name="PName" column="PName" />
+		<property name="PostalCode" column="PostalCode" />
+		<property name="PropertyDetails" column="PropertyDetails" />
+		<property name="RaceRemarks" column="RaceRemarks" />
+		<property name="ResidenceCtryRemarks" column="ResidenceCtryRemarks" />
+		<property name="StreetName" column="StreetName" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" />
+		<property name="UnitNo" column="UnitNo" />
+		<set name="InfantOriginalNames" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="InfantInfoID"/>
+			</key>
+			<one-to-many class="InfantOriginalName"/>
+		</set>
+		<many-to-one name="MGender" fetch="select" cascade="none">
+			<column name="GenderCode"/>
+		</many-to-one>
+
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="CountryCode"/>
+    </many-to-one>
+		<many-to-one name="MBirthCountry" fetch="select" cascade="none">
+			<column name="BirthCountryCode"/>
+		</many-to-one>
+		<many-to-one name="MResidenceCountry" fetch="select" cascade="none">
+			<column name="ResidenceCtry"/>
+		</many-to-one>
+		<many-to-one name="MNationality" fetch="select" cascade="none">
+			<column name="NationalityCode"/>
+		</many-to-one>
+		<many-to-one name="MRace" fetch="select" cascade="none">
+			<column name="RaceCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

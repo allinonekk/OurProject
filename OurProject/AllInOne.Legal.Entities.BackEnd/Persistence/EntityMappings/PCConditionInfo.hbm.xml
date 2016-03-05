@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PCConditionInfo" table="[dbo].[PCConditionInfo]" optimistic-lock="none" >
+		<id name="PCConditionInfoId" column="PCConditionInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AGCProcDateTime" column="AGCProcDateTime" />
+		<property name="Description" column="Description" />
+		<property name="HasJudicialOffUpdated" column="HasJudicialOffUpdated" />
+		<property name="IsAGCApproved" column="IsAGCApproved" />
+		<property name="IsLAWSOCApproved" column="IsLAWSOCApproved" />
+		<property name="IsSALApproved" column="IsSALApproved" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LAWSOCProcDateTime" column="LAWSOCProcDateTime" />
+		<property name="SALProcDateTime" column="SALProcDateTime" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

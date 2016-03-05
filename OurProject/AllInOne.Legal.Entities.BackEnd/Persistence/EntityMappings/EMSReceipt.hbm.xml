@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSReceipt" table="[dbo].[EMSReceipt]" optimistic-lock="none" >
+		<id name="EMSReceiptId" column="EMSReceiptId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Amount" column="Amount" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ReceiptDate" column="ReceiptDate" />
+		<property name="ReceiptNo" column="ReceiptNo" />
+		<property name="Remarks" column="Remarks" />
+		<property name="Status" column="Status" />
+    <many-to-one name="Cashier" fetch="select" cascade="none" lazy="false">
+      <column name="CashierId"/>
+    </many-to-one>
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+    <many-to-one name="MEMSRecTransType" fetch="select" cascade="none" lazy="false">
+      <column name="TransactionType"/>
+    </many-to-one>
+		<set name="EMSRecTrans" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="EMSReceiptId"/>
+			</key>
+			<one-to-many class="EMSRecTrans"/>
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="Temp_EMSAppointment" table="[dbo].[Temp_EMSAppointment]" optimistic-lock="none" >
+		<id name="WorkflowSerialNo" column="WorkflowSerialNo" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="EMSAccountId" column="EMSAccountId" type="AnsiString"/>
+		<property name="CaseInfoId" column="CaseInfoId" />
+		<property name="SubCaseInfoId" column="SubCaseInfoId" /> 
+		<property name="WritFilingDate" column="WritFilingDate" />
+		<property name="WritExpiryDate" column="WritExpiryDate" />
+		<property name="EMSType" column="EMSType" />
+		<property name="IsOnHold" column="IsOnHold" />
+		<property name="BailiffId" column="BailiffId" />
+		<property name="WritAmount" column="WritAmount" />
+		<property name="WritCost" column="WritCost" />
+		<property name="Interest" column="Interest" />
+    <property name="IsWaiver" column="IsWaiver" />
+		<property name="IsWSeizure" column="IsWSeizure" />
+		<property name="EMSAppointmentId" column="EMSAppointmentId" type="AnsiString"/>
+		<property name="ApptDateTime" column="ApptDateTime" />
+    <property name="DepositAmt" column="DepositAmt" />
+    <property name="ApptTypeCode" column="ApptTypeCode" />
+    <property name="ExecAddrFormatInd" column="ExecAddrFormatInd" />
+    <property name="ExecAddress" column="ExecAddress" />
+    <property name="ExecAddrBlkNo" column="ExecAddrBlkNo" />
+    <property name="ExecAddrStreetName" column="ExecAddrStreetName" />
+    <property name="ExecAddrFloorNo" column="ExecAddrFloorNo" />
+    <property name="ExecAddrUnitNo" column="ExecAddrUnitNo" />
+    <property name="ExecAddrBuildingName" column="ExecAddrBuildingName" />
+    <property name="ExecAddrPostalCode" column="ExecAddrPostalCode" />
+    <property name="OutOfcHrStatus" column="OutOfcHrStatus" />
+    <property name="EMSFileMovementId" column="EMSFileMovementId" />
+    <property name="FileMoveDesc" column="FileMoveDesc" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

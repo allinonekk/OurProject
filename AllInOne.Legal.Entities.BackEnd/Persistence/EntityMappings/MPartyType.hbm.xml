@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPartyType" table="[dbo].[MPartyType]" optimistic-lock="none" >
+		<id name="PartyTypeCode" column="PartyTypeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="IsInterfaced" column="IsInterfaced" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PartyTypeCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="MCasePartyTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="PartyTypeCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="MSubCasePartyTypeCode" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCasePartyTypeCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+		<set name="SubCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="SubCasePartyTypeCode"/>
+			</key>
+			<one-to-many class="SubCaseParty"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

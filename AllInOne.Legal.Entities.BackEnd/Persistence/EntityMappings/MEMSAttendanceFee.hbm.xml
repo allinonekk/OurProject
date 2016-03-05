@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSAttendanceFee" table="[dbo].[MEMSAttendanceFee]" optimistic-lock="none" >
+		<id name="EMSAttendanceFeeCode" column="EMSAttendanceFeeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="StartTime" column="StartTime" />
+		<property name="EndTime" column="EndTime" />
+		<property name="Rate" column="Rate" />
+		<property name="EMSType" column="EMSType" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="FromAmount" column="FromAmount" />
+		<property name="ToAmount" column="ToAmount" />
+		<property name="CourtId" column="CourtId" />
+		<property name="AppCode" column="AppCode" />
+	</class>
+</hibernate-mapping>

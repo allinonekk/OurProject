@@ -1,0 +1,5 @@
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\Bin\AllInOne.Common.DataAccess.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Common.DataAccess.pdb
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess\obj\Debug\AllInOne.Common.DataAccess.dll
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess\obj\Debug\AllInOne.Common.DataAccess.pdb

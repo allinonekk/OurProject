@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RMDocFilterGroup" table="[dbo].[RMDocFilterGroup]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="DocCode" column="DocCode" />
+      <key-property name="FilterGroupId" column="FilterGroupID" />
+    </composite-id>
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+  </class>
+  <sql-query name="SaveOrUpdateRMDocFilterGroupProcedure">
+    exec MDM_BackEnd_SaveOrUpdateRMDocFilterGroup
+    :DocCode,:FilterGroupID,:ObsInd,:LastModifiedBy,:LastModifiedDate
+  </sql-query>  
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MHRGOutCome" table="[dbo].[MHRGOutCome]" optimistic-lock="none" >
+		<id name="HRGOutComeCode" column="HRGOutComeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="IsConcludedInd" column="IsConcludedInd" />
+		<property name="IsInterfaced" column="IsInterfaced" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="OrderGenerateInd" column="OrderGenerateInd" />
+
+	</class>
+</hibernate-mapping>

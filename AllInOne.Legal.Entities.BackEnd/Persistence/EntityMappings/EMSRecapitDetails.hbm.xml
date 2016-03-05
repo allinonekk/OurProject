@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSRecapitDetails" table="[dbo].[EMSRecapitDetails]" optimistic-lock="none" >
+		<id name="EMSRecapitDetailsId" column="EMSRecapitDetailsId" type="AnsiString">
+			<generator class="assigned"/>
+		</id> 
+		<property name="CurrBal" column="CurrBal" />
+		<property name="LastTransDate" column="LastTransDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <many-to-one name="LastTransUser" fetch="select" cascade="none" lazy="false">
+      <column name="LastTransUserId"></column>    
+    </many-to-one>
+    <many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+      <column name="EMSAccountId"></column>
+    </many-to-one>
+    <many-to-one name="EMSRecapitulation" fetch="select" cascade="none" lazy="false">
+      <column name="EMSRecapitulationId"></column>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

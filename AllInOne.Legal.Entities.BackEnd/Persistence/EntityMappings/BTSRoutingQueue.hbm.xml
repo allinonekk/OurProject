@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="BTSRoutingQueue" table="[dbo].[BTSRoutingQueue]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="MessageId" column="MessageID" type="AnsiString" />
+    		<key-property name="Recipient" column="Recipient" />
+    		<key-property name="RetryCount" column="RetryCount" />
+    		<key-property name="RoutingTypeId" column="RoutingTypeID" />
+    		<key-property name="Sender" column="Sender" />
+		</composite-id>
+		<property name="CreatedDateTime" column="CreatedDateTime" />
+		<property name="LastModifiedDateTime" column="LastModifiedDateTime" />
+		<property name="MessageXML" column="MessageXML" />
+		<property name="ProcessingStatus" column="ProcessingStatus" />
+		<property name="RecoveryCount" column="RecoveryCount" />
+		<property name="SourcePayloadURI" column="SourcePayloadURI" />
+		<property name="Status" column="Status" />
+		<property name="StatusCode" column="StatusCode" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+
+	</class>
+</hibernate-mapping>

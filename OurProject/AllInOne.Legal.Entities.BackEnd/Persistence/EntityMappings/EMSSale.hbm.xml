@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSSale" table="[dbo].[EMSSale]" optimistic-lock="none" >
+		<id name="EMSSaleId" column="EMSSaleId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="SaleType" column="SaleType" />
+		<property name="SaleDateTime" column="SaleDateTime" />
+		<property name="ConductedBy" column="ConductedBy" />
+		<property name="ConductedByOthers" column="ConductedByOthers" />
+		<property name="AmountSold" column="AmountSold" />
+		<property name="DebtSatisfied" column="DebtSatisfied" />
+		<property name="ItemSold" column="ItemSold" />
+		<property name="OtherAuctioneer" column="OtherAuctioneer" />
+		<property name="AuctioneerDateEngaged" column="AuctioneerDateEngaged" />
+		<property name="AuctioneerCharges" column="AuctioneerCharges" />
+		<property name="Remarks" column="Remarks" />
+		<property name="SaleOrderDate" column="SaleOrderDate" />
+		<property name="CFASDate" column="CFASDate" />
+		<property name="BelowValueOrderDate" column="BelowValueOrderDate" />
+		<property name="CommissionRemarks" column="CommissionRemarks" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="TypeOfAuction" column="TypeOfAuction" />
+		<property name="AdmSaleFormatInd" column="AdmSaleFormatInd" />
+		<property name="AdmSaleAddress" column="AdmSaleAddress" />
+		<property name="AdmSaleAddr1" column="AdmSaleAddr1" />
+		<property name="AdmSaleAddr2" column="AdmSaleAddr2" />
+		<property name="AdmSaleAddr3" column="AdmSaleAddr3" />
+		<property name="AdmSaleAddr4" column="AdmSaleAddr4" />
+		<property name="AdmSaleBlkNo" column="AdmSaleBlkNo" />
+		<property name="AdmSaleStreetName" column="AdmSaleStreetName" />
+		<property name="AdmSaleFloorNo" column="AdmSaleFloorNo" />
+		<property name="AdmSaleUnitNo" column="AdmSaleUnitNo" />
+		<property name="AdmSaleBuildingName" column="AdmSaleBuildingName" />
+		<property name="AdmSalePostalCode" column="AdmSalePostalCode" />
+		<property name="OthersaleDetails" column="OthersaleDetails" />
+    <property name="SyncRequired" column="SyncRequired" />
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAccountId"/>
+		</many-to-one>
+		<many-to-one name="EMSAppointment" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAppointmentId"/>
+		</many-to-one>
+		<many-to-one name="EMSAdmProperty" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAdmPropertyId"/>
+		</many-to-one>
+		<many-to-one name="MEMSAuctioneer" fetch="select" cascade="none" lazy="false">
+		  <column name="Auctioneer"/>
+		</many-to-one>
+		<many-to-one name="EMSAdmCharge" fetch="select" cascade="none" lazy="false">
+		  <column name="EMSAdmChargeId"/>
+		</many-to-one>
+		<set name="EMSSaleAdverts" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSSaleId"/>
+		  </key>
+		  <one-to-many class="EMSSaleAdvert"/>
+		</set>
+		<set name="EMSSaleAppraisers" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSSaleId"/>
+		  </key>
+		  <one-to-many class="EMSSaleAppraiser"/>
+		</set>
+		<set name="EMSSaleAgents" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSSaleId"/>
+		  </key>
+		  <one-to-many class="EMSSaleAgent"/>
+		</set>
+		<set name="EMSSaleBuyers" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSSaleId"/>
+		  </key>
+		  <one-to-many class="EMSSaleBuyer"/>
+		</set>
+		<set name="EMSAdmClaims" cascade="none" inverse="true" fetch="select">
+		  <key>
+			<column name="EMSSaleId"/>
+		  </key>
+		  <one-to-many class="EMSAdmClaim"/>
+		</set>
+  </class>
+</hibernate-mapping>

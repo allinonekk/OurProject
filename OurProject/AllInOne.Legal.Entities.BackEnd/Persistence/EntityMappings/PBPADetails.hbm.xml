@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PBPADetails" table="[dbo].[PBPADetails]" optimistic-lock="none" >
+    <id name="PBPADetailId" column="PBPADetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="SubmissionGroupId" column="SubmissionGroupID" />
+    <property name="ItemNo" column="ItemNo"/>
+   <property name="DonorName" column="DonorName" />
+    <property name="PANumber" column="PANumber" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PADate" column="PADate" />
+    <property name="RelationshipRemarks" column="RelationshipRemarks" />
+    <property name="RelationshipCode" column="RelationshipCode" />
+    <property name="CapacityRemarks" column="CapacityRemarks" />
+    <many-to-one name="MGender" fetch="select" cascade="none">
+      <column name="Gender"/>
+    </many-to-one>
+    <many-to-one name="MApplicantCapacity" fetch="select" cascade="none">
+      <column name="CapacityCode"/>
+    </many-to-one>
+    
+   </class>
+</hibernate-mapping>

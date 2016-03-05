@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSWritAppt" table="[dbo].[MEMSWritAppt]" optimistic-lock="none" >
+		<id name="EMSWritApptCode" column="EMSWritApptCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="FrequencyInd" column="FrequencyInd" /> 
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<many-to-one name="MEMSApptType" fetch="select" cascade="none"  lazy="false">
+			<column name="ApptTypeCode"/>
+		</many-to-one>
+    <many-to-one name="MCaseType" fetch="select" cascade="none"  lazy="false">
+      <column name="CaseTypeCode"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

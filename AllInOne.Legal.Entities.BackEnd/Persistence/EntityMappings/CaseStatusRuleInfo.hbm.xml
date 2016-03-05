@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="CaseStatusRuleInfo" table="[dbo].[CaseStatusRuleInfo]" optimistic-lock="none" >
+    <id name="CaseStatusRuleInfoId" column="CaseStatusRuleInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="RuleType" column="RuleType" />
+  </class>
+</hibernate-mapping>

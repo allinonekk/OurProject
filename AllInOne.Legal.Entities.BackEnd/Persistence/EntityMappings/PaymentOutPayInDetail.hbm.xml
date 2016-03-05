@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PaymentOutPayInDetail" table="[dbo].[PaymentOutPayInDetail]" optimistic-lock="none" >
+    <id name="PaymentOutInId" column="PaymentOutInID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AmountOut" column="AmountOut" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="CaseNo" column="CaseNo" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <property name="SubCaseNo" column="SubCaseNo" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <many-to-one name="MCourtType" fetch="select" cascade="none">
+      <column name="CourtId"/>
+    </many-to-one>
+    <!--<many-to-one name="PaymentInDocDetail" fetch="select" cascade="none">
+			<column name="PaymentInID"/>
+		</many-to-one>-->
+    <property name="PaymentInId" column="PaymentInID" type="AnsiString"/>
+    <!--<many-to-one name="PaymentOutDocDetail" fetch="select" cascade="none">
+			<column name="PaymentOutID"/>
+		</many-to-one>-->
+    <property name="PaymentOutId" column="PaymentOutID" type="AnsiString"/>
+    <property name="IsBackEndUserAdded" column="IsBackEndUserAdded" />
+    <property name="ItemNo" column="ItemNo" />
+    <many-to-one name="MCurrency" fetch="select" cascade="none">
+      <column name="CurrencyCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

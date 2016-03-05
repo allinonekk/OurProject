@@ -1,0 +1,6 @@
+C:\Bin\InHouse\Debug\Common\CrimsonLogic.Common.Library.dll
+C:\Bin\InHouse\Debug\Common\CrimsonLogic.Common.Library.pdb
+C:\Bin\InHouse\Debug\Common\CrimsonLogic.Common.Binder.xml
+C:\AllInOne\OurProject\CrimsonLogic.Common.Library\CrimsonLogic.Common.Library\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\CrimsonLogic.Common.Library\CrimsonLogic.Common.Library\obj\Debug\CrimsonLogic.Common.Library.dll
+C:\AllInOne\OurProject\CrimsonLogic.Common.Library\CrimsonLogic.Common.Library\obj\Debug\CrimsonLogic.Common.Library.pdb

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RelatedProceeding" table="[dbo].[RelatedProceeding]" optimistic-lock="none" >
+		<id name="RelatedCaseId" column="RelatedCaseId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseNo" column="CaseNo" />
+		<property name="DateOfOrder" column="DateOfOrder" />
+		<property name="DetailsOfOrder" column="DetailsOfOrder" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="OtherProceedingInfo" column="OtherProceedingInfo" />
+		<property name="StatusOfProceedings" column="StatusOfProceedings" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="DateOfApplication" column="DateOfApplication" />
+    <property name="IsPlaintiffBankrupt" column="IsPlaintiffBankrupt" />
+    <property name="PlaintiffBankruptDtls" column="PlaintiffBankruptDtls"/>
+    <property name="PendingBankruptDtls" column="PendingBankruptDtls" />
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="CountryCode"/>
+		</many-to-one>
+		<many-to-one name="MNatureOfProceeding" fetch="select" cascade="none">
+			<column name="NOPCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

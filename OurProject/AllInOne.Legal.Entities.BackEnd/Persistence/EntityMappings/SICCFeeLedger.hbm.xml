@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+
+  <class name="SICCFeeLedger" table="[dbo].[SICCFeeLedger]" optimistic-lock="none" >
+    <id name="FeeLedgerId" column="FeeLedgerId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseInfoId" column="Caseinfoid" />
+    <property name="SubCaseInfoId" column="SubCaseinfoid" />
+    <property name="CasePartyId" column="CasePartyId" />
+    <property name="MilestoneCode" column="MilestoneCode" />
+    <property name="FeeDetails" column="FeeDetails" />
+    <property name="Fees" column="Fees" />
+    <property name="TransactionType" column="TransactionType" />
+    <property name="TrasactionStatus" column="TrasactionStatus" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastmodifiedBy" />
+    <property name="LastModifiedDate" column="LastmodifiedDate" />
+
+  </class>
+</hibernate-mapping>

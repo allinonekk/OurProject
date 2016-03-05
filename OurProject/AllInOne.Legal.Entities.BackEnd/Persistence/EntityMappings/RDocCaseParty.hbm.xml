@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RDocCaseParty" table="[dbo].[RDocCaseParty]" optimistic-lock="none" >
+		<id name="RDCPId" column="RDCPId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="DocId" column="DocID" type="AnsiString" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="UpdateInd" column="UpdateInd" />
+		<!--<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>-->
+    		<property name="DCPID" column="DCPID" type="AnsiString" />
+
+	</class>
+  <sql-query name="GetRDocCaseParty">
+    exec Mediator_BackEnd_GetRDocCasePartyByDocId
+    :DocId
+  </sql-query>
+</hibernate-mapping>

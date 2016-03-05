@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSRecTransType" table="[dbo].[MEMSRecTransType]" optimistic-lock="none" >
+		<id name="EMSRecTransTypeCode" column="EMSRecTransTypeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="EMSReceipts" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="TransactionType"/>
+			</key>
+			<one-to-many class="EMSReceipt"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

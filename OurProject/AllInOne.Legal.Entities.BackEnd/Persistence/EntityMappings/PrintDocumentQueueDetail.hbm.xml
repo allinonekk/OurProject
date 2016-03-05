@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PrintDocumentQueueDetail" table="[dbo].[PrintDocumentQueueDetail]" optimistic-lock="none" >
+		<id name="PrintDocumentQueueDetailID" column="PrintDocumentQueueDetailID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="PrintDocumentQueueId" column="PrintDocumentQueueId" />
+		<property name="DocId" column="DocId" />
+		<property name="SequenceNo" column="SequenceNo" />
+		<property name="DocumentRemarks" column="DocumentRemarks" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+	</class>
+</hibernate-mapping>

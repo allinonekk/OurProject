@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+  <class name="RMCDRAutoFixTimeLine" table="[dbo].[RMCDRAutoFixTimeLine]" optimistic-lock="none" >
+    <composite-id>
+      <key-many-to-one name="CaseTypeCode" column="CaseTypeCode"/>
+      <key-many-to-one name="DocCode" column="DocCode"/>
+      <key-many-to-one name="NOCCode" column="NOCCode"/>
+    </composite-id>
+    <property name="QuantumType" column="QuantumType" />
+    <property name="QuantumValue" column="QuantumValue" />
+    <property name="TimeLineDays" column="TimeLineDays" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+
+     </class>
+</hibernate-mapping>

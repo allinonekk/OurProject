@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="WOEMOMSCTInfo" table="[dbo].[WOEMOMSCTInfo]" optimistic-lock="none" >
+    <id name="WOEMOMSCTInfoId" column="WOEMOMSCTInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="OrderEnforced" column="OrderEnforced" />
+    <property name="EmpActOrderType" column="EmpActOrderType" />
+    <property name="EmpActSection" column="EmpActSection" />
+    <property name="EnforcementDoc" column="EnforcementDoc" />
+    <property name="MOMSCTCaseNo" column="MOMSCTCaseNo" />
+    <property name="IsExecOutOffHour" column="IsExecOutOffHour" />
+    <property name="IsAuthorisedBailiff" column="IsAuthorisedBailiff" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="DateOfOrderByCommOfLabour" column="DateOfOrderByCommOfLabour" />
+
+  </class>
+</hibernate-mapping>

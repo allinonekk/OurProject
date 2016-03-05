@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ReportConfigUser" table="[dbo].[ReportConfigUser]" optimistic-lock="none" >
+		<id name="ReportConfigUserId" column="ReportConfigUserId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="ReportConfigInfoId" column="ReportConfigInfoId" type="AnsiString"/>
+		<!--<many-to-one name="JudicialUser" fetch="select" cascade="none">
+			<column name="UserId"/>
+		</many-to-one>
+		<many-to-one name="ReportConfigInfo" fetch="select" cascade="none">
+			<column name="ReportConfigInfoId"/>
+		</many-to-one>-->
+    		<property name="UserId" column="UserId"/>
+
+	</class>
+</hibernate-mapping>

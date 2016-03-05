@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MEMSDisburseRate" table="[dbo].[MEMSDisburseRate]" optimistic-lock="none" >
+		<id name="EMSDisburseRateCode" column="EMSDisburseRateCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="DayOfWeek" column="DayOfWeek" />
+		<property name="StartTime" column="StartTime" />
+		<property name="EndTime" column="EndTime" />
+		<property name="Rate" column="Rate" />
+		<property name="EMSType" column="EMSType" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="CourtId" column="CourtId" />
+		<property name="AppCode" column="AppCode" />
+	</class>
+</hibernate-mapping>

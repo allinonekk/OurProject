@@ -1,0 +1,5 @@
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess.NHibernate\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\Bin\AllInOne.Common.DataAccess.NHibernate.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Common.DataAccess.NHibernate.pdb
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess.NHibernate\obj\Debug\AllInOne.Common.DataAccess.NHibernate.dll
+C:\AllInOne\OurProject\AllInOne.Common.DataAccess.NHibernate\obj\Debug\AllInOne.Common.DataAccess.NHibernate.pdb

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MBailType" table="[dbo].[MBailType]" optimistic-lock="none" >
+		<id name="BailTypeCode" column="BailTypeCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<set name="CasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BailTypeCode"/>
+			</key>
+			<one-to-many class="CasePartyBailorInfo"/>
+		</set>
+		<set name="DocCasePartyBailorInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="BailTypeCode"/>
+			</key>
+			<one-to-many class="DocCasePartyBailorInfo"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

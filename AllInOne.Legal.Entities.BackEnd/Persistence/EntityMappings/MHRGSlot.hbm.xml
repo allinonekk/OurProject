@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MHRGSlot" table="[dbo].[MHRGSlot]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="CourtInd" column="CourtInd" />
+      <key-property name="HRGSlotCode" column="HRGSlotCode" />
+    </composite-id>
+    <property name="Day" column="Day" />
+    <property name="EffectiveDate" column="EffectiveDate" />
+    <property name="EndTime" column="EndTime" />
+    <property name="FrequencyCode" column="FrequencyCode" />
+    <property name="HardQuota" column="HardQuota" />
+    <property name="HRGSlotName" column="HRGSlotName" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="SoftQuota" column="SoftQuota" />
+    <property name="StartTime" column="StartTime" />
+    <property name="EffectiveToDate" column="EffectiveToDate" />
+    <property name="ColorCode" column="colorCode" />
+	<property name="LocationGroup" column="LocationGroup" />
+  </class>
+</hibernate-mapping>

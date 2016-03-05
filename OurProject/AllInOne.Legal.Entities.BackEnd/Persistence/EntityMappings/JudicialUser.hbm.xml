@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="JudicialUser" table="[dbo].[Users]" optimistic-lock="none" >
+    <id name="UserId" column="UserId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AssignedDate" column="AssignedDate" />
+    <property name="CaseFileInspectionInd" column="CaseFileInspectionInd" />
+    <property name="DisplayName" column="DisplayName" />
+    <property name="EMailAddress" column="eMailAddress" />
+    <property name="EndDate" column="EndDate" />
+    <property name="Initials" column="Initials" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LawnetIndicator" column="LawnetIndicator" />
+    <property name="LocalDownloadLocation" column="LocalDownloadLocation" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="SeniorityLevel" column="SeniorityLevel" />
+    <property name="Signature" column="Signature"  type="BinaryBlob"/>
+    <property name="StartDate" column="StartDate" />
+    <property name="UserName" column="UserName" />
+	<property name="SignaturePath" column="SignaturePath" />
+
+    <set name="CaseInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CaseOfficerUserId"/>
+      </key>
+      <one-to-many class="CaseInfo"/>
+    </set>
+    <set name="DocumentInfos" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="WaiverApproveUserId"/>
+      </key>
+      <one-to-many class="DocumentInfo"/>
+    </set>
+    <set name="EMSAccounts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSAccount"/>
+    </set>
+    <set name="EMSAdmExecs" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSAdmExec"/>
+    </set>
+    <set name="EMSAppointments" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSAppointment"/>
+    </set>
+    <set name="EMSBailiffUnavailabilities" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSBailiffUnavailability"/>
+    </set>
+    <set name="EMSDisburseClaims" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSDisburseClaim"/>
+    </set>
+    <set name="EMSFileMovementJudicialUserBailiff" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="Bailiff"/>
+      </key>
+      <one-to-many class="EMSFileMovement"/>
+    </set>
+    <set name="EMSFileMovementJudicialUserUpdatedBy" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="UpdatedBy"/>
+      </key>
+      <one-to-many class="EMSFileMovement"/>
+    </set>
+    <set name="EMSMiscClaims" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSMiscClaim"/>
+    </set>
+    <set name="EMSPayments" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="PaymentOfficerID"/>
+      </key>
+      <one-to-many class="EMSPayment"/>
+    </set>
+    <set name="EMSPaymentVouchers" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSPaymentVoucher"/>
+    </set>
+    <set name="EMSReceipts" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="CashierId"/>
+      </key>
+      <one-to-many class="EMSReceipt"/>
+    </set>
+    <set name="EMSTptClaims" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="BailiffId"/>
+      </key>
+      <one-to-many class="EMSTptClaim"/>
+    </set>
+    <many-to-one name="MCourtType" fetch="select" cascade="none">
+      <column name="CourtID"/>
+    </many-to-one>
+    <many-to-one name="MUserGroup" fetch="select" cascade="none">
+      <column name="GroupCode"/>
+    </many-to-one>
+    <set name="ReportConfigUsers" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="UserId"/>
+      </key>
+      <one-to-many class="ReportConfigUser"/>
+    </set>
+    <set name="RUserRoleSections" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="UserId"/>
+      </key>
+      <one-to-many class="RUserRoleSection"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MDialect" table="[dbo].[MDialect]" optimistic-lock="none" >
+		<id name="DialectCode" column="DialectCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="FrequencyInd" column="FrequencyInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SortingType" column="SortingType" />
+		<set name="CaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DialectCode"/>
+			</key>
+			<one-to-many class="CaseParty"/>
+		</set>
+		<set name="DocCaseParties" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="DialectCode"/>
+			</key>
+			<one-to-many class="DocCaseParty"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RMRoutingSectionConfig" table="[dbo].[RMRoutingSectionConfig]" optimistic-lock="none" >
+    <id name="RMRoutingSectionConfigId" column="RMRoutingSectionConfigId" >
+      <generator class="assigned"/>
+    </id>  
+    <property name="DocCode" column="DocCode" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="RoleCode" column="RoleCode" />
+    <property name="ForumId" column="ForumId" />
+    <property name="ProvisionNo" column="ProvisionNo" />
+    <property name="LastSectionAssignedDate" column="LastSectionAssignedDate" />
+    <property name="ByPassCaseOfficerSection" column="ByPassCaseOfficerSection" />
+    <property name="CaseTypeAdditionalAttrType" column="CaseTypeAdditionalAttrType" />
+    <property name="CaseTypeAdditionalAttrValue" column="CaseTypeAdditionalAttrValue" />
+	<many-to-one name="MNOC" fetch="select" cascade="none">
+		<column name="NOCCode"/>
+	</many-to-one>
+	<many-to-one name="MLegislationAct" fetch="select" cascade="none">
+		<column name="ActCode"/>
+	</many-to-one>
+    <many-to-one name="MCaseType" fetch="select" cascade="none">
+      <column name="CaseTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MSection" fetch="select" cascade="none">
+      <column name="SectionCode"/>
+    </many-to-one>
+    <many-to-one name="MSubCaseType" fetch="select" cascade="none">
+      <column name="SubCaseTypeCode"/>
+    </many-to-one>
+    <many-to-one name="MProvision" fetch="select" cascade="none">
+      <column name="ProvisionCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

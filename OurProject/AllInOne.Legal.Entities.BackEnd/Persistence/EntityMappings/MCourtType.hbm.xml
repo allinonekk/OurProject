@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MCourtType" table="[dbo].[MCourtType]" optimistic-lock="none" >
+		<id name="CourtId" column="CourtID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="SeqNo" column="SeqNo" />
+		<set name="CaseOriginatingCases" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtId"/>
+			</key>
+			<one-to-many class="CaseOriginatingCase"/>
+		</set>
+		<set name="JudicialUsers" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="JudicialUser"/>
+		</set>
+		<set name="MDocControls" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtInd"/>
+			</key>
+			<one-to-many class="MDocControl"/>
+		</set>
+		<set name="MForumTypes" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="MForumType"/>
+		</set>
+		<set name="MHRGRooms" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="MHRGRoom"/>
+		</set>
+		<set name="MNAAAlertEventsTemplates" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="MNAAAlertEventsTemplate"/>
+		</set>
+		<set name="MSections" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="MSection"/>
+		</set>
+		<set name="MSummonsParams" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtID"/>
+			</key>
+			<one-to-many class="MSummonsParam"/>
+		</set>
+		<set name="OriginatingCases" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtId"/>
+			</key>
+			<one-to-many class="OriginatingCase"/>
+		</set>
+		<set name="PaymentOutPayInDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="CourtId"/>
+			</key>
+			<one-to-many class="PaymentOutPayInDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

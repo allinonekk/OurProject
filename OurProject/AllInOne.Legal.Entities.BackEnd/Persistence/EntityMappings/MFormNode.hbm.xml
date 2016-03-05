@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MFormNode" table="[dbo].[MFormNodes]" optimistic-lock="none" >
+		<id name="NodeItemNo" column="NodeItemNo" >
+			<generator class="assigned"/>
+		</id>
+		<property name="DocCode" column="DocCode" />
+		<property name="IsMandatoryInd" column="IsMandatoryInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="NodeName" column="NodeName" />
+		<property name="NodePath" column="NodePath" />
+		<property name="ObsInd" column="ObsInd" />
+
+	</class>
+</hibernate-mapping>

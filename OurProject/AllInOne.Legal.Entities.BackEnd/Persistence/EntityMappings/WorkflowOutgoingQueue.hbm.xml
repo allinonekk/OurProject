@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="WorkflowOutgoingQueue" table="[dbo].[WorkflowOutgoingQueue]" optimistic-lock="none" >
+		<id name="WorkflowOutgoingQueueId" column="WorkflowOutgoingQueueId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseTypeGroupCode" column="CaseTypeGroupCode" />
+		<property name="SubCaseInfoId" column="SubCaseInfoId" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" />
+		<property name="QueueStatus" column="QueueStatus" />
+		<property name="FilingType" column="FilingType" />
+		<property name="FilingMode" column="FilingMode" />
+		<property name="SubFilingType" column="SubFilingType" />
+		<property name="CreatedBy" column="CreatedBy" />
+    <property name="CreatedDate" column="CreatedDate" />
+    <property name="SubCaseType" column="SubCaseType" />
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" />
+    <property name="Remarks" column="remarks" />
+    <property name="AttemptCount" column="AttemptCount" />
+    <property name="DocId" column="DocId" />
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+	</class>
+</hibernate-mapping>

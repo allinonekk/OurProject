@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CriminalClaimInterpreterFeeInfo" table="[dbo].[CriminalClaimInterpreterFeeInfo]" optimistic-lock="none" >
+		<id name="CriminalClaimInterpreterFeeInfoId" column="CriminalClaimInterpreterFeeInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="InterpreterNo" column="InterpreterNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="CriminalClaimInfoId" column="CriminalClaimInfoId" type="AnsiString"/>
+		<!--<many-to-one name="CriminalClaimInfo" fetch="select" cascade="none">
+			<column name="CriminalClaimInfoId"/>
+		</many-to-one>-->
+
+	</class>
+</hibernate-mapping>

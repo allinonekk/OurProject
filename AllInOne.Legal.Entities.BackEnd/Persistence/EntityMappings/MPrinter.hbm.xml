@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MPrinter" table="[dbo].[MPrinter]" optimistic-lock="none" >
+		<id name="ModuleCode" column="ModuleCode" >
+			<generator class="assigned"/>
+		</id>
+		<property name="ModuleDescription" column="ModuleDescription" />
+		<property name="PrinterName" column="PrinterName" />
+		<property name="PrinterDescription" column="PrinterDescription" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="EmailAddress" column="EmailAddress" />
+		<property name="DeliveryMode" column="DeliveryMode" />
+	</class>
+</hibernate-mapping>

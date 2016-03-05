@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ArchiveTaskList" table="[dbo].[ArchiveTaskList]" optimistic-lock="none" >
+    <id name="WorkflowSerialNo" column="WorkflowSerialNo" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="DocID" column="DocID" type="AnsiString"/>
+    <property name="CaseInfoId" column="CaseInfoId" />
+    <property name="CheckListInstanceID" column="CheckListInstanceID" />
+    <property name="TaskLocation" column="TaskLocation" />
+    <property name="TaskName" column="TaskName" />
+    <property name="CaseName" column="CaseName" />
+    <property name="CaseNo" column="CaseNo" />
+    <property name="OrgCaseNo" column="OrgCaseNo" />
+    <property name="SubCaseNo" column="SubCaseNo" />
+    <property name="AssignedTo" column="AssignedTo" />
+    <property name="Role" column="Role" />
+    <property name="Status" column="Status" />
+    <property name="DateOfFiling" column="DateOfFiling" />
+    <property name="LFID" column="LFID" type="AnsiString"/>
+    <property name="PriorityInd" column="PriorityInd" />
+    <property name="DateSend" column="DateSend" />
+    <property name="SourceUser" column="SourceUser" />
+    <property name="MessageType" column="MessageType" />
+    <property name="MessageDescription" column="MessageDescription" />
+    <property name="AssignedNo" column="AssignedNo" />
+    <property name="IsUrgentInd" column="IsUrgentInd" />
+    <property name="PriortyIconCode" column="PriortyIconCode" />
+    <property name="WorkItemIconcode" column="WorkItemIconcode" />
+    <property name="Remarks" column="Remarks" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ReminderID" column="ReminderID" />
+    <property name="ParentWFSNo" column="ParentWFSNo" />
+    <property name="ComDocID" column="ComDocID" />
+    <property name="GroupID" column="GroupID" type="AnsiString"/>
+    <property name="HrgID" column="HrgID" />
+    <property name="ReminderDate" column="ReminderDate" />
+    <property name="TaskDisplayName" column="TaskDisplayName" />
+    <property name="TaskDisplayMainInd" column="TaskDisplayMainInd" />
+    <property name="IsCrossCourt" column="IsCrossCourt" />
+    <property name="SubCaseInfoId" column="SubCaseInfoId" />
+    <many-to-one name="MSection" fetch="select" cascade="none">
+      <column name="SectionCode"/>
+    </many-to-one>
+	<many-to-one name="MTaskListType" fetch="select" cascade="none">
+	  <column name="TaskListTypeCode"/>
+	</many-to-one>
+  </class>
+</hibernate-mapping>

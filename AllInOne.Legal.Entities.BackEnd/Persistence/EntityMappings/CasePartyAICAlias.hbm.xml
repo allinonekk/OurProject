@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="CasePartyAICAlias" table="[dbo].[CasePartyAICAlias]" optimistic-lock="none" >
+		<id name="RecId" column="RecId" type="AnsiString" >
+			<generator class="assigned"/>
+		</id>
+		<property name="AliasName" column="AliasName" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<!--<many-to-one name="CasePartyAICDetail" fetch="select" cascade="none">
+			<column name="AICID"/>
+		</many-to-one>-->
+    		<property name="AICID" column="AICID" type="AnsiString" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Mediator.BackEnd.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Mediator.BackEnd.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\AllInOne.Legal.Mediator.BackEnd.dll
+C:\AllInOne\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\AllInOne.Legal.Mediator.BackEnd.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Mediator.BackEnd.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Mediator.BackEnd.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\AllInOne.Legal.Mediator.BackEnd.csprojResolveAssemblyReference.cache
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\AllInOne.Legal.Mediator.BackEnd.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Mediator.BackEnd\obj\Debug\AllInOne.Legal.Mediator.BackEnd.pdb

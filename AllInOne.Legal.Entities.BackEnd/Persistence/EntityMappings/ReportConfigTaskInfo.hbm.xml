@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ReportConfigTaskInfo" table="[dbo].[ReportConfigTaskInfo]" optimistic-lock="none" >
+    <id name="ReportConfigTaskInfoId" column="ReportConfigTaskInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="ReportConfigInfoId" column="ReportConfigInfoId" type="AnsiString"/>
+    <property name="Status" column="Status" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="GroupId" column="GroupId" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+
+  <class name="RequestForExemption" table="[dbo].[RequestForExemption]" optimistic-lock="none" >
+    <id name="RequestForExemptionId" column="RequestForExemptionId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="CaseinfoId" column="CaseinfoId" />
+    <property name="SubmissionGroupId" column="SubmissiongroupId" />
+    <property name="PCStartYear" column="PCStartYear" />
+    <property name="PCEndYear" column="PCEndYear" />
+    <property name="PCYear" column="PCYear" />
+    <property name="Status" column="Status" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+</hibernate-mapping>

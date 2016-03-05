@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="OffenceInfo" table="[dbo].[OffenceInfo]" optimistic-lock="none" >
+		<id name="OffenceInfoId" column="OffenceInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LocationOfOffence" column="LocationOfOffence" />
+		<property name="OffenceFromDate" column="OffenceFromDate" />
+		<property name="OffenceToDate" column="OffenceToDate" />
+		<property name="OtherText" column="OtherText" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="ChargeInfoId" column="ChargeInfoId" type="AnsiString"/>
+		<property name="OffenceDateRemarks" column="OffenceDateRemarks" />
+    <property name="MainOffenceInd" column="MainOffenceInd" />
+		<!--
+		<many-to-one name="ChargeInfo" fetch="select" cascade="none">
+			<column name="ChargeInfoId"/>
+		</many-to-one>-->
+    
+		<many-to-one name="MNatureOfOffence" fetch="select" cascade="none">
+			<column name="NatureOfOffenceCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,5 @@
+C:\NewTrunk2\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.Binder.BackEnd.dll
+C:\NewTrunk2\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.Binder.BackEnd.pdb
+C:\NewTrunk2\Src\BackEnd\CrimsonLogic.Legal.Binder.BackEnd\CrimsonLogic.Legal.Binder.BackEnd\obj\Debug\ResolveAssemblyReference.cache
+C:\NewTrunk2\Src\BackEnd\CrimsonLogic.Legal.Binder.BackEnd\CrimsonLogic.Legal.Binder.BackEnd\obj\Debug\CrimsonLogic.Legal.Binder.BackEnd.dll
+C:\NewTrunk2\Src\BackEnd\CrimsonLogic.Legal.Binder.BackEnd\CrimsonLogic.Legal.Binder.BackEnd\obj\Debug\CrimsonLogic.Legal.Binder.BackEnd.pdb

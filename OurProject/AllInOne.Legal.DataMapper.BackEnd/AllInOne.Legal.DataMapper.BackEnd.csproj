@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FA95861-0AE6-4A5F-AED2-370978F27E94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllInOne.Legal.DataMapper.BackEnd</RootNamespace>
+    <AssemblyName>AllInOne.Legal.DataMapper.BackEnd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\SNK Files\CrimsonLogic.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Bin\InHouse\Release\BackEnd\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=2.0.0.1, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainToNHibernate\MapAllDomainToNHibernate.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\AppealMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\AuditMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\BackEndSpecificMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\BankruptcyMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\CaseMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\CaseSpecificMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\CommonMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\CWUMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\DivorceMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\DocumentMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\DomainMapperService.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\EnforcementMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\ExternalMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\LAPMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\LawFirmMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\MasterMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\PaymentInOutMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\ServiceOfDocMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\SubCaseMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\SubCaseSpecificMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapper\SubsequentMapper.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\AuditMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\BackEndSpecificMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\BankruptcyMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\CaseMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\AppealMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\CaseSpecificMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\CommonMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\CWUMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\DocumentMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\DivorceMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\EnforcementMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\ExternalMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\LAPMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\LawFirmMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\MasterMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\PaymentInOutMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\DomainMappingService.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\ServiceOfDocMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\SubCaseMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\SubCaseSpecificMapping.cs" />
+    <Compile Include="DomainToNHibernate\ObjectMapping\SubsequentMapping.cs" />
+    <Compile Include="NHibernateToDomain\MapAllNHibernateToDomain.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\AuditMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\BackEndSpecificMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\CaseMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\CaseSpecificMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\CommonMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\DocumentMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\HibernateMapperService.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\EnforcementMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\LAPMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\LawFirmMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\MasterMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\SubCaseMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\SubCaseSpecificMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapper\SubsequentMapper.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\AuditMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\BackEndSpecificMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\CaseMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\CaseSpecificMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\CommonMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\CustomTypeMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\DocumentMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\EnforcementMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\LAPMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\LawFirmMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\MasterMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\HibernateMappingService.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\SubCaseMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\SubCaseSpecificMapping.cs" />
+    <Compile Include="NHibernateToDomain\ObjectMapping\SubsequentMapping.cs" />
+    <Compile Include="Utilities\DomainToNHibernateObjectResolvers.cs" />
+    <Compile Include="Utilities\EntityToDomainConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\DomainToEntityResolvers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AllInOne.Legal.Domain\AllInOne.Legal.Domain\AllInOne.Legal.Domain.csproj">
+      <Project>{45466F53-B987-4CB9-99F7-690232A451C5}</Project>
+      <Name>AllInOne.Legal.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AllInOne.Legal.Entities.BackEnd\AllInOne.Legal.Entities.BackEnd.csproj">
+      <Project>{35E2D4CF-780C-49E5-B14F-B48BB983DAE0}</Project>
+      <Name>AllInOne.Legal.Entities.BackEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

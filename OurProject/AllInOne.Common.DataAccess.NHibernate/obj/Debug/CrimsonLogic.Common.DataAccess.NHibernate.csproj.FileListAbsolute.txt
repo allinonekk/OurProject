@@ -1,0 +1,5 @@
+C:\NewTrunk2\Bin\InHouse\Debug\Common\CrimsonLogic.Common.DataAccess.NHibernate.dll
+C:\NewTrunk2\Bin\InHouse\Debug\Common\CrimsonLogic.Common.DataAccess.NHibernate.pdb
+C:\NewTrunk2\Src\Common\CrimsonLogic.Common.DataAccess\CrimsonLogic.Common.DataAccess.NHibernate\obj\Debug\ResolveAssemblyReference.cache
+C:\NewTrunk2\Src\Common\CrimsonLogic.Common.DataAccess\CrimsonLogic.Common.DataAccess.NHibernate\obj\Debug\CrimsonLogic.Common.DataAccess.NHibernate.dll
+C:\NewTrunk2\Src\Common\CrimsonLogic.Common.DataAccess\CrimsonLogic.Common.DataAccess.NHibernate\obj\Debug\CrimsonLogic.Common.DataAccess.NHibernate.pdb

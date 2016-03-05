@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="BankruptcyOtherDefDetail" table="[dbo].[BankruptcyOtherDefDetail]" optimistic-lock="none" >
+		<id name="OtherDefendantId" column="OtherDefendantId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CompanyName" column="CompanyName" type="AnsiString"/>
+		<property name="DateOfRegistration" column="DateOfRegistration" />
+		<property name="FullName" column="FullName" type="AnsiString"/>
+		<property name="IdNumber" column="IDNumber" type="AnsiString"/>
+		<property name="IdRemarks" column="IDRemarks" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="UEN" column="UEN" type="AnsiString"/>
+		<many-to-one name="MBODDCompanyIdType" fetch="select" cascade="none">
+			<column name="CompanyIDTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MBODDCountryOfRegistration" fetch="select" cascade="none">
+			<column name="CountryOfRegistration"/>
+		</many-to-one>
+		<many-to-one name="MBODDIdCountry" fetch="select" cascade="none">
+			<column name="IDCountryCode"/>
+		</many-to-one>
+		<many-to-one name="MBODDPersonIdType" fetch="select" cascade="none">
+			<column name="PersonIDTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MEntityType" fetch="select" cascade="none">
+			<column name="EntityTypeCode"/>
+		</many-to-one>
+		<many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+			<column name="IDGroupCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ADMWAInfo" table="[dbo].[ADMWAInfo]" optimistic-lock="none" >
+		<id name="ADMWAInfoId" column="ADMWAInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="WAType" column="WAType" />
+    <property name="WATypeRemarks" column="WATypeRemarks" />
+    <property name="AICID" column="AICID"  type="AnsiString"/>
+    <property name="DCPAICID" column="DCPAICID" type="AnsiString"/>
+    <property name="CargoDCPAICID" column="CargoDCPAICID" type="AnsiString"/>
+    <property name="CargoAICID" column="CargoAICID" type="AnsiString"/>
+    <property name="IsExecOutOffHour" column="IsExecOutOffHour"/>
+		<!--<many-to-one name="CasePartyAICDetail" fetch="select" cascade="none">
+			<column name="AICID"/>
+		</many-to-one>-->
+		<!--<many-to-one name="DocCasePartyAICDetail" fetch="select" cascade="none">
+			<column name="DCPAICID"/>
+		</many-to-one>-->
+	</class>
+</hibernate-mapping>

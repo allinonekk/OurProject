@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="AreaOfLegalPractice" table="[dbo].[AreaOfLegalPractice]" optimistic-lock="none" >
+		<id name="AreaOfLegalPracticeId" column="AreaOfLegalPracticeId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="EndDate" column="EndDate" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="ReasonForCeasing" column="ReasonForCeasing" />
+		<property name="StartDate" column="StartDate" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="IsForeignLawPractice" column="IsForeignLawPractice" />
+		<many-to-one name="MCountry" fetch="select" cascade="none">
+			<column name="CountryCode"/>
+		</many-to-one>
+		<many-to-one name="MLegalPractice" fetch="select" cascade="none">
+			<column name="LegalPracticeCode"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ChargeInfo" table="[dbo].[ChargeInfo]" optimistic-lock="none" >
+		<id name="ChargeInfoId" column="ChargeInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="CapitalChargeInd" column="CapitalChargeInd" />
+		<property name="ChargeDescription" column="ChargeDescription" />
+		<property name="ChargeNumber" column="ChargeNumber" />
+		<property name="ChargeSerialNumber" column="ChargeSerialNumber" />
+		<property name="ChargeYear" column="ChargeYear" />
+		<property name="CoronerNoticeInd" column="CoronerNoticeInd" />
+		<property name="ItemNo" column="ItemNo" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MainChargeInd" column="MainChargeInd" />
+		<property name="PIChargeInd" column="PIChargeInd" />
+		<property name="RelatedPICChargeNumber" column="RelatedPICChargeNumber" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+
+    <property name="OutcomeCode" column="outcomecode" />
+    <property name="OutcomeRemarks" column="outcomeRemarks" />
+    <property name="ChargeNo" column="ChargeNo" type="AnsiString"/>
+    
+		<!--<many-to-one name="CaseParty" fetch="select" cascade="none">
+			<column name="CasePartyId"/>
+		</many-to-one>
+		<many-to-one name="DocCaseParty" fetch="select" cascade="none">
+			<column name="DCPID"/>
+		</many-to-one>-->
+		<property name="CasePartyId" column="CasePartyId" type="AnsiString"/>
+		<property name="DCPID" column="DCPID" type="AnsiString"/>
+		<set name="DrugInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ChargeInfoId"/>
+			</key>
+			<one-to-many class="DrugInfo"/>
+		</set>
+		<many-to-one name="MChargeType" fetch="select" cascade="none">
+			<column name="ChargeTypeCode"/>
+		</many-to-one>
+		<set name="OffenceInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ChargeInfoId"/>
+			</key>
+			<one-to-many class="OffenceInfo"/>
+		</set>
+		<set name="RCriminalLegislationInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ChargeInfoId"/>
+			</key>
+			<one-to-many class="RCriminalLegislationInfo"/>
+		</set>
+		<set name="SentenceInfos" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ChargeInfoId"/>
+			</key>
+			<one-to-many class="SentenceInfo"/>
+		</set>
+		<property name="ChargeStatus" column="ChargeStatus" />
+		<!--<many-to-one name="ChargeStatusHrg" fetch="select" cascade="none">
+			<column name="ChargeStatusHrgId"/>
+		</many-to-one>-->
+		<property name="ChargeStatusHrgId" column="ChargeStatusHrgId" />
+
+	</class>
+</hibernate-mapping>

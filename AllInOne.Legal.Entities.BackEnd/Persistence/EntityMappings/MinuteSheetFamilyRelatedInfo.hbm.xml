@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MinuteSheetFamilyRelatedInfo" table="[dbo].[MinuteSheetFamilyRelatedInfo]" optimistic-lock="none" >
+    <id name="MinuteSheetFamilyRelatedInfoId" column="MinuteSheetFamilyRelatedInfoId" >
+      <generator class="assigned"/>
+    </id>
+    <property name="MinuteSheetInfoId" column="MinuteSheetInfoId" />
+    <property name="IJMadeFinalAfter" column="IJMadeFinalAfter" />
+    <property name="IsIJMadeForSOC" column="IsIJMadeForSOC" />
+    <property name="IsIJMadeForCC" column="IsIJMadeForCC" />
+    <property name="IsHRGOutComeForWrit" column="IsHRGOutComeForWrit" />
+    <property name="IsHRGOutComeForCC" column="IsHRGOutComeForCC" />
+    <property name="IsStandardCPFOrderGenerated" column="IsStandardCPFOrderGenerated" />
+    <property name="AddressOfMatrimonialAsset" column="AddressOfMatrimonialAsset" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="FileAndExchangeDate" column="FileAndExchangeDate" />
+    </class>
+</hibernate-mapping>

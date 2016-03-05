@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="ADMInfo" table="[dbo].[ADMInfo]" optimistic-lock="none" >
+    <id name="ADMInfoId" column="ADMInfoId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AdmiraltyWritType" column="AdmiraltyWritType" />
+    <property name="AttachmentType" column="AttachmentType" />
+    <property name="CaveatSearchDateTime" column="CaveatSearchDateTime" />
+    <property name="CaveatSearchResult" column="CaveatSearchResult" />
+    <property name="IsInjunctionFiled" column="IsInjunctionFiled" />
+    <property name="IsManagedEWT" column="IsManagedEWT" />
+    <property name="IsPartnerInFirm" column="IsPartnerInFirm" />
+    <property name="IsServeOutJDC" column="IsServeOutJDC" />
+    <property name="IsWOARequired" column="IsWOARequired" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+    <property name="TotalLIQAwardedAmount" column="TotalLIQAwardedAmount" />
+    <property name="TotalLIQClaimAmount" column="TotalLIQClaimAmount" />
+    <property name="TotalUnLIQESTAmount" column="TotalUnLIQESTAmount" />
+    <property name="TotlaUnLIQAwardedAmount" column="TotlaUnLIQAwardedAmount" />
+    <property name="WritAmount" column="WritAmount" />
+  </class>
+</hibernate-mapping>

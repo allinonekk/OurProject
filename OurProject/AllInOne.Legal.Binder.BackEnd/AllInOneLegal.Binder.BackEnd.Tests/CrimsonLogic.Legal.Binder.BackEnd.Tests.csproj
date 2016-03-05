@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F169E40-2703-43A0-A39B-E9D2AF116B8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrimsonLogic.Legal.Binder.BackEnd.Tests</RootNamespace>
+    <AssemblyName>CrimsonLogic.Legal.Binder.BackEnd.Tests</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\Bin\Test\Unit\BackEnd\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\Bin\Test\Unit\BackEnd\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrimsonLogic.Common.BarcodeUtility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Common.BarcodeUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Common.Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL" />
+    <Reference Include="CrimsonLogic.Common.Configuration.Custom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL" />
+    <Reference Include="CrimsonLogic.Common.DMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL" />
+    <Reference Include="CrimsonLogic.Common.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Common.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Common.PDFUtility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Common.PDFUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Common.UserMessageStore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Common.UserMessageStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.AppMon">
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Legal.AppMon.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.CaseConverter.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.CaseConverter.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.DataSync, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\Common\CrimsonLogic.Legal.DataSync.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.DataSync.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.DataSync.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.FilingBroker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0f1f2735f84cf573, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.FilingBroker.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.FilingBroker.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0f1f2735f84cf573, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.FilingBroker.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.Kernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL" />
+    <Reference Include="CrimsonLogic.Legal.Mediator.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.Mediator.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.OCCore.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.OCCore.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="CrimsonLogic.Legal.TaskList.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\Inhouse\Debug\BackEnd\CrimsonLogic.Legal.TaskList.BackEnd.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\External\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\..\Bin\External\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=1.0.2.3, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\External\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Bin\External\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestQuartzRuntime.cs" />
+    <Compile Include="ITestComponent.cs" />
+    <Compile Include="TestBinder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestComponentImpl.cs" />
+    <Compile Include="TestConfigurationExtension.cs" />
+    <Compile Include="TestScheduler.cs" />
+    <Compile Include="TestSimpleBinder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrimsonLogic.Legal.Binder.BackEnd\CrimsonLogic.Legal.Binder.BackEnd.csproj">
+      <Project>{C0D852B7-9B69-43DD-AB12-1611E6D68F67}</Project>
+      <Name>CrimsonLogic.Legal.Binder.BackEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CastleWindsor.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ConfigFolder\CrimsonLogic.Legal.Binder.BackEnd.Configuration.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="log4net_binderbackend.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="System.Data.SQLite.x86.DLL">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

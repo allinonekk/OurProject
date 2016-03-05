@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PaymentInDocFSDetail" table="[dbo].[PaymentInDocFSDetail]" optimistic-lock="none" >
+		<id name="PaymentInFSId" column="PaymentInFSID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="Amount" column="Amount" />
+		<property name="AmountSGD" column="AmountSGD" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Particulars" column="Particulars" />
+		<property name="PersonsDirected" column="PersonsDirected" />
+		<property name="Securities" column="Securities" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<many-to-one name="MCurrency" fetch="select" cascade="none">
+			<column name="CurrencyCode"/>
+		</many-to-one>
+		<!--<many-to-one name="PaymentInDocDetail" fetch="select" cascade="none">
+			<column name="PaymentInID"/>
+		</many-to-one>-->
+    		<property name="PaymentInId" column="PaymentInID" type="AnsiString"/>
+    <property name="ItemNo" column="ItemNo" />
+	</class>
+</hibernate-mapping>

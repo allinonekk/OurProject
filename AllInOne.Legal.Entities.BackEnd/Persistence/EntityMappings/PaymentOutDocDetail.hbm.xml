@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="PaymentOutDocDetail" table="[dbo].[PaymentOutDocDetail]" optimistic-lock="none" >
+    <id name="PaymentOutId" column="PaymentOutID" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="AGRefNumber" column="AGRefNumber" />
+    <property name="Amount" column="Amount" />
+    <property name="AmountApproved" column="AmountApproved" />
+    <property name="Designation" column="Designation" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="PartyName" column="PartyName" />
+    <property name="POReason" column="POReason" />
+    <property name="Remarks" column="Remarks" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="PIRemarks" column="PIRemarks" />
+    <property name="ItemNo" column="ItemNo" />
+    <set name="PaymentOutPayInDetails" cascade="none" inverse="true" fetch="select">
+      <key>
+        <column name="PaymentOutID"/>
+      </key>
+      <one-to-many class="PaymentOutPayInDetail"/>
+    </set>
+    <!--<many-to-one name="RefOrderDetail" fetch="select" cascade="none">
+			<column name="RefOrderDetailId"/>
+		</many-to-one>-->
+    <property name="RefOrderDetailId" column="RefOrderDetailId" type="AnsiString"/>
+    <many-to-one name="MCurrency" fetch="select" cascade="none">
+      <column name="CurrencyCode"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

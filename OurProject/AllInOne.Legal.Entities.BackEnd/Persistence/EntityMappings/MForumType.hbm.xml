@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="MForumType" table="[dbo].[MForumType]" optimistic-lock="none" lazy="false">
+    <id name="ForumId" column="ForumID" >
+      <generator class="assigned"/>
+    </id>
+    <property name="Description" column="Description" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="NeutralCiteCode" column="NeutralCiteCode" />
+    <property name="RegSignature" column="RegSignature" />
+    <property name="SeqNo" column="SeqNo" />
+    <property name="CourtID" column="CourtID" />
+    <property name="CourtSeal" column="ForumSeal" />
+    <property name="HeaderCentreImagePath" column="HeaderCentreImagePath" />
+    <property name="HeaderRightImagePath" column="HeaderRightImagePath" />
+    <property name="FooterCentreImagePath" column="FooterCentreImagePath" />
+    <property name="ADMHeaderRightImagePath" column="ADMHeaderRightImagePath" />
+    <property name="ForumSeal" column="ForumSeal" />
+    <property name="ForumSignature" column="ForumSignature" />
+    <property name="EFormHeaderDescription" column="EFormHeaderDescription" />
+    <property name="EFormFooterDescription" column="EFormFooterDescription" />
+
+  </class>
+
+  <sql-query name="GetMForumType">
+    exec Mediator_Common_GetMForumTypeByForumId
+    :ForumId
+  </sql-query>
+</hibernate-mapping>

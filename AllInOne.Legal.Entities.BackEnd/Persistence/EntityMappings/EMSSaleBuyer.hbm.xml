@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSSaleBuyer" table="[dbo].[EMSSaleBuyer]" optimistic-lock="none" >
+		<id name="BuyerDetailId" column="BuyerDetailId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="BuyerId" column="BuyerId" />
+		<property name="BuyerName" column="BuyerName" />
+		<property name="BuyerRemarks" column="BuyerRemarks" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="BuyerAddrBlkNo" column="BuyerAddrBlkNo" />
+    <property name="BuyerAddrStreetName" column="BuyerAddrStreetName" />
+    <property name="BuyerAddrFloorNo" column="BuyerAddrFloorNo" />
+    <property name="BuyerAddrUnitNo" column="BuyerAddrUnitNo" />
+    <property name="BuyerAddrBuildingName" column="BuyerAddrBuildingName" />
+    <property name="BuyerAddrPostalCode" column="BuyerAddrPostalCode" />
+    <property name="BuyerAddress" column="BuyerAddress" />
+    <many-to-one name="EMSSale" fetch="select" cascade="none" lazy="false">
+      <column name="EMSSaleId"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

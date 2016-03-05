@@ -1,0 +1,9 @@
+C:\AllInOne\OurProject\AllInOne.Legal.Domain.Factory\AllInOne.Legal.Domain.Factory\obj\Debug\ResolveAssemblyReference.cache
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Domain.Factory.dll
+C:\AllInOne\OurProject\Bin\AllInOne.Legal.Domain.Factory.pdb
+C:\AllInOne\OurProject\AllInOne.Legal.Domain.Factory\AllInOne.Legal.Domain.Factory\obj\Debug\AllInOne.Legal.Domain.Factory.dll
+C:\AllInOne\OurProject\AllInOne.Legal.Domain.Factory\AllInOne.Legal.Domain.Factory\obj\Debug\AllInOne.Legal.Domain.Factory.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Domain.Factory.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\Bin\AllInOne.Legal.Domain.Factory.pdb
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Domain.Factory\AllInOne.Legal.Domain.Factory\obj\Debug\AllInOne.Legal.Domain.Factory.dll
+C:\Users\nagavardhank\Desktop\Project\OurProject\OurProject\AllInOne.Legal.Domain.Factory\AllInOne.Legal.Domain.Factory\obj\Debug\AllInOne.Legal.Domain.Factory.pdb

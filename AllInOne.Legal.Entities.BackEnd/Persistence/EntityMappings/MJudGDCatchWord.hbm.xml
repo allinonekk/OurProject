@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="MJudGDCatchWord" table="[dbo].[MJudGDCatchWord]" optimistic-lock="none" >
+		<id name="JudCatchWordId" column="JudCatchWordID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="Description" column="Description" />
+		<property name="Display" column="Display" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Level" column="Level" />
+		<property name="Obsind" column="Obsind" />
+		<property name="ParentRef" column="ParentRef" />
+
+	</class>
+</hibernate-mapping>

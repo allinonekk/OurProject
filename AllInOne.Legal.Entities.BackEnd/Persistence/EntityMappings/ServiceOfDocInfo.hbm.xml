@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="ServiceOfDocInfo" table="[dbo].[ServiceOfDocInfo]" optimistic-lock="none" >
+		<id name="ServiceOfDocInfoId" column="ServiceOfDocInfoID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MFARefNo" column="MFARefNo" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="RequestDate" column="RequestDate" />
+		<property name="RequestId" column="RequestId" />
+		<property name="ServiceDate" column="ServiceDate" />
+		<property name="ServiceSatus" column="ServiceSatus" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>-->
+		<property name="CaseInfoId" column="CaseInfoId"/>
+		<many-to-one name="MServeStatus" fetch="select" cascade="none">
+			<column name="SerStatusCode"/>
+		</many-to-one>
+		<!--<many-to-one name="RefOrderDetail" fetch="select" cascade="none">
+			<column name="OrderId"/>
+		</many-to-one>-->
+		<property name="RefOrderDetailId" column="OrderId" type="AnsiString"/>
+		<set name="ServiceOfDocDocStatusHistories" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ServiceOfDocInfoID"/>
+			</key>
+			<one-to-many class="ServiceOfDocDocStatusHistory"/>
+		</set>
+		<set name="ServiceOfDocInfoDetails" cascade="none" inverse="true" fetch="select">
+			<key>
+				<column name="ServiceOfDocInfoID"/>
+			</key>
+			<one-to-many class="ServiceOfDocInfoDetail"/>
+		</set>
+
+	</class>
+</hibernate-mapping>

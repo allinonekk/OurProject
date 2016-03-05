@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="SystemParameters" table="[dbo].[SystemParameters]" optimistic-lock="none" >
+		<id name="ConfigKey" column="ConfigKey">
+			<generator class="assigned"/>
+		</id>
+		<property name="Value" column="Value" />
+		<property name="Description" column="Description" />
+		<property name="ModuleName" column="ModuleName" />
+		<property name="ConfigType" column="ConfigType" />
+		<property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy"/>
+    <property name="LastModifiedDate" column="LastModifieddate"/>
+	</class>
+</hibernate-mapping>

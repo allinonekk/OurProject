@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="FileInspectionDocDetail" table="[dbo].[FileInspectionDocDetails]" optimistic-lock="none" >
+		<composite-id>
+    		<key-property name="CaseInfoId" column="CaseInfoID" />
+    		<key-property name="DocId" column="DocID" type="AnsiString"/>
+    		<key-property name="FileInspectionId" column="FileInspectionID" type="AnsiString"/>
+		</composite-id>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Status" column="Status" />
+		<!--<many-to-one name="CaseInfo" fetch="select" cascade="none">
+			<column name="CaseInfoID"/>
+		</many-to-one>
+		<many-to-one name="DocumentInfo" fetch="select" cascade="none">
+			<column name="DocID"/>
+		</many-to-one>
+		<many-to-one name="FileInspection" fetch="select" cascade="none">
+			<column name="FileInspectionID"/>
+		</many-to-one>-->
+		<many-to-one name="SubCaseInfo" fetch="select" cascade="none">
+			<column name="SubCaseInfoID"/>
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

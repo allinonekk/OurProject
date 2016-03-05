@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="RPTNOCGroupNOC" table="[dbo].[RPTNOCGroupNOC]" optimistic-lock="none" >
+		<id name="RPTNOCGroupNOCCode" column="RPTNOCGroupNOCCode" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="NocGroupCode" column="NocGroupCode" />
+		<property name="NOCCode" column="NOCCode" />
+		<property name="ObsInd" column="Obsind" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="ActCode" column="ActCode" />
+    <property name="NocGroupName" column="NocGroupName" />
+	</class>
+</hibernate-mapping>

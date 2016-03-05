@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="PCInfo" table="[dbo].[PCInfo]" optimistic-lock="none" >
+		<id name="PCInfoId" column="PCInfoId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="AnyAdvrOrdersInForeignJuri" column="AnyAdvrOrdersInForeignJuri" />
+		<property name="CircumstancesAndJurisdictions" column="CircumstancesAndJurisdictions" />
+		<property name="CommOfOathsAppDate" column="CommOfOathsAppDate" />
+		<property name="CommOfOathsAppExpDate" column="CommOfOathsAppExpDate" />
+		<property name="CountriesQualifiedForPractice" column="CountriesQualifiedForPractice" />
+		<property name="DateOfAGCCertIssued" column="DateOfAGCCertIssued" />
+		<property name="DoesPracticeIncludeLitigation" column="DoesPracticeIncludeLitigation" />
+		<property name="FinalConfirmation" column="FinalConfirmation" />
+		<property name="HasSection251bSatisfied" column="HasSection251bSatisfied" />
+		<property name="HasSection251cSatisfied" column="HasSection251cSatisfied" />
+		<property name="HasSection251dSatisfied" column="HasSection251dSatisfied" />
+		<property name="IDoNotNeedToVote" column="IDoNotNeedToVote" />
+		<property name="IsAreaOfLPDisclosed" column="IsAreaOfLPDisclosed" />
+		<property name="IsConditionalPC" column="IsConditionalPC" />
+		<property name="IsDisqualifiedBySection261" column="IsDisqualifiedBySection261" />
+		<property name="IsDisqualifiedBySection262" column="IsDisqualifiedBySection262" />
+		<property name="IsDisqualifiedBySection263" column="IsDisqualifiedBySection263" />
+		<property name="IsNotHoldClientMoney" column="IsNotHoldClientMoney" />
+		<property name="IsNotPeriodOfFiveYears" column="IsNotPeriodOfFiveYears" />
+		<property name="IsOnRollOfAdvsSolicitors" column="IsOnRollOfAdvsSolicitors" />
+		<property name="IsPCPossessedLPA261" column="IsPCPossessedLPA261" />
+		<property name="IsPeriodOfFiveYears" column="IsPeriodOfFiveYears" />
+		<property name="IsProfIndemnityInsur" column="IsProfIndemnityInsur" />
+		<property name="IsSatisfiedSec130N" column="IsSatisfiedSec130N" />
+		<property name="IsSection25AApplicable" column="IsSection25AApplicable" />
+		<property name="IsVoted" column="IsVoted" />
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="LawSocAnnualSubPaidStatus" column="LawSocAnnualSubPaidStatus" />
+		<property name="LawSocCompFundStatus" column="LawSocCompFundStatus" />
+		<property name="LawSocInsurnCvrgEndDate" column="LawSocInsurnCvrgEndDate" />
+		<property name="LawSocInsurnCvrgStartDate" column="LawSocInsurnCvrgStartDate" />
+		<property name="LawSocMembershipCategory" column="LawSocMembershipCategory" />
+		<property name="LawSocVoteInfo" column="LawSocVoteInfo" />
+		<property name="LegalOfficerExperience" column="LegalOfficerExperience" />
+		<property name="LocumSolicitorPosition" column="LocumSolicitorPosition" />
+		<property name="NPAppDate" column="NPAppDate" />
+		<property name="NPAppExpDate" column="NPAppExpDate" />
+		<property name="OrgAccReportSection73OfLPA" column="OrgAccReportSection73OfLPA" />
+		<property name="ProBonoHours" column="ProBonoHours" />
+		<property name="ProBonoInitiatives" column="ProBonoInitiatives"  type="StringClob"/>
+		<property name="QualifiedForPractice" column="QualifiedForPractice" />
+		<property name="SALfeePaidStatus" column="SALfeePaidStatus" />
+		<property name="SCAppDate" column="SCAppDate" />
+		<property name="SCAppExpDate" column="SCAppExpDate" />
+		<property name="Section25AReason" column="Section25AReason" />
+		<property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+		<property name="SubSectionForSection25A" column="SubSectionForSection25A" />
+    <property name="SALMembership" column="SALMembership" />
+    <property name="IsRequiredVote" column="IsRequiredVote" />
+    <property name="ApptOrgType" column="ApptOrgType" />
+    <property name="ApptLFId" column="ApptLFID" />
+    <property name="LawsoSubscriptionFee" column="LawsoSubscriptionFee" />
+    <property name="LawsoCompensationFee" column="LawsoCompensationFee" />
+    <property name="LawsoVotePenalityFee" column="LawsoVotePenalityFee" />
+    <property name="SALFee" column="SALFee" />
+    <property name="CORDocId" column="CORDocId" />
+
+    <property name="PCCaseYear" column="PCCaseYear" />
+
+    <property name="ProBonoStateHours" column="ProBonoStateHours" />
+    <property name="PbnoTrg" column="PbnoTrg" />
+    <property name="PbnoMentor" column="PbnoMentor" />
+    <property name="PbnoScheme" column="PbnoScheme" />
+
+    <property name="PbnoBillableHrs" column="PbnoBillableHrs" />
+    <property name="PbnoencOthers" column="PbnoencOthers" />
+    <property name="PbnoencOthersremarks" column="PbnoencOthersremarks" />
+    <property name="PbnoOppurtunity" column="PbnoOppurtunity" />
+    <property name="PbnoQualified" column="PbnoQualified" />
+
+    <property name="PbnoNotime" column="PbnoNotime" />
+    <property name="PbnoLegalPractice" column="PbnoLegalPractice" />
+    <property name="PbnoHighbillable" column="PbnoHighbillable" />
+    <property name="PbnoMoreothers" column="PbnoMoreothers" />
+
+    <property name="PbnoMorehrsOthers" column="PbnoMorehrsOthers" />
+    <property name="PbnoLegalservices" column="PbnoLegalservices" />
+    <property name="PbnoDonations" column="PbnoDonations" />
+    <property name="Pbnochq" column="Pbnochq" />
+
+    <property name="PbnoLawsoc" column="PbnoLawsoc" />
+    <property name="CPDReq" column="CPDReq" />
+    <property name="Sec73LPA" column="Sec73LPA" />
+    <property name="Sec73Trivual" column="Sec73Trivual" />
+
+    <property name="Sec731stSection" column="Sec731stSection" />
+    <property name="Sec732ndSection" column="Sec732ndSection" />
+    <property name="AccRep41f" column="AccRep41f" />
+    <property name="LSGIRORPTST" column="LSGIRORPTST" />
+    <property name="LSHCRPTST" column="LSHCRPTST" />
+    <many-to-one name="MApptOrganisation" fetch="select" cascade="none">
+      <column name="ApptOrgCode"/>
+    </many-to-one>
+
+
+  </class>
+</hibernate-mapping>

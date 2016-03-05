@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RARASDetail" table="[dbo].[RARASDetail]" optimistic-lock="none" >
+    <id name="RARASDetailId" column="RARASDetailId" type="AnsiString">
+      <generator class="assigned"/>
+    </id>
+    <property name="TimeForGDCT" column="TimeForGDCT" />
+    <property name="SubmissionGroupId" column="SubmissionGroupId" type="AnsiString"/>
+    <property name="TimeTakenForHearing" column="TimeTakenForHearing" />
+    <property name="IsAppealFiledCorrectly" column="IsAppealFiledCorrectly" />
+    <property name="SendAutoNotification" column="SendAutoNotification" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+    <property name="GDDueDate" column="GDDueDate" />
+  </class>
+</hibernate-mapping>

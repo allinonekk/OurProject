@@ -1,0 +1,5 @@
+C:\NewTrunk2\Bin\InHouse\Debug\Common\CrimsonLogic.Legal.Domain.Factory.dll
+C:\NewTrunk2\Bin\InHouse\Debug\Common\CrimsonLogic.Legal.Domain.Factory.pdb
+C:\NewTrunk2\Src\Common\CrimsonLogic.Legal.Domain.Factory\CrimsonLogic.Legal.Domain.Factory\obj\Debug\ResolveAssemblyReference.cache
+C:\NewTrunk2\Src\Common\CrimsonLogic.Legal.Domain.Factory\CrimsonLogic.Legal.Domain.Factory\obj\Debug\CrimsonLogic.Legal.Domain.Factory.dll
+C:\NewTrunk2\Src\Common\CrimsonLogic.Legal.Domain.Factory\CrimsonLogic.Legal.Domain.Factory\obj\Debug\CrimsonLogic.Legal.Domain.Factory.pdb

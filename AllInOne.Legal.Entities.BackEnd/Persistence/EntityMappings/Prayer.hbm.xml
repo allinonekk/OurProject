@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="Prayer" table="[dbo].[Prayer]" optimistic-lock="none" >
+		<id name="PrayersId" column="PrayersID" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="GrantedPara" column="GrantedPara" />
+		<property name="GrantedPrayer" column="GrantedPrayer"  type="StringClob"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="Level" column="Level" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="PrayerParaNo" column="PrayerParaNo" />
+		<property name="PrayerTitle" column="PrayerTitle" />
+		<property name="RequestedPrayer" column="RequestedPrayer"  type="StringClob"/>
+		<property name="SubLevel" column="SubLevel" />
+		<property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="HRGID" column="HRGID" />
+		<property name="PrayerCode" column="PrayerCode" />
+		<many-to-one name="MPrayerOutcome" fetch="select" cascade="none">
+			<column name="PrayerStatusCode"/>
+		</many-to-one>
+		<property name="DocId" column="DocId" />
+
+	</class>
+</hibernate-mapping>

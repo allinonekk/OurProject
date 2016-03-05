@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="EMSCivCrmMissing" table="[dbo].[EMSCivCrmMissing]" optimistic-lock="none" >
+		<id name="EMSCivCrmMissingId" column="EMSCivCrmMissingId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ItemMissing" column="ItemMissing" /> 
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="MissingRptDate" column="MissingRptDate" />
+		<property name="ObsInd" column="ObsInd" />
+		<property name="Remarks" column="Remarks" />
+    <property name="IsMakeReport" column="IsMakeReport" />
+    <property name="SeekDate" column="SeekDate" />
+    <property name="DecisionDate" column="DecisionDate" />
+    <property name="DecisionRemarks" column="DecisionRemarks" />
+    <property name="IsRouted" column="IsRouted" />
+    <property name="WorkflowSerialNo" column="WorkflowSerialNo" />
+    <many-to-one name="EMSCivCrmSeizure" fetch="select" cascade="none" lazy="false">
+      <column name="EMSCivCrmSeizureId"/>
+    </many-to-one>
+		<many-to-one name="EMSAccount" fetch="select" cascade="none" lazy="false">
+			<column name="EMSAccountId"/>
+		</many-to-one>
+    <many-to-one name="User" fetch="select" cascade="none" lazy="false">
+      <column name="DRId"/>
+    </many-to-one>
+	</class>
+</hibernate-mapping>

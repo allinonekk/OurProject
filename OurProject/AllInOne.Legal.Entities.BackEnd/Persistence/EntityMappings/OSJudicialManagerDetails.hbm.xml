@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5fb9aab394206ec1"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="OSJudicialManagerDetails" table="[dbo].[OSJudicialManagerDetails]" optimistic-lock="none" >
+		<id name="OSJudicialManagerDetailId" column="OSJudicialManagerDetailId" type="AnsiString">
+			<generator class="assigned"/>
+		</id>
+		<property name="ItemNo" column="ItemNo" />
+		<property name="JMName" column="JMName" />
+		<property name="JMIDNumber" column="JMIDNumber" />
+    <property name="SubmissionGroupId" column="SubmissionGroupID" type="AnsiString"/>
+		<property name="LastModifiedBy" column="LastModifiedBy" />
+		<property name="LastModifiedDate" column="LastModifiedDate" />
+		<property name="JMIDRemarks" column="JMIDRemarks" />
+		
+		<many-to-one name="MPersonIDGroup" fetch="select" cascade="none">
+			<column name="JMIDGroupCode"/>
+		</many-to-one>
+    <many-to-one name="MPersonIDType" fetch="select" cascade="none">
+      <column name="JMIDTypeCode"/>
+    </many-to-one>
+
+    <many-to-one name="MCountry" fetch="select" cascade="none">
+      <column name="JMIDCountryCode"/>
+    </many-to-one>
+
+	</class>
+</hibernate-mapping>

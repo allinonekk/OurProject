@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+  <class name="RCaseLinked" table="[dbo].[RCaseLinked]" optimistic-lock="none" >
+    <composite-id>
+      <key-property name="LinkGroupId" column="LinkGroupID" type="AnsiString"/>
+      <key-property name="CaseInfoId" column="CaseInfoID" />
+    </composite-id>
+    <property name="LinkedDate" column="LinkedDate" />
+    <property name="CrossCourtInd" column="CrossCourtInd" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="LastModifiedBy" column="LastModifiedBy" />
+    <property name="LastModifiedDate" column="LastModifiedDate" />
+  </class>
+  <sql-query name="Procedure">
+    Common_SaveRCaseLinked
+    :LinkGroupID,:CaseInfoID,:LinkedDate,:ObsInd,:CrossCourtInd,:LastModifiedBy
+  </sql-query>
+</hibernate-mapping>

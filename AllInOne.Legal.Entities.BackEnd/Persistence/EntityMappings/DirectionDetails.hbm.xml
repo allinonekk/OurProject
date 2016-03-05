@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="AllInOne.Legal.Entities.BackEnd"
+                   namespace="AllInOne.Legal.Entities.BackEnd">
+
+	<class name="DirectionDetails" table="[dbo].[DirectionDetails]" optimistic-lock="none" >
+		<id name="HRGID" column="HRGID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="CaseInfoID" column="CaseInfoID" />
+		<property name="SubCaseInfoID" column="SubCaseInfoID" />
+		<property name="DocID" column="DocID" />
+		<property name="DirCode" column="DirCode" />
+    <property name="ObsInd" column="ObsInd" />
+    <property name="Lastmodifiedby" column="Lastmodifiedby" />
+    <property name="Lastmodifieddate" column="Lastmodifieddate" />
+	</class>
+</hibernate-mapping>
